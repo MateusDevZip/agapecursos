@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Os 3 Pilares da Ágape Cursos - Abordagem Integrada</title>
+    <meta name="description"
+        content="Conheça os 3 pilares da Ágape Cursos: Terapia Capilar, Massagem Terapêutica e Psicanálise Aplicada. Uma abordagem integrada para profissionais completos." />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        // Extracted from the uploaded lotus image
+                        "primary": "#D68C96", // Soft Pink/Rose (medium tone)
+                        "primary-dark": "#B06573", // Darker Rose for hover states
+                        "secondary": "#A85B6B", // Deep Pink/Mauve (darker tone from outer petals)
+                        "accent": "#F2C4C0", // Peach/Light Pink (light tone from inner petals)
+                        "neutral-dark": "#4A3B3E", // Dark Brownish-Grey (warmer dark neutral)
+                        "bg-soft": "#FFF5F5", // Very light pinkish white for backgrounds
+                        "bg-white": "#FFFFFF",
+                        "text-body": "#6B5A5D", // Softer body text color
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Lexend", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="font-display bg-bg-white text-text-body antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-pink-100 bg-white/95 backdrop-blur-sm">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="flex size-8 items-center justify-center rounded-lg bg-secondary text-white">
+                        <span class="material-symbols-outlined text-xl">spa</span>
+                    </div>
+                    <h2 class="text-xl font-bold tracking-tight text-secondary">Ágape Cursos</h2>
+                </div>
+                <nav class="hidden md:flex gap-8">
+                    <a class="text-sm font-medium text-neutral-dark hover:text-primary transition-colors"
+                        href="#inicio">Início</a>
+                    <a class="text-sm font-medium text-neutral-dark hover:text-primary transition-colors"
+                        href="#terapia-capilar">Terapia Capilar</a>
+                    <a class="text-sm font-medium text-neutral-dark hover:text-primary transition-colors"
+                        href="#massagem">Massagem</a>
+                    <a class="text-sm font-medium text-neutral-dark hover:text-primary transition-colors"
+                        href="#psicanalise">Psicanálise</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="hidden sm:flex h-9 items-center justify-center rounded-lg border border-pink-100 bg-white px-4 text-sm font-medium text-neutral-dark hover:bg-bg-soft transition-colors">
+                        Login
+                    </button>
+                    <button
+                        class="flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-bold text-white transition-colors hover:bg-primary-dark">
+                        Matricule-se
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-bg-soft pt-16 pb-20 lg:pt-24 lg:pb-32" id="inicio">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+                <div class="flex flex-col items-start gap-6">
+                    <div
+                        class="inline-flex items-center rounded-full border border-primary/20 bg-white px-3 py-1 text-sm font-medium text-secondary shadow-sm">
+                        <span class="mr-1 h-2 w-2 rounded-full bg-primary"></span>
+                        Bem-estar Holístico Integrado
+                    </div>
+                    <h1
+                        class="text-4xl font-black leading-tight tracking-tight text-neutral-dark sm:text-5xl lg:text-6xl">
+                        Os 3 Pilares da <br />
+                        <span class="text-secondary">Ágape Cursos</span>
+                    </h1>
+                    <p class="text-lg text-text-body max-w-lg leading-relaxed">
+                        Nossa metodologia exclusiva une <strong>Terapia Capilar</strong>, <strong>Massagem
+                            Terapêutica</strong> e <strong>Psicanálise Aplicada</strong> para formar profissionais
+                        completos, capazes de promover saúde física e emocional.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <a class="inline-flex h-12 items-center justify-center rounded-lg bg-secondary px-8 text-base font-bold text-white shadow-sm transition-all hover:bg-[#8e4a58] hover:shadow-md"
+                            href="#triade">
+                            Conheça a Tríade Holística
+                        </a>
+                        <a class="inline-flex h-12 items-center justify-center rounded-lg border border-secondary/20 bg-transparent px-8 text-base font-medium text-secondary transition-colors hover:bg-white hover:border-secondary/40"
+                            href="#terapia-capilar">
+                            Explorar Pilares
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-center lg:justify-end">
+                    <div class="relative h-[400px] w-full max-w-[500px]">
+                        <svg class="h-full w-full drop-shadow-xl" viewBox="0 0 500 500"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#F2C4C0;stop-opacity:0.4"></stop>
+                                    <stop offset="100%" style="stop-color:#D68C96;stop-opacity:0.1"></stop>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="250" cy="180" fill="url(#grad1)" r="120" stroke="#D68C96" stroke-width="2">
+                            </circle>
+                            <circle cx="160" cy="330" fill="url(#grad1)" r="120" stroke="#A85B6B" stroke-width="2">
+                            </circle>
+                            <circle cx="340" cy="330" fill="url(#grad1)" r="120" stroke="#4A3B3E" stroke-width="2">
+                            </circle>
+                            <path d="M250 180 L160 330" opacity="0.5" stroke="#A85B6B" stroke-dasharray="5,5"
+                                stroke-width="1"></path>
+                            <path d="M250 180 L340 330" opacity="0.5" stroke="#4A3B3E" stroke-dasharray="5,5"
+                                stroke-width="1"></path>
+                            <path d="M160 330 L340 330" opacity="0.5" stroke="#D68C96" stroke-dasharray="5,5"
+                                stroke-width="1"></path>
+                            <g transform="translate(225, 155)">
+                                <rect fill="white" height="50" rx="10" width="50"></rect>
+                                <text fill="#D68C96" font-family="Material Symbols Outlined" font-size="28"
+                                    text-anchor="middle" x="25" y="32">face_3</text>
+                            </g>
+                            <g transform="translate(135, 305)">
+                                <rect fill="white" height="50" rx="10" width="50"></rect>
+                                <text fill="#A85B6B" font-family="Material Symbols Outlined" font-size="28"
+                                    text-anchor="middle" x="25" y="32">spa</text>
+                            </g>
+                            <g transform="translate(315, 305)">
+                                <rect fill="white" height="50" rx="10" width="50"></rect>
+                                <text fill="#4A3B3E" font-family="Material Symbols Outlined" font-size="28"
+                                    text-anchor="middle" x="25" y="32">psychology</text>
+                            </g>
+                        </svg>
+                        <div class="absolute top-10 right-0 hidden sm:block animate-bounce [animation-duration:3s]">
+                            <div class="bg-white/80 backdrop-blur-md p-3 rounded-lg shadow-lg border border-white/50">
+                                <span class="text-xs font-bold text-secondary">Saúde Integrada</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-10 left-0 hidden sm:block animate-bounce [animation-duration:4s]">
+                            <div class="bg-white/80 backdrop-blur-md p-3 rounded-lg shadow-lg border border-white/50">
+                                <span class="text-xs font-bold text-secondary">Profissionalização</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terapia Capilar Section -->
+    <section class="py-20 bg-white" id="terapia-capilar">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
+                <div class="lg:w-1/3 flex flex-col gap-6 sticky top-24">
+                    <div class="flex items-center gap-3">
+                        <div class="p-3 bg-bg-soft rounded-lg text-primary">
+                            <span class="material-symbols-outlined text-3xl">face_3</span>
+                        </div>
+                        <h2 class="text-3xl font-bold text-neutral-dark">Terapia Capilar</h2>
+                    </div>
+                    <div class="prose prose-lg text-text-body">
+                        <p class="leading-relaxed">
+                            A saúde dos cabelos é um reflexo direto do equilíbrio interno. Em nosso pilar de Terapia
+                            Capilar, transcendemos a estética para focar na tricologia clínica e no bem-estar do couro
+                            cabeludo.
+                        </p>
+                        <p class="mt-4 leading-relaxed">
+                            Nossos cursos ensinam a identificar patologias, desenvolver protocolos de recuperação e,
+                            acima de tudo, resgatar a autoestima dos clientes. Acreditamos que cuidar dos fios é uma
+                            forma de cuidar da alma.
+                        </p>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-bold text-neutral-dark mb-3">Benefícios Chave:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-sm text-text-body">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                Domínio da anatomia capilar e tricologia
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-text-body">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                Tratamentos naturais e tecnológicos
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-text-body">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                Foco em saúde e prevenção
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:w-2/3 w-full">
+                    <h3 class="text-xl font-bold text-neutral-dark mb-6 pl-1 border-l-4 border-primary">Cursos em
+                        Destaque</h3>
+                    <div class="grid gap-6 sm:grid-cols-2">
+                        <div
+                            class="group flex flex-col rounded-xl border border-pink-100 bg-white p-6 shadow-sm transition-all hover:border-primary/50 hover:shadow-md">
+                            <div class="mb-4 h-40 w-full rounded-lg bg-gray-100 bg-cover bg-center"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYKWdIBI8fPKUalAiZCryLs60g_p3n1ccyT_PPdcR4HewFI5yFQlVP4uttaRKBJsEpVostJF5hvK5gZa3gkZyDUy7gpFuNvjAQhzt-lm0jx4K44T2qDeIhX4UPg5VCqwAIixyxngi6z05a-3t_F6qVaPaShA3Li3YWhwKl7V-mOGzMLgfF8NjHIzPb5M2hgL886u6_jJJCEVdVVPLjgxhvR8y_xDZvZMopAR19kX65Pya3e3_k-mJpH7Ch7mfK-GpJM950aVCVxBSH')">
+                            </div>
+                            <h4 class="text-lg font-bold text-neutral-dark group-hover:text-primary">Fundamentos da
+                                Tricologia</h4>
+                            <p class="mt-2 text-sm text-gray-500 line-clamp-2">Entenda a ciência por trás dos fios e do
+                                couro cabeludo.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-100 mt-4">
+                                <span class="flex items-center text-xs font-medium text-gray-500">
+                                    <span class="material-symbols-outlined mr-1 text-base">schedule</span> 40h
+                                </span>
+                                <span class="text-lg font-bold text-primary">R$ 399</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col rounded-xl border border-pink-100 bg-white p-6 shadow-sm transition-all hover:border-primary/50 hover:shadow-md">
+                            <div class="mb-4 h-40 w-full rounded-lg bg-gray-100 bg-cover bg-center"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaaK2kuwKrsKuuyF1JOjd1JnPJrfRGbyZTSzdHiXNLOb549H-j3ozrsiHZvt9JF-Q7DhHmevrUu6c9hEPzRhldZokZihtG5TeYeep_zeGnhyFyl-MGwsZmUUnDXpPF6premSVpNdadWyr1OI3Fu0EBJxzXvB84ZWxXZ3gVAcTPF_9lRkGrfOhzhpPXUrQQg6255dQPg18NuiseQZ3g1ytwlIFxE4gv68Rbb8rpcP9ccAYmVFqd1Pp4eXbMipMrH5o-DCgDf8Pyompv')">
+                            </div>
+                            <h4 class="text-lg font-bold text-neutral-dark group-hover:text-primary">Protocolos de
+                                Recuperação</h4>
+                            <p class="mt-2 text-sm text-gray-500 line-clamp-2">Aprenda a criar planos de tratamento
+                                personalizados para queda e danos.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-100 mt-4">
+                                <span class="flex items-center text-xs font-medium text-gray-500">
+                                    <span class="material-symbols-outlined mr-1 text-base">schedule</span> 60h
+                                </span>
+                                <span class="text-lg font-bold text-primary">R$ 549</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Massagem Terapêutica Section -->
+    <section class="py-20 bg-bg-soft" id="massagem">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row-reverse gap-12 items-start">
+                <div class="lg:w-1/3 flex flex-col gap-6 sticky top-24">
+                    <div class="flex items-center gap-3">
+                        <div class="p-3 bg-white rounded-lg text-secondary">
+                            <span class="material-symbols-outlined text-3xl">spa</span>
+                        </div>
+                        <h2 class="text-3xl font-bold text-neutral-dark">Massagem Terapêutica</h2>
+                    </div>
+                    <div class="prose prose-lg text-text-body">
+                        <p class="leading-relaxed">
+                            O toque tem poder de cura. Nosso pilar de Massagem Terapêutica foca no alívio de tensões
+                            físicas que, muitas vezes, são manifestações de estresse emocional.
+                        </p>
+                        <p class="mt-4 leading-relaxed">
+                            Formamos profissionais sensíveis e técnicos, capazes de aplicar desde a clássica massagem
+                            relaxante até técnicas avançadas de liberação miofascial e drenagem linfática, promovendo
+                            equilíbrio corporal completo.
+                        </p>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-bold text-neutral-dark mb-3">Benefícios Chave:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-sm text-text-body">
+                                <span class="material-symbols-outlined text-secondary">check_circle</span>
+                                Redução de estresse e ansiedade
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-text-body">
+                                <span class="material-symbols-outlined text-secondary">check_circle</span>
+                                Melhora da circulação e imunidade
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-text-body">
+                                <span class="material-symbols-outlined text-secondary">check_circle</span>
+                                Alívio de dores crônicas
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:w-2/3 w-full">
+                    <h3 class="text-xl font-bold text-neutral-dark mb-6 pl-1 border-l-4 border-secondary">Cursos em
+                        Destaque</h3>
+                    <div class="grid gap-6 sm:grid-cols-2">
+                        <div
+                            class="group flex flex-col rounded-xl border border-white bg-white p-6 shadow-sm transition-all hover:border-secondary/50 hover:shadow-md">
+                            <div class="mb-4 h-40 w-full rounded-lg bg-gray-100 bg-cover bg-center"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkSL5XAHcO4pJ1xRgrw36EnPvudyBTHKGB6EDyD4tFfsY03KlCygXdE13nDTALl78tqiSNUF6weeYzAlhD8Bd69FikU8QzvWkJgUkultcoAQVhNV52rnE8J6HVIuitHkVPPxkkkftbL4MCtPr_gzX-1UTFbKjtcmr0n66OUGin8Mx15tpTocOKBbRwMCwzdkypFp860dhZQtVgrr45o59-jtq8kY1oLGHYX2TBsjKusIC4rwPw2hlMoQ6tRkiOZEiO6iNFLI3_6Fcy')">
+                            </div>
+                            <h4 class="text-lg font-bold text-neutral-dark group-hover:text-secondary">Drenagem
+                                Linfática</h4>
+                            <p class="mt-2 text-sm text-gray-500 line-clamp-2">Técnicas manuais para eliminação de
+                                toxinas e redução de inchaço.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-100 mt-4">
+                                <span class="flex items-center text-xs font-medium text-gray-500">
+                                    <span class="material-symbols-outlined mr-1 text-base">schedule</span> 50h
+                                </span>
+                                <span class="text-lg font-bold text-primary">R$ 459</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col rounded-xl border border-white bg-white p-6 shadow-sm transition-all hover:border-secondary/50 hover:shadow-md">
+                            <div class="mb-4 h-40 w-full rounded-lg bg-gray-100 bg-cover bg-center"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCTNKcVS4twAzM5MqOf4mmrLA0Mt0M3mtNcO3HwTlB5x4brG4frCbepbToQ7x8_JJe0QpnoRg3lvgjCXPllfqKwnBjC82aUcFTBXXoqCJwQh1Bs9jyJK7Sqvxw_4PGjXV7VROxFDK5eXEq-uPHtHcwblTCXsi4uqEdCQrot49RDLvUe_ovDVi6X1k6BItVPnzIbB1MuteNLQfeEAxATh7cRzq2OgT_i_SAxdQ0awZ16O2MQnpLQUZsMjaWsL5ckVh5etC00oAu-TzbD')">
+                            </div>
+                            <h4 class="text-lg font-bold text-neutral-dark group-hover:text-secondary">Massagem
+                                Relaxante Integrativa</h4>
+                            <p class="mt-2 text-sm text-gray-500 line-clamp-2">Uma abordagem completa para o relaxamento
+                                muscular profundo.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-100 mt-4">
+                                <span class="flex items-center text-xs font-medium text-gray-500">
+                                    <span class="material-symbols-outlined mr-1 text-base">schedule</span> 35h
+                                </span>
+                                <span class="text-lg font-bold text-primary">R$ 329</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Psicanálise Aplicada Section -->
+    <section class="py-20 bg-white" id="psicanalise">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
+                <div class="lg:w-1/3 flex flex-col gap-6 sticky top-24">
+                    <div class="flex items-center gap-3">
+                        <div class="p-3 bg-bg-soft rounded-lg text-neutral-dark">
+                            <span class="material-symbols-outlined text-3xl">psychology</span>
+                        </div>
+                        <h2 class="text-3xl font-bold text-neutral-dark">Psicanálise Aplicada</h2>
+                    </div>
+                    <div class="prose prose-lg text-text-body">
+                        <p class="leading-relaxed">
+                            A cura verdadeira começa na mente. A Psicanálise Aplicada na Ágape Cursos não é apenas
+                            teoria; é uma ferramenta prática para entender o comportamento humano, traumas e processos
+                            emocionais.
+                        </p>
+                        <p class="mt-4 leading-relaxed">
+                            Este pilar é essencial para terapeutas que desejam oferecer um suporte mais profundo aos
+                            seus clientes, integrando a escuta ativa e a compreensão psíquica aos tratamentos físicos.
+                        </p>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-bold text-neutral-dark mb-3">Benefícios Chave:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-sm text-text-body">
+                                <span class="material-symbols-outlined text-neutral-dark">check_circle</span>
+                                Autoconhecimento profundo
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-text-body">
+                                <span class="material-symbols-outlined text-neutral-dark">check_circle</span>
+                                Melhoria nas relações interpessoais
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-text-body">
+                                <span class="material-symbols-outlined text-neutral-dark">check_circle</span>
+                                Ferramentas para escuta terapêutica
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:w-2/3 w-full">
+                    <h3 class="text-xl font-bold text-neutral-dark mb-6 pl-1 border-l-4 border-neutral-dark">Cursos em
+                        Destaque</h3>
+                    <div class="grid gap-6 sm:grid-cols-2">
+                        <div
+                            class="group flex flex-col rounded-xl border border-pink-100 bg-white p-6 shadow-sm transition-all hover:border-neutral-dark/50 hover:shadow-md">
+                            <div class="mb-4 h-40 w-full rounded-lg bg-gray-100 bg-cover bg-center"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXDaleF08sIEAB-p95l9OQDtKRrGkW39TIjT76xNwFgG66SZJlnqvevkm9CqWuhUlZhA6PknQiZdGC7vJePrH37spsPsb_NWbzlcpd1Vl3pGnqB2oWtkhSGFXDb5OvgwSLSDzJXiqdsxT935x2rL78u98xmVXOgxO4R_L934nYt0dZ9fO6OGIKhND62rAm24Vd5r3trYo6riM92lDr7xrDB8UiAJkMBGgSKSEWLvWONMnZ4X52lLymsTteEx2ZTKMje0h7OFfCFHv0')">
+                            </div>
+                            <h4 class="text-lg font-bold text-neutral-dark group-hover:text-neutral-600">Introdução a
+                                Freud e Lacan</h4>
+                            <p class="mt-2 text-sm text-gray-500 line-clamp-2">Conceitos fundamentais dos pais da
+                                psicanálise aplicados ao dia a dia.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-100 mt-4">
+                                <span class="flex items-center text-xs font-medium text-gray-500">
+                                    <span class="material-symbols-outlined mr-1 text-base">schedule</span> 80h
+                                </span>
+                                <span class="text-lg font-bold text-primary">R$ 599</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col rounded-xl border border-pink-100 bg-white p-6 shadow-sm transition-all hover:border-neutral-dark/50 hover:shadow-md">
+                            <div class="mb-4 h-40 w-full rounded-lg bg-gray-100 bg-cover bg-center"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfoMStrDlwDm_aBUOXlwlm5510gjn7V7rJ78alEPLUaBR2h27zmtbO0aeXS3NQq0PMMKxE1_U6_4dJX9KoRkMMI8CRvwE7R3BokS8H8ZEbOJRd9eAIY9oiu1_DWaFhiZoWUJa9ho0mK3ONsyXWzkQYwKU_a4X5ymKgy_Yz-waMoeB6Fa4mBlZLjWsOFTsH8b21wgXvKDV4A8rMN9v3f8hFFo4ef8a53AWagOcqBT9nwwsYuSJUI4YufdTzQi-6iqP0eSxQAb-2QkFI')">
+                            </div>
+                            <h4 class="text-lg font-bold text-neutral-dark group-hover:text-neutral-600">Escuta
+                                Terapêutica</h4>
+                            <p class="mt-2 text-sm text-gray-500 line-clamp-2">Desenvolva a habilidade de ouvir além das
+                                palavras para um atendimento humanizado.</p>
+                            <div class="mt-auto pt-4 flex items-center justify-between border-t border-gray-100 mt-4">
+                                <span class="flex items-center text-xs font-medium text-gray-500">
+                                    <span class="material-symbols-outlined mr-1 text-base">schedule</span> 40h
+                                </span>
+                                <span class="text-lg font-bold text-primary">R$ 389</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pacote Tríade Section -->
+    <section class="py-24 bg-secondary text-white relative overflow-hidden" id="triade">
+        <div class="absolute inset-0 opacity-10 pointer-events-none"
+            style="background-image: radial-gradient(#F2C4C0 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-white/20 bg-white/10 p-8 md:p-12 backdrop-blur-sm shadow-2xl">
+                <div class="flex flex-col md:flex-row gap-10 items-center">
+                    <div class="flex-1 space-y-6">
+                        <div
+                            class="inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-neutral-dark">
+                            Oferta Especial
+                        </div>
+                        <h2 class="text-3xl font-black md:text-4xl">Pacote Tríade Holística</h2>
+                        <p class="text-gray-100 text-lg">
+                            Torne-se um profissional completo dominando os três pilares. Adquira a formação integrada
+                            com certificação tripla.
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-accent">check</span>
+                                <span>Acesso vitalício a todos os cursos básicos</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-accent">check</span>
+                                <span>Mentoria mensal exclusiva</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-accent">check</span>
+                                <span>Certificado Premium Reconhecido</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-full md:w-auto bg-white rounded-xl p-6 text-neutral-dark shadow-lg min-w-[300px] flex flex-col gap-4">
+                        <div class="text-center pb-4 border-b border-gray-100">
+                            <span class="block text-sm text-gray-500 line-through">R$ 1.299,00</span>
+                            <div class="flex justify-center items-baseline gap-1 text-secondary">
+                                <span class="text-2xl font-bold">12x de</span>
+                                <span class="text-5xl font-black">R$ 79</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full h-12 rounded-lg bg-primary text-white font-bold text-lg hover:bg-primary-dark transition-colors shadow-md">
+                            Quero o Pacote Completo
+                        </button>
+                        <p class="text-xs text-center text-gray-400">Garantia de 7 dias ou seu dinheiro de volta.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold mb-8">Ou Escolha Seu Caminho</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a class="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium hover:bg-white/20 transition-colors"
+                        href="#terapia-capilar">
+                        <span class="material-symbols-outlined">face_3</span> Terapia Capilar
+                    </a>
+                    <a class="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium hover:bg-white/20 transition-colors"
+                        href="#massagem">
+                        <span class="material-symbols-outlined">spa</span> Massagem
+                    </a>
+                    <a class="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium hover:bg-white/20 transition-colors"
+                        href="#psicanalise">
+                        <span class="material-symbols-outlined">psychology</span> Psicanálise
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-dark text-white py-12 border-t border-gray-800/50">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="flex size-8 items-center justify-center rounded-lg bg-secondary text-white">
+                            <span class="material-symbols-outlined text-xl">spa</span>
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight text-white">Ágape Cursos</h2>
+                    </div>
+                    <p class="text-gray-300 text-sm max-w-xs mb-6">
+                        Transformando vidas através do conhecimento integrado. Sua jornada para o bem-estar começa aqui.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="text-gray-300 hover:text-accent transition-colors" href="#">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="text-gray-300 hover:text-accent transition-colors" href="#">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="text-gray-300 hover:text-accent transition-colors" href="#">
+                            <span class="sr-only">YouTube</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-4">Navegação</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a class="hover:text-primary transition-colors" href="#inicio">Início</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#terapia-capilar">Terapia Capilar</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="#massagem">Massagem Terapêutica</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="#psicanalise">Psicanálise Aplicada</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="#triade">Pacote Tríade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-4">Newsletter</h3>
+                    <p class="text-xs text-gray-300 mb-4">Receba dicas de bem-estar e novidades.</p>
+                    <form class="flex flex-col gap-2">
+                        <input
+                            class="rounded bg-[#5a484c] border-[#6b585d] placeholder-gray-400 text-white text-sm focus:ring-primary focus:border-primary"
+                            placeholder="Seu e-mail" type="email" />
+                        <button
+                            class="bg-primary text-white font-bold text-sm py-2 rounded hover:bg-primary-dark transition-colors"
+                            type="submit">
+                            Inscrever-se
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700/50 mt-12 pt-8 text-center text-sm text-gray-400">
+                © 2024 Ágape Cursos. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

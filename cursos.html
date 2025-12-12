@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ágape Cursos - Bem-estar Holístico</title>
+    <meta name="description"
+        content="Especialize-se em Terapia Capilar, Massagem Terapêutica e Psicanálise Aplicada com certificação reconhecida e metodologia exclusiva." />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E8B4B8", // Soft Peach/Pink (accent from center petals)
+                        "primary-dark": "#D08E94", // Darker peach for hover
+                        "secondary": "#B56576", // Deep Rose (outer petals)
+                        "secondary-dark": "#9A4D5E", // Darker rose for hover
+                        "accent": "#EBBAB9", // Light peach for highlights
+                        "background-light": "#FFF9F9", // Very light pinkish white background
+                        "background-dark": "#3D1E24", // Dark warm brown/burgundy for text contrast
+                        "surface": "#FFFFFF",
+                        "text-main": "#5D3A3F", // Warm brownish grey text
+                        "text-light": "#8E6C71", // Muted text color
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Montserrat", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FFF9F9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #E8B4B8;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B56576;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-text-main font-body flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-[#F2E6E6]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 text-secondary">
+                        <span class="material-symbols-outlined fill text-3xl">spa</span>
+                    </div>
+                    <h1 class="font-display text-2xl font-bold text-secondary tracking-tight">Ágape <span
+                            class="text-primary-dark">Cursos</span></h1>
+                </div>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-text-main hover:text-secondary font-medium transition-colors"
+                        href="index.html">Home</a>
+                    <a class="text-secondary font-semibold transition-colors" href="cursos.html">Cursos</a>
+                    <a class="text-text-main hover:text-secondary font-medium transition-colors" href="#">Sobre</a>
+                    <a class="text-text-main hover:text-secondary font-medium transition-colors" href="#">Contato</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="hidden sm:flex text-sm font-bold text-secondary border-2 border-secondary px-4 py-2 rounded-lg hover:bg-secondary hover:text-white transition-all">
+                        Login
+                    </button>
+                    <button
+                        class="flex items-center justify-center bg-secondary hover:bg-secondary-dark text-white text-sm font-bold px-5 py-2.5 rounded-lg shadow-md transition-colors shadow-secondary/20">
+                        Área do Aluno
+                    </button>
+                    <button class="md:hidden p-2 text-secondary">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <div class="relative w-full bg-secondary overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img alt="Woman receiving a relaxing head massage in a spa setting"
+                class="w-full h-full object-cover opacity-30 mix-blend-overlay"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0HWW5ksTEAZOEmdrha2DjsN48QLPFVjrek_n0w13sxA6l2dEscXm4b4077qiUBONx7Y_SCVoYNJsz5xJcy5yhwRdrvJPcqjzovvsif-xnpNNY_iGJzT5SrW6xurFAIEhiGQBS4J-ETlO5c8VHASDu0EKjCwBi1dq__rI0386zteRrjqEWMbcbnO0bKDY7bQKTGhG3lcESxxhLYO-X2y-QmVgpOYDu2n7juYp6bAsLO3wi6DGToU6_ynZhBE2uOFbgFMnNMjytf1Tx" />
+            <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 to-secondary/40"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+            <div class="max-w-2xl text-white">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-white/20 border border-white/30 text-white text-xs font-bold uppercase tracking-wider mb-4">
+                    Educação Holística
+                </span>
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    Transforme vidas com o <span class="text-primary">cuidado integral</span>
+                </h2>
+                <p class="text-lg text-white/90 mb-8 leading-relaxed max-w-lg">
+                    Especialize-se em Terapia Capilar, Massagem Terapêutica e Psicanálise Aplicada com certificação
+                    reconhecida e metodologia exclusiva.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                        class="bg-primary hover:bg-white text-secondary-dark hover:text-secondary font-bold py-3.5 px-8 rounded-lg transition-colors shadow-lg shadow-primary/20">
+                        Ver Cursos Disponíveis
+                    </button>
+                    <button
+                        class="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-semibold py-3.5 px-8 rounded-lg hover:bg-white/20 transition-colors border border-white/20">
+                        <span class="material-symbols-outlined text-xl">play_circle</span>
+                        Conheça a Metodologia
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar Filters -->
+            <aside class="w-full lg:w-64 flex-shrink-0 space-y-8">
+                <div class="lg:sticky lg:top-24 space-y-6">
+                    <div class="flex items-center justify-between lg:hidden mb-4">
+                        <h3 class="font-display text-lg font-bold text-secondary">Filtros</h3>
+                        <button class="text-sm text-secondary-dark font-medium">Limpar tudo</button>
+                    </div>
+
+                    <!-- Pilar Filter -->
+                    <div class="bg-surface p-5 rounded-xl border border-[#F2E6E6] shadow-sm">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="material-symbols-outlined text-secondary">spa</span>
+                            <h3 class="font-display font-semibold text-secondary">Pilar</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input class="w-5 h-5 rounded border-gray-300 text-secondary focus:ring-secondary"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-text-light group-hover:text-secondary transition-colors">Terapia
+                                    Capilar</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input checked=""
+                                    class="w-5 h-5 rounded border-gray-300 text-secondary focus:ring-secondary"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-text-light group-hover:text-secondary transition-colors font-medium">Massagem
+                                    Terapêutica</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input class="w-5 h-5 rounded border-gray-300 text-secondary focus:ring-secondary"
+                                    type="checkbox" />
+                                <span
+                                    class="text-sm text-text-light group-hover:text-secondary transition-colors">Psicanálise
+                                    Aplicada</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Level Filter -->
+                    <div class="bg-surface p-5 rounded-xl border border-[#F2E6E6] shadow-sm">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="material-symbols-outlined text-secondary">school</span>
+                            <h3 class="font-display font-semibold text-secondary">Nível</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input class="w-5 h-5 border-gray-300 text-secondary focus:ring-secondary" name="level"
+                                    type="radio" />
+                                <span
+                                    class="text-sm text-text-light group-hover:text-secondary transition-colors">Iniciante</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input class="w-5 h-5 border-gray-300 text-secondary focus:ring-secondary" name="level"
+                                    type="radio" />
+                                <span
+                                    class="text-sm text-text-light group-hover:text-secondary transition-colors">Avançado</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input class="w-5 h-5 border-gray-300 text-secondary focus:ring-secondary" name="level"
+                                    type="radio" />
+                                <span
+                                    class="text-sm text-text-light group-hover:text-secondary transition-colors">Profissionalizante</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="bg-surface p-5 rounded-xl border border-[#F2E6E6] shadow-sm">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="material-symbols-outlined text-secondary">payments</span>
+                            <h3 class="font-display font-semibold text-secondary">Preço</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <input
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-secondary"
+                                max="1000" min="100" type="range" />
+                            <div class="flex justify-between text-xs text-text-light font-medium">
+                                <span>R$ 100</span>
+                                <span>R$ 1000+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Courses Grid -->
+            <div class="flex-1">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="font-display text-2xl font-bold text-secondary">Cursos em Destaque</h2>
+                    <div class="flex items-center gap-2 text-sm text-text-light">
+                        <span>Ordenar por:</span>
+                        <select
+                            class="border-none bg-transparent font-medium text-secondary focus:ring-0 cursor-pointer">
+                            <option>Mais Populares</option>
+                            <option>Novidades</option>
+                            <option>Menor Preço</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Course Card 1 -->
+                    <article
+                        class="group bg-surface rounded-2xl overflow-hidden border border-[#F2E6E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:border-primary/30">
+                        <div class="relative h-48 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYwJFHixoBvmvAhPVu4IfKrkQJayRmQSlkUI8iZ8NzSSV9N_sFzfpW-dYB_SwQbqJG0GTYsVWbaJcViVdhc9AlMo8PBNI8qjk5rs90OP1_oiasGZnvVhkyt1pk8qSz27mra9tIPPLvTxD8Q0dD5k52l8_SvFUg_8KnMBFagRGMHHrkwCNXumVNrpzTK1X6rPEIB7rI_O2RNn6I31VZnDUZdV46--oXIERdU7MCJWUBXOwhhRT0M15Yqv8WYvkAqYzSSNyVfFrw6vYT" />
+                            <div
+                                class="absolute top-3 left-3 bg-secondary/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                                Terapia Capilar
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3
+                                class="font-display text-lg font-bold text-text-main mb-2 leading-tight group-hover:text-secondary transition-colors">
+                                Master em Tricologia e Saúde Capilar</h3>
+                            <p class="text-sm text-text-light mb-4 line-clamp-2">Aprenda a diagnosticar e tratar as
+                                principais patologias do couro cabeludo com técnicas avançadas.</p>
+                            <div class="flex items-center gap-4 mb-4 text-xs font-medium text-text-light">
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">schedule</span>
+                                    <span>60h</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">signal_cellular_alt</span>
+                                    <span>Avançado</span>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-text-light line-through">R$ 697,00</span>
+                                    <span class="text-xl font-bold text-secondary">R$ 497,00</span>
+                                </div>
+                                <button
+                                    class="bg-secondary text-white p-2 rounded-lg hover:bg-secondary-dark transition-colors shadow-sm group-hover:translate-x-1 duration-300">
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course Card 2 -->
+                    <article
+                        class="group bg-surface rounded-2xl overflow-hidden border border-[#F2E6E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:border-primary/30">
+                        <div class="relative h-48 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuClBmouvf-asfRcFyc42RzRhmyjL9-AoZk2SFas8PeE4UT7W_PMgh1i7UN1C2gInRWfvEr5wKDT5BTWhGwf6F0gQNQoduP1-8DJGBXiNMb5xP8R2VtK95C5bf9FEwV9Q_qUADBOqCBjTC6ZSc7XHczDT9S_BaWISXGbB3AEiOdguljFwzMOmJUUWfyR-m96QzylcJqeWBa9L4hOoWsj-bMOi60We3CLf6xTb4r-06tn_xhuo24bFna5jL8b0dkZIEAg_CMI65junrhS" />
+                            <div
+                                class="absolute top-3 left-3 bg-primary-dark/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                                Massagem
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3
+                                class="font-display text-lg font-bold text-text-main mb-2 leading-tight group-hover:text-secondary transition-colors">
+                                Massagem Terapêutica Integrativa</h3>
+                            <p class="text-sm text-text-light mb-4 line-clamp-2">Domine técnicas de relaxamento profundo
+                                e liberação miofascial para o bem-estar dos seus clientes.</p>
+                            <div class="flex items-center gap-4 mb-4 text-xs font-medium text-text-light">
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">schedule</span>
+                                    <span>40h</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">signal_cellular_alt</span>
+                                    <span>Básico</span>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-text-light line-through">R$ 397,00</span>
+                                    <span class="text-xl font-bold text-secondary">R$ 297,00</span>
+                                </div>
+                                <button
+                                    class="bg-secondary text-white p-2 rounded-lg hover:bg-secondary-dark transition-colors shadow-sm group-hover:translate-x-1 duration-300">
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course Card 3 -->
+                    <article
+                        class="group bg-surface rounded-2xl overflow-hidden border border-[#F2E6E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:border-primary/30">
+                        <div class="relative h-48 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb62dlEIHgKL-GNtxfYtHm7FgHlxZGzvQkR62YgEr-pzdFI_D5JUc9gLXoKJrmtqPRbdlzzYL-3CWrBDcKzy43QqPlZbu3LAQ1f1CkaQEXlIfYR6uGjJhGVyv9T-5XGJsFxm56ZTwIvaHGOyaA3rtONfTc0eaGNybv0AgPwrhYuHi5hcFioZf5Xr_ckRHmYYz0J8pi2ptJBs6J3lgHfG3s93DLokk2dGGLRiSMTCKtrBWqu69S9RBZzf-x-RpyoPGEB-jB2XS5-HEy" />
+                            <div
+                                class="absolute top-3 left-3 bg-[#5D3A3F]/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                                Psicanálise
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3
+                                class="font-display text-lg font-bold text-text-main mb-2 leading-tight group-hover:text-secondary transition-colors">
+                                Fundamentos da Psicanálise Clínica</h3>
+                            <p class="text-sm text-text-light mb-4 line-clamp-2">Introdução aos conceitos freudianos e
+                                lacanianos aplicados à escuta terapêutica moderna.</p>
+                            <div class="flex items-center gap-4 mb-4 text-xs font-medium text-text-light">
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">schedule</span>
+                                    <span>120h</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">signal_cellular_alt</span>
+                                    <span>Profissional</span>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-text-light line-through">R$ 997,00</span>
+                                    <span class="text-xl font-bold text-secondary">R$ 797,00</span>
+                                </div>
+                                <button
+                                    class="bg-secondary text-white p-2 rounded-lg hover:bg-secondary-dark transition-colors shadow-sm group-hover:translate-x-1 duration-300">
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course Card 4 -->
+                    <article
+                        class="group bg-surface rounded-2xl overflow-hidden border border-[#F2E6E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:border-primary/30">
+                        <div class="relative h-48 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjKVtqQbiGUfhfBFafzCvMyop9ue3_S7hjdSCQyS3nVA7qftdImKhLgngpvdmkvQ1i7OowIW6a2ndnbym2di3ZcwQqME2CWyoGH8yWjlqbxk7DCUCM2Cag8FtYOUT9eIiDr7EqOs38_fuNhi2_qzlnvG8943hSqsl82XVfWDQ8dGa-VQfqT16EvDt4XVImua6SPvCfxlm0xonc3T6KETwH365uuaPsYCHmY-o-n-SHF-ZEOvyTwC5XQQr6fVmbI0Cf--tRgRg6-vkw" />
+                            <div
+                                class="absolute top-3 left-3 bg-secondary/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                                Massagem
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3
+                                class="font-display text-lg font-bold text-text-main mb-2 leading-tight group-hover:text-secondary transition-colors">
+                                Aromaterapia para Massagistas</h3>
+                            <p class="text-sm text-text-light mb-4 line-clamp-2">Potencialize seus tratamentos
+                                utilizando o poder dos óleos essenciais e suas propriedades curativas.</p>
+                            <div class="flex items-center gap-4 mb-4 text-xs font-medium text-text-light">
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">schedule</span>
+                                    <span>20h</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">signal_cellular_alt</span>
+                                    <span>Iniciante</span>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-text-light line-through">R$ 197,00</span>
+                                    <span class="text-xl font-bold text-secondary">R$ 147,00</span>
+                                </div>
+                                <button
+                                    class="bg-secondary text-white p-2 rounded-lg hover:bg-secondary-dark transition-colors shadow-sm group-hover:translate-x-1 duration-300">
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course Card 5 -->
+                    <article
+                        class="group bg-surface rounded-2xl overflow-hidden border border-[#F2E6E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:border-primary/30">
+                        <div class="relative h-48 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNd77vOJkEJ3GDOtdsZiLODnHLOdMG2xn7sS1DSXdXKq8frWiy25a2ADu66Desab124N1R7PAdHHASBFjUiEgw2Oob_E0jDbzR9PKv1puu8a9qQ1bcDf8SLMzSB_j2r1dt0HRnEOX5bN-oFkNvmJHJ7iaUs3TfJeq3noBXT0Y_V_z0HFqXczAzy8Ci3l_swXQoSWdeD4e-4W5d23uOK65TQlOnq2o-ggNDUY0pzs-4_S0NKgB66b0xF9ILwXhjCkpwlGQ-JSM91V02" />
+                            <div
+                                class="absolute top-3 left-3 bg-[#5D3A3F]/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                                Gestão
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3
+                                class="font-display text-lg font-bold text-text-main mb-2 leading-tight group-hover:text-secondary transition-colors">
+                                Gestão de Carreira para Terapeutas</h3>
+                            <p class="text-sm text-text-light mb-4 line-clamp-2">Aprenda a precificar, atrair clientes e
+                                gerenciar seu consultório holístico com eficiência.</p>
+                            <div class="flex items-center gap-4 mb-4 text-xs font-medium text-text-light">
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">schedule</span>
+                                    <span>15h</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">signal_cellular_alt</span>
+                                    <span>Básico</span>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="text-xl font-bold text-secondary">R$ 97,00</span>
+                                </div>
+                                <button
+                                    class="bg-secondary text-white p-2 rounded-lg hover:bg-secondary-dark transition-colors shadow-sm group-hover:translate-x-1 duration-300">
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course Card 6 -->
+                    <article
+                        class="group bg-surface rounded-2xl overflow-hidden border border-[#F2E6E6] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:border-primary/30">
+                        <div class="relative h-48 overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQdJwHCDuqwGLEZjgLoWsBEZ0faEd6YaMVI5D-eGJJfB67LJkgvbmiCAcp2rxEt6mH_s6j9h8_oa5uH7Z_-mLTXK0MC4h3EfUuApbl37a4ndJ06y09eqnRGa3axP-CTb7j2UNkZ6428dg624MWYhC2hXeF6cteqgcC3knEKj9z1r3DqaeZbw-HorbgvFbE9NlHBDbU5zWQXz1LqYooBEmLwnPmYu6DxVRk5O_Mi_hKsbhB6xFvpkxGjRr7FjTESBBGLj1cuGacecRC" />
+                            <div
+                                class="absolute top-3 left-3 bg-[#5D3A3F]/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                                Psicanálise
+                            </div>
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3
+                                class="font-display text-lg font-bold text-text-main mb-2 leading-tight group-hover:text-secondary transition-colors">
+                                Interpretação de Sonhos</h3>
+                            <p class="text-sm text-text-light mb-4 line-clamp-2">Mergulhe no inconsciente e aprenda a
+                                técnica de interpretação dos sonhos na clínica psicanalítica.</p>
+                            <div class="flex items-center gap-4 mb-4 text-xs font-medium text-text-light">
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">schedule</span>
+                                    <span>30h</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">signal_cellular_alt</span>
+                                    <span>Avançado</span>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-text-light line-through">R$ 350,00</span>
+                                    <span class="text-xl font-bold text-secondary">R$ 250,00</span>
+                                </div>
+                                <button
+                                    class="bg-secondary text-white p-2 rounded-lg hover:bg-secondary-dark transition-colors shadow-sm group-hover:translate-x-1 duration-300">
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Bundles Section -->
+                <section
+                    class="mt-16 bg-gradient-to-br from-secondary to-secondary-dark rounded-2xl p-8 lg:p-12 relative overflow-hidden shadow-xl">
+                    <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/30 rounded-full blur-3xl"></div>
+                    <div class="relative z-10">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-10">
+                            <div class="text-white">
+                                <span
+                                    class="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Ofertas
+                                    Especiais</span>
+                                <h2 class="font-display text-3xl font-bold">Pacotes & Bundles</h2>
+                                <p class="text-white/80 mt-2 max-w-lg">Economize adquirindo trilhas completas de
+                                    conhecimento.</p>
+                            </div>
+                            <button
+                                class="text-white border border-white/30 hover:bg-white/10 px-6 py-2 rounded-full text-sm font-bold transition-colors">
+                                Ver Todos os Pacotes
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div
+                                class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 flex flex-col sm:flex-row gap-6 hover:bg-white/10 transition-colors">
+                                <div
+                                    class="w-full sm:w-1/3 aspect-square bg-white/20 rounded-lg overflow-hidden shrink-0">
+                                    <img class="w-full h-full object-cover"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgXhLe9eqG2r7HfCJbiw4eJmENZv9eG6ftAe40DHMpUKREt1IUW-iILwLDL3QneaBW5eujtM-T6RuaJKP5NNFGAfBzUN69ifR_gQ7KaJedv59quIFUfrTxfKx7vFuPJ24ijCo0ZEFzbCJBHea_XK56mZ8yJadQFLHBR2eW7ikxfeU7gIyTvB2hjckoNyJM2QISesiwoyWBVRcxxpzX8rqh56jc_cim2FP1-Sde3S32Jhp5sty7q7hk53x2ViTMivYFPX4owT4Fg1gB" />
+                                </div>
+                                <div class="flex flex-col justify-center">
+                                    <h3 class="font-display text-xl font-bold text-white mb-2">Terapeuta Completo</h3>
+                                    <ul class="text-sm text-gray-200 mb-4 space-y-1">
+                                        <li class="flex items-center gap-2"><span
+                                                class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                            Massagem Relaxante</li>
+                                        <li class="flex items-center gap-2"><span
+                                                class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                            Terapia Capilar</li>
+                                        <li class="flex items-center gap-2"><span
+                                                class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                            Gestão de Carreira</li>
+                                    </ul>
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-2xl font-bold text-primary">R$ 897</span>
+                                        <span class="text-sm text-white/60 line-through">R$ 1.290</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 flex flex-col sm:flex-row gap-6 hover:bg-white/10 transition-colors">
+                                <div
+                                    class="w-full sm:w-1/3 aspect-square bg-white/20 rounded-lg overflow-hidden shrink-0">
+                                    <img class="w-full h-full object-cover"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBblmNKB-QpNGhrDWmh3s7xtvjzk1oDeS_ty7Xw3I2qhJQP0Ray8YH_1Oe2fh5kXCn9RWIz9yxAKOnL8vFxA78UWxVBW5gUttBnczPycDJR8pBYYP4al_8EG8EzIvOfCc8c-3BJgFrp0yCtlzlAa8yQODbkg40vf-qHMwWye7ro2Sb5Ck3WvF-V96ibeATMBXmLuMYuLeLFlkF-6ygYxksxyLdhNsQ8G1zLfUfZiU5xbieQDwfChPtfsldPQQXiYHDrNt53mpGkc_nv" />
+                                </div>
+                                <div class="flex flex-col justify-center">
+                                    <h3 class="font-display text-xl font-bold text-white mb-2">Imersão Psicanálise</h3>
+                                    <ul class="text-sm text-gray-200 mb-4 space-y-1">
+                                        <li class="flex items-center gap-2"><span
+                                                class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                            Fundamentos</li>
+                                        <li class="flex items-center gap-2"><span
+                                                class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                            Interp. de Sonhos</li>
+                                        <li class="flex items-center gap-2"><span
+                                                class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                            Casos Clínicos</li>
+                                    </ul>
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-2xl font-bold text-primary">R$ 1.197</span>
+                                        <span class="text-sm text-white/60 line-through">R$ 1.590</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pagination -->
+                <div class="mt-12 flex justify-center">
+                    <nav class="flex items-center gap-2">
+                        <button
+                            class="p-2 rounded-lg border border-[#F2E6E6] text-text-light hover:bg-surface hover:text-secondary disabled:opacity-50">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button
+                            class="w-10 h-10 rounded-lg bg-secondary text-white font-bold shadow-md shadow-secondary/20">1</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-[#F2E6E6] text-text-light font-medium hover:bg-surface hover:text-secondary">2</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-[#F2E6E6] text-text-light font-medium hover:bg-surface hover:text-secondary">3</button>
+                        <span class="text-text-light">...</span>
+                        <button
+                            class="p-2 rounded-lg border border-[#F2E6E6] text-text-light hover:bg-surface hover:text-secondary">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="bg-surface border-y border-[#F2E6E6] py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="text-secondary-dark font-bold tracking-widest uppercase text-sm mb-2 block">Comece sua
+                jornada</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-secondary mb-4">Matricule-se e Comece Hoje</h2>
+            <p class="text-text-light mb-8 max-w-xl mx-auto">Receba nossa grade curricular detalhada e uma aula
+                experimental gratuita diretamente no seu e-mail.</p>
+            <form
+                class="bg-background-light p-6 md:p-8 rounded-2xl shadow-inner max-w-2xl mx-auto border border-[#F2E6E6]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div class="text-left">
+                        <label class="block text-sm font-semibold text-text-main mb-1">Nome Completo</label>
+                        <input
+                            class="w-full rounded-lg border-gray-300 focus:border-secondary focus:ring-secondary text-text-main"
+                            placeholder="Seu nome" type="text" />
+                    </div>
+                    <div class="text-left">
+                        <label class="block text-sm font-semibold text-text-main mb-1">E-mail</label>
+                        <input
+                            class="w-full rounded-lg border-gray-300 focus:border-secondary focus:ring-secondary text-text-main"
+                            placeholder="seu@email.com" type="email" />
+                    </div>
+                </div>
+                <div class="text-left mb-6">
+                    <label class="block text-sm font-semibold text-text-main mb-1">Área de Interesse</label>
+                    <select
+                        class="w-full rounded-lg border-gray-300 focus:border-secondary focus:ring-secondary text-text-main">
+                        <option>Selecione uma opção...</option>
+                        <option>Terapia Capilar</option>
+                        <option>Massagem Terapêutica</option>
+                        <option>Psicanálise Aplicada</option>
+                        <option>Todos</option>
+                    </select>
+                </div>
+                <button
+                    class="w-full bg-secondary hover:bg-secondary-dark text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-md shadow-secondary/20"
+                    type="button">
+                    Receber Material Gratuito
+                </button>
+                <p class="text-xs text-text-light mt-4">Ao se inscrever, você concorda com nossa Política de
+                    Privacidade.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-main text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="material-symbols-outlined fill text-3xl text-primary">spa</span>
+                        <h2 class="font-display text-2xl font-bold tracking-tight">Ágape <span
+                                class="text-primary">Cursos</span></h2>
+                    </div>
+                    <p class="text-white/70 text-sm leading-relaxed mb-6">
+                        Formando profissionais de excelência na área do bem-estar holístico com uma abordagem humana e
+                        técnica.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-text-main transition-colors"
+                            href="#">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-text-main transition-colors"
+                            href="#">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-text-main transition-colors"
+                            href="#">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-display font-bold text-lg mb-4 text-primary">Cursos</h3>
+                    <ul class="space-y-2 text-sm text-white/70">
+                        <li><a class="hover:text-primary transition-colors" href="#">Terapia Capilar</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Massagem Terapêutica</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Psicanálise</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Todos os Cursos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-display font-bold text-lg mb-4 text-primary">Institucional</h3>
+                    <ul class="space-y-2 text-sm text-white/70">
+                        <li><a class="hover:text-primary transition-colors" href="#">Sobre a Ágape</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Metodologia</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-display font-bold text-lg mb-4 text-primary">Fale Conosco</h3>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                            <span>Av. Paulista, 1000 - Bela Vista<br />São Paulo, SP</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl">call</span>
+                            <span>(11) 99999-9999</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl">mail</span>
+                            <span>contato@agapecursos.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/50">
+                <p>© 2024 Ágape Cursos. Todos os direitos reservados.</p>
+                <p>Desenvolvido com <span class="text-primary">♥</span> para o seu bem-estar.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

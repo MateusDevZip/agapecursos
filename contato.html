@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Página de Contato - Ágape Cursos</title>
+    <meta name="description"
+        content="Entre em contato com a Ágape Cursos. Tire suas dúvidas sobre nossos cursos de Terapia Capilar, Massagem Terapêutica e Psicanálise Aplicada." />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#D67C8C", // Dusty Rose (Replacing Gold)
+                        "primary-dark": "#B85C6E", // Darker Rose
+                        "accent-green": "#854D58", // Deep Mauve/Burgundy (Replacing Green)
+                        "background-light": "#FDF8F7", // Very light peach/white
+                        "background-dark": "#261F21", // Dark reddish grey
+                        "text-main": "#4A3B3E", // Warm dark grey
+                        "text-light": "#7D6B6E", // Warm medium grey
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-[#F2E6E8]">
+    <!-- Navigation -->
+    <nav
+        class="sticky top-0 z-50 w-full bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-[#EACDCF] dark:border-[#4A383C]">
+        <div class="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="size-8 text-primary">
+                    <span class="material-symbols-outlined text-4xl">spa</span>
+                </div>
+                <h1 class="text-xl font-bold tracking-tight text-accent-green dark:text-primary">Ágape Cursos</h1>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Início</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="sobre.html">Sobre Nós</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="cursos.html">Cursos</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Blog</a>
+                <a class="text-sm font-bold text-primary" href="contato.html">Contato</a>
+            </div>
+            <div class="hidden md:flex gap-3">
+                <button
+                    class="bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-lg text-sm font-bold transition-colors shadow-sm">
+                    Entrar
+                </button>
+            </div>
+            <button class="md:hidden text-text-main dark:text-white">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="relative w-full py-16 md:py-24 bg-[#FAEFF0] dark:bg-[#241C1E]">
+        <div class="max-w-[1280px] mx-auto px-6 flex flex-col items-center text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-accent-green dark:text-primary mb-4 tracking-tight">Fale
+                Conosco</h2>
+            <p class="max-w-2xl text-lg text-text-light dark:text-[#B0A6A8]">
+                Estamos aqui para ouvir você. Entre em contato para saber mais sobre nossos cursos de bem-estar
+                holístico ou agendar uma conversa personalizada.
+            </p>
+        </div>
+        <div
+            class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-[1280px] mx-auto px-6 py-12 -mt-10 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Contact Form -->
+            <div
+                class="lg:col-span-7 bg-white dark:bg-[#2D2426] rounded-xl shadow-lg border border-[#EACDCF] dark:border-[#4A383C] overflow-hidden">
+                <div class="p-8 md:p-10">
+                    <h3 class="text-2xl font-bold text-accent-green dark:text-[#F2E6E8] mb-6">Envie uma mensagem</h3>
+                    <form class="flex flex-col gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-semibold text-text-main dark:text-[#D67C8C]" for="name">Nome
+                                Completo</label>
+                            <input
+                                class="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-[#261F21] border border-[#EACDCF] dark:border-[#5E4B50] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400 dark:text-white"
+                                id="name" placeholder="Digite seu nome" type="text" />
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label class="text-sm font-semibold text-text-main dark:text-[#D67C8C]"
+                                    for="email">E-mail</label>
+                                <input
+                                    class="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-[#261F21] border border-[#EACDCF] dark:border-[#5E4B50] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400 dark:text-white"
+                                    id="email" placeholder="seu@email.com" type="email" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label class="text-sm font-semibold text-text-main dark:text-[#D67C8C]"
+                                    for="phone">WhatsApp / Telefone</label>
+                                <input
+                                    class="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-[#261F21] border border-[#EACDCF] dark:border-[#5E4B50] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400 dark:text-white"
+                                    id="phone" placeholder="(00) 00000-0000" type="tel" />
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-semibold text-text-main dark:text-[#D67C8C]" for="pilar">Pilar de
+                                Interesse</label>
+                            <div class="relative">
+                                <select
+                                    class="w-full h-12 px-4 appearance-none rounded-lg bg-background-light dark:bg-[#261F21] border border-[#EACDCF] dark:border-[#5E4B50] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-text-main dark:text-white cursor-pointer"
+                                    id="pilar">
+                                    <option disabled="" selected="" value="">Selecione um curso...</option>
+                                    <option value="capilar">Terapia Capilar</option>
+                                    <option value="massagem">Massagem Terapêutica</option>
+                                    <option value="psicanalise">Psicanálise Aplicada</option>
+                                    <option value="geral">Dúvidas Gerais</option>
+                                </select>
+                                <div
+                                    class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-primary">
+                                    <span class="material-symbols-outlined">expand_more</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-semibold text-text-main dark:text-[#D67C8C]"
+                                for="message">Mensagem</label>
+                            <textarea
+                                class="w-full p-4 rounded-lg bg-background-light dark:bg-[#261F21] border border-[#EACDCF] dark:border-[#5E4B50] focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none placeholder:text-gray-400 dark:text-white"
+                                id="message" placeholder="Como podemos te ajudar hoje?" rows="4"></textarea>
+                        </div>
+                        <button
+                            class="mt-2 w-full h-12 bg-primary hover:bg-primary-dark text-white font-bold rounded-lg transition-colors shadow-md flex items-center justify-center gap-2"
+                            type="button">
+                            <span>Enviar Mensagem</span>
+                            <span class="material-symbols-outlined text-lg">send</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info Sidebar -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <!-- Contact Information Card -->
+                <div
+                    class="bg-accent-green dark:bg-[#3D2329] text-white rounded-xl shadow-lg p-8 relative overflow-hidden">
+                    <div class="relative z-10 flex flex-col gap-6">
+                        <div>
+                            <h3 class="text-xl font-bold mb-1 text-[#FFF5F6]">Informações de Contato</h3>
+                            <p class="text-sm text-white/80">Fale diretamente com nossa equipe de atendimento.</p>
+                        </div>
+                        <div class="flex flex-col gap-5">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-white/20 p-2 rounded-lg flex items-center justify-center">
+                                    <span class="material-symbols-outlined">mail</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-white/60 font-medium uppercase tracking-wider">E-mail</p>
+                                    <a class="text-base font-medium hover:text-primary transition-colors"
+                                        href="mailto:contato@agapecursos.com.br">contato@agapecursos.com.br</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-white/20 p-2 rounded-lg flex items-center justify-center">
+                                    <span class="material-symbols-outlined">chat</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-white/60 font-medium uppercase tracking-wider">WhatsApp</p>
+                                    <a class="text-base font-medium hover:text-primary transition-colors" href="#">(11)
+                                        99999-9999</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-white/20 p-2 rounded-lg flex items-center justify-center">
+                                    <span class="material-symbols-outlined">location_on</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-white/60 font-medium uppercase tracking-wider">Endereço</p>
+                                    <p class="text-base font-medium">Rua do Bem-Estar, 123<br />São Paulo - SP</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-4 mt-2 border-t border-white/10">
+                            <p class="text-xs text-white/60 font-medium uppercase tracking-wider mb-3">Redes Sociais</p>
+                            <div class="flex gap-3">
+                                <a class="bg-white/10 hover:bg-primary text-white p-2 rounded-full transition-colors flex items-center justify-center size-10"
+                                    href="#">
+                                    <svg aria-hidden="true" class="size-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a class="bg-white/10 hover:bg-primary text-white p-2 rounded-full transition-colors flex items-center justify-center size-10"
+                                    href="#">
+                                    <svg aria-hidden="true" class="size-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.047-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.451 4.635c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-16 -right-16 w-64 h-64 bg-primary/20 rounded-full blur-3xl z-0"></div>
+                </div>
+
+                <!-- Map Card -->
+                <div
+                    class="bg-white dark:bg-[#2D2426] rounded-xl shadow-md border border-[#EACDCF] dark:border-[#4A383C] overflow-hidden h-[300px] relative group cursor-pointer">
+                    <img alt="Mapa ilustrativo da localização em São Paulo"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI8IKnmAy9VEwu0_VKdqIIdJ5jqzchhtzdMfqOtKZ3WuZ1zC8VPaBR_e9h-KyC8aoseifh7gB0Sh5R-jK1T62T7E_0oHApN0_2hcUsr5Qgb1xad9GNyXNTG-q06xHHo23xr5d6C9XUDJo4bDkRV38lrwMAM39v9tJ4oMU1gmKTrVDnCelxaIHGAiN-Nt4MBHh_YRkjlefzFZA4ie7IOoEZM4LnMYkXnCYxHX_T0noMEgKkrGV3zOJ3Bkr-PquOgcxwbqTk4-R10OOF" />
+                    <div
+                        class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                        <div class="bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+                            <span class="material-symbols-outlined text-red-500">place</span>
+                            <span class="text-sm font-bold text-gray-800">Ver no Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Banner -->
+        <div
+            class="mt-12 md:mt-16 bg-[#FFF0F2] dark:bg-[#241C1E] border border-[#EACDCF] dark:border-[#4A383C] rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div class="max-w-2xl">
+                <h3 class="text-2xl font-bold text-accent-green dark:text-primary mb-2">Agende uma Conversa Gratuita
+                </h3>
+                <p class="text-text-light dark:text-[#B0A6A8]">Não tem certeza qual curso é o ideal para você? Converse
+                    com um de nossos especialistas e encontre o melhor caminho para sua jornada holística.</p>
+            </div>
+            <button
+                class="whitespace-nowrap bg-accent-green hover:bg-[#6D3B47] text-white px-8 py-4 rounded-lg font-bold shadow-md transition-all transform hover:-translate-y-1">
+                Agendar Agora
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-[#1C1719] border-t border-[#EACDCF] dark:border-[#2D2426] pt-16 pb-8 mt-16">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-3xl text-primary">spa</span>
+                        <span class="text-lg font-bold text-accent-green dark:text-primary">Ágape Cursos</span>
+                    </div>
+                    <p class="text-sm text-text-light dark:text-gray-400">
+                        Transformando vidas através do conhecimento holístico. Cursos de Terapia Capilar, Massagem e
+                        Psicanálise.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-text-main dark:text-[#F2E6E8] mb-4">Links Rápidos</h4>
+                    <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-gray-400">
+                        <li><a class="hover:text-primary transition-colors" href="index.html">Início</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="sobre.html">Sobre Nós</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="cursos.html">Cursos</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-text-main dark:text-[#F2E6E8] mb-4">Nossos Cursos</h4>
+                    <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-gray-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">Terapia Capilar</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Massagem Terapêutica</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Psicanálise Aplicada</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-text-main dark:text-[#F2E6E8] mb-4">Legal</h4>
+                    <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-gray-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">Termos de Uso</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Política de Privacidade</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-[#EACDCF] dark:border-[#2D2426] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-text-light dark:text-gray-500 text-center md:text-left">
+                    © 2024 Ágape Cursos. Todos os direitos reservados.
+                </p>
+                <div class="flex gap-4">
+                    <a class="text-text-light dark:text-gray-500 hover:text-primary transition-colors" href="#">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.047-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.451 4.635c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="text-text-light dark:text-gray-500 hover:text-primary transition-colors" href="#">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="text-text-light dark:text-gray-500 hover:text-primary transition-colors" href="#">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
