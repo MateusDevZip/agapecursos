@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ágape Cursos - Progresso</title>
+    <meta name="description"
+        content="Acompanhe seu progresso nos cursos da Ágape. Veja suas conquistas, certificados e continue sua jornada de transformação." />
+    <!-- Google Fonts: Lexend -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee5b2b",
+                        "primary-light": "#fff0e8",
+                        "background-light": "#fcf9f8", // Slightly warmer white
+                        "background-dark": "#221510",
+                        "text-main": "#1b110d",
+                        "text-secondary": "#9a5f4c",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white transition-colors duration-200">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header
+            class="sticky top-0 z-50 border-b border-[#f3eae7] dark:border-[#3a251e] bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm px-6 py-3">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <!-- Logo Area -->
+                <div class="flex items-center gap-3">
+                    <div class="size-8 text-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined !text-3xl">spa</span>
+                    </div>
+                    <h1 class="text-xl font-bold tracking-tight text-text-main dark:text-white">Ágape Cursos</h1>
+                </div>
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium text-primary hover:text-primary/80 transition-colors" href="#">Meus
+                        Cursos</a>
+                    <a class="text-sm font-medium text-text-main dark:text-gray-300 hover:text-primary transition-colors"
+                        href="#">Certificados</a>
+                    <a class="text-sm font-medium text-text-main dark:text-gray-300 hover:text-primary transition-colors"
+                        href="#">Comunidade</a>
+                </nav>
+                <!-- User Actions -->
+                <div class="flex items-center gap-4">
+                    <button
+                        class="relative p-2 rounded-full hover:bg-primary-light dark:hover:bg-white/10 text-text-main dark:text-white transition-colors group">
+                        <span class="material-symbols-outlined !text-[24px]">notifications</span>
+                        <span
+                            class="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-background-light dark:border-background-dark"></span>
+                    </button>
+                    <a class="flex items-center gap-2 pl-2 border-l border-[#f3eae7] dark:border-[#3a251e]" href="#">
+                        <div class="bg-center bg-no-repeat bg-cover rounded-full size-9 ring-2 ring-transparent hover:ring-primary transition-all"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpzC6oKn_z5UFe60C-FWpDeqNM6CiQ4DXWySxQEBLdwBxt6QhtgwU8Qgql5SMzxFraqD_65DSFHrpdyCO2lMtSqDMTomdBy4IhjCNgSe3clFIZVv3XY_wMCpoZFLRIoZp9hGGAWOhUY_B9a7YypfYMCxhnwmVmH3zOJL54wVCNZLf1VBKIMfU0GHW5QNWR1ZELz4akCROr93yDP6bqachOygQApEZCtBeQd5TsSChTnKK-FaqkyFxfoSzihontgX_gSHrYwYBmMFBI");'>
+                        </div>
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 text-text-main dark:text-white">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Welcome Section -->
+            <div class="mb-10 animate-fade-in">
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-text-main dark:text-white">Olá, Maria!</h2>
+                    <p class="text-text-secondary dark:text-gray-400 text-lg">Continue sua jornada de transformação e
+                        bem-estar hoje.</p>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                <!-- Stat Card 1 -->
+                <div
+                    class="bg-white dark:bg-[#2f1d16] p-5 rounded-2xl shadow-sm border border-[#f3eae7] dark:border-[#3a251e] flex flex-col justify-between group hover:border-primary/30 transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-2 bg-primary-light dark:bg-white/5 rounded-lg text-primary">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <span
+                            class="text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/30 dark:text-green-400 px-2 py-1 rounded-full">+1
+                            essa semana</span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-text-secondary dark:text-gray-400">Cursos em Andamento</p>
+                        <p class="text-3xl font-bold text-text-main dark:text-white mt-1">3</p>
+                    </div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div
+                    class="bg-white dark:bg-[#2f1d16] p-5 rounded-2xl shadow-sm border border-[#f3eae7] dark:border-[#3a251e] flex flex-col justify-between group hover:border-primary/30 transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-2 bg-primary-light dark:bg-white/5 rounded-lg text-primary">
+                            <span class="material-symbols-outlined">check_circle</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-text-secondary dark:text-gray-400">Aulas Concluídas</p>
+                        <p class="text-3xl font-bold text-text-main dark:text-white mt-1">24</p>
+                    </div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div
+                    class="bg-white dark:bg-[#2f1d16] p-5 rounded-2xl shadow-sm border border-[#f3eae7] dark:border-[#3a251e] flex flex-col justify-between group hover:border-primary/30 transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-2 bg-primary-light dark:bg-white/5 rounded-lg text-primary">
+                            <span class="material-symbols-outlined">workspace_premium</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-text-secondary dark:text-gray-400">Certificados</p>
+                        <p class="text-3xl font-bold text-text-main dark:text-white mt-1">1</p>
+                    </div>
+                </div>
+
+                <!-- Stat Card 4 (Motivation) -->
+                <div
+                    class="bg-gradient-to-br from-primary to-[#ff8c61] p-5 rounded-2xl shadow-sm flex flex-col justify-between text-white relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 opacity-20">
+                        <span class="material-symbols-outlined !text-[120px]">local_florist</span>
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-sm font-medium opacity-90">Sua Conquista Recente</p>
+                        <p class="text-lg font-bold mt-1 leading-snug">Mestre em Massagem Relaxante</p>
+                    </div>
+                    <a class="relative z-10 text-xs font-bold bg-white/20 hover:bg-white/30 w-fit px-3 py-1.5 rounded-lg mt-4 transition-colors backdrop-blur-sm"
+                        href="#">
+                        Ver Detalhes
+                    </a>
+                </div>
+            </div>
+
+            <!-- Content Split: Courses & Badges -->
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Left Column: Courses List -->
+                <div class="flex-1">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-text-main dark:text-white">Meus Cursos</h3>
+                        <div class="flex gap-2">
+                            <button
+                                class="p-1.5 rounded bg-white dark:bg-[#2f1d16] border border-[#f3eae7] dark:border-[#3a251e] text-primary shadow-sm">
+                                <span class="material-symbols-outlined !text-xl">grid_view</span>
+                            </button>
+                            <button
+                                class="p-1.5 rounded hover:bg-white dark:hover:bg-[#2f1d16] text-text-secondary dark:text-gray-500 transition-colors">
+                                <span class="material-symbols-outlined !text-xl">list</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
+                        <!-- Course Card 1: Active -->
+                        <div
+                            class="flex flex-col bg-white dark:bg-[#2f1d16] rounded-2xl overflow-hidden border border-[#f3eae7] dark:border-[#3a251e] shadow-sm hover:shadow-md transition-shadow group">
+                            <div class="h-48 bg-cover bg-center relative"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtAbDpfxjgg67-gZ8mc2ADmLuo5L4G4sbFlRvHFf1MF3g-VsTl-V5vhZTeXZybHHa-hXnRQ4bE9xykTab-neAW8HuPCrtRYePWoWwdfUG96xqruNKcgmSvMp63Z-Fb8WZ4yEu5f0Ng-_DWBjWAg5jVipFk8rJYYIpiV9GHI1U4naV1aYVjefDBf0eMjUWmzm9_1diO5PhE-8hkC9-hRpIW18yp8o-gDlwwHUfLYuxWkE7CZWRwT9caXFjSo1YSvSRYjpCQctv9bs11");'>
+                                <div
+                                    class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                                    <p class="text-[10px] font-bold tracking-wide uppercase text-primary">Terapia
+                                        Capilar</p>
+                                </div>
+                            </div>
+                            <div class="p-5 flex flex-col flex-1">
+                                <h4
+                                    class="text-lg font-bold text-text-main dark:text-white leading-tight mb-2 group-hover:text-primary transition-colors">
+                                    Fundamentos da Terapia Capilar</h4>
+                                <p class="text-sm text-text-secondary dark:text-gray-400 mb-4 line-clamp-2">Aprenda a
+                                    diagnosticar e tratar as principais patologias do couro cabeludo com uma abordagem
+                                    natural.</p>
+                                <div class="mt-auto">
+                                    <div
+                                        class="flex justify-between text-xs font-medium text-text-secondary dark:text-gray-400 mb-1.5">
+                                        <span>45% Concluído</span>
+                                        <span>9/20 Aulas</span>
+                                    </div>
+                                    <div class="w-full bg-[#f3eae7] dark:bg-gray-700 rounded-full h-2 mb-4">
+                                        <div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+                                    </div>
+                                    <button
+                                        class="w-full py-2.5 rounded-xl bg-primary hover:bg-primary/90 text-white text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+                                        <span class="material-symbols-outlined !text-lg">play_circle</span>
+                                        Continuar Curso
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 2: Just Started -->
+                        <div
+                            class="flex flex-col bg-white dark:bg-[#2f1d16] rounded-2xl overflow-hidden border border-[#f3eae7] dark:border-[#3a251e] shadow-sm hover:shadow-md transition-shadow group">
+                            <div class="h-48 bg-cover bg-center relative"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEXVSX1bWpNG7atCMDO1KQPWmtbqf5Mes3K119CjhhCmJ2Cf4BMxC9CPcc6N6HJbkCDcZbFswL9QCk-2hcSds40L3uX2xMTrYOK_kij2JHC21GdNpn_oUS5J15xfx8eXzMACb6CgU8ABAkh2U8HCMcCe-C-EOl5J_Vj5zRjbzYm5tta67OQBMVkHGSgNS4t74oVbEfcXv5Bc586OIvuYXkkPS6jjhDRsbBO36kj4KTqETMPJkQuh9atV_cdDjlEPk8VwgkvYZxgfr9");'>
+                                <div
+                                    class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                                    <p
+                                        class="text-[10px] font-bold tracking-wide uppercase text-purple-600 dark:text-purple-400">
+                                        Psicanálise</p>
+                                </div>
+                            </div>
+                            <div class="p-5 flex flex-col flex-1">
+                                <h4
+                                    class="text-lg font-bold text-text-main dark:text-white leading-tight mb-2 group-hover:text-primary transition-colors">
+                                    Introdução à Psicanálise Aplicada</h4>
+                                <p class="text-sm text-text-secondary dark:text-gray-400 mb-4 line-clamp-2">Conceitos
+                                    fundamentais de Freud e Lacan aplicados ao bem-estar cotidiano e autoconhecimento.
+                                </p>
+                                <div class="mt-auto">
+                                    <div
+                                        class="flex justify-between text-xs font-medium text-text-secondary dark:text-gray-400 mb-1.5">
+                                        <span>10% Concluído</span>
+                                        <span>2/20 Aulas</span>
+                                    </div>
+                                    <div class="w-full bg-[#f3eae7] dark:bg-gray-700 rounded-full h-2 mb-4">
+                                        <div class="bg-purple-500 h-2 rounded-full" style="width: 10%"></div>
+                                    </div>
+                                    <button
+                                        class="w-full py-2.5 rounded-xl border border-primary text-primary hover:bg-primary hover:text-white text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+                                        <span class="material-symbols-outlined !text-lg">play_arrow</span>
+                                        Retomar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Card 3: Completed -->
+                        <div
+                            class="flex flex-col bg-white dark:bg-[#2f1d16] rounded-2xl overflow-hidden border border-[#f3eae7] dark:border-[#3a251e] shadow-sm hover:shadow-md transition-shadow group opacity-90 hover:opacity-100">
+                            <div class="h-48 bg-cover bg-center relative grayscale group-hover:grayscale-0 transition-all duration-500"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCpRlTAivBY8R1y_-ybW1hulNxAE4Nrbcvqs6BAcEi_QEHdvXp3c9698gJ_H5op7Wc-MPgL5Ez3oZmSvZDTz7ZuiqfGICbU1zw1cpQH0hvncjKOWeS4IyHFgPhABFaxtbO8XBbE1nrXDIekXZl0E5wXd7s8BGMcDEDFPDftxQxAs1nRIXMm5wKrlztfocVEe_5EsOtOALHBoDwoCktmo8thQUr8UdpiNnHx9-r1Ae1K1WYzF-TP6W1BiR2MT8pl8Fy-BchNcdUIGYS");'>
+                                <div
+                                    class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                                    <div class="bg-green-500 text-white rounded-full p-2">
+                                        <span class="material-symbols-outlined">check</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2.5 py-1 rounded-full">
+                                    <p
+                                        class="text-[10px] font-bold tracking-wide uppercase text-green-600 dark:text-green-400">
+                                        Massagem</p>
+                                </div>
+                            </div>
+                            <div class="p-5 flex flex-col flex-1">
+                                <h4 class="text-lg font-bold text-text-main dark:text-white leading-tight mb-2">Massagem
+                                    Terapêutica Avançada</h4>
+                                <p class="text-sm text-text-secondary dark:text-gray-400 mb-4 line-clamp-2">Domine
+                                    técnicas de liberação miofascial e drenagem linfática.</p>
+                                <div class="mt-auto">
+                                    <div
+                                        class="flex justify-between text-xs font-medium text-green-600 dark:text-green-400 mb-1.5">
+                                        <span>Concluído</span>
+                                        <span>100%</span>
+                                    </div>
+                                    <div class="w-full bg-[#f3eae7] dark:bg-gray-700 rounded-full h-2 mb-4">
+                                        <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                                    </div>
+                                    <button
+                                        class="w-full py-2.5 rounded-xl bg-text-main dark:bg-gray-700 hover:bg-black dark:hover:bg-gray-600 text-white text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+                                        <span class="material-symbols-outlined !text-lg">download</span>
+                                        Ver Certificado
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Motivation/Badges Sidebar -->
+                <div class="w-full lg:w-80 flex flex-col gap-6">
+                    <!-- Achievements Box -->
+                    <div
+                        class="bg-white dark:bg-[#2f1d16] rounded-2xl p-6 border border-[#f3eae7] dark:border-[#3a251e] shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-text-main dark:text-white">Conquistas</h3>
+                            <a class="text-xs font-bold text-primary hover:underline" href="#">Ver todas</a>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <!-- Badge Item -->
+                            <div class="flex items-center gap-3 opacity-100">
+                                <div
+                                    class="size-12 rounded-full bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center text-yellow-600 dark:text-yellow-400">
+                                    <span class="material-symbols-outlined">emoji_events</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-text-main dark:text-white">Primeiros Passos</p>
+                                    <p class="text-xs text-text-secondary dark:text-gray-400">Completou 1º módulo</p>
+                                </div>
+                            </div>
+                            <!-- Badge Item -->
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="size-12 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                                    <span class="material-symbols-outlined">history_edu</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-text-main dark:text-white">Estudioso</p>
+                                    <p class="text-xs text-text-secondary dark:text-gray-400">3 dias seguidos</p>
+                                </div>
+                            </div>
+                            <!-- Badge Item (Locked) -->
+                            <div class="flex items-center gap-3 opacity-50">
+                                <div
+                                    class="size-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-400">
+                                    <span class="material-symbols-outlined">lock</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-text-main dark:text-white">Especialista</p>
+                                    <p class="text-xs text-text-secondary dark:text-gray-400">Complete 3 cursos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Live Class -->
+                    <div
+                        class="bg-primary-light dark:bg-white/5 rounded-2xl p-6 border border-primary/20 dark:border-white/10 relative overflow-hidden">
+                        <div class="relative z-10">
+                            <div
+                                class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded w-fit mb-3 uppercase tracking-wider">
+                                Ao Vivo</div>
+                            <h3 class="font-bold text-text-main dark:text-white mb-2">Mentoria em Grupo</h3>
+                            <p class="text-sm text-text-secondary dark:text-gray-300 mb-4">Tira-dúvidas sobre tricologia
+                                com Dra. Ana.</p>
+                            <div class="flex items-center gap-2 mb-4 text-sm text-text-main dark:text-white">
+                                <span class="material-symbols-outlined text-primary !text-lg">calendar_month</span>
+                                <span>Amanhã, 19:00</span>
+                            </div>
+                            <button
+                                class="w-full py-2 rounded-lg bg-white dark:bg-[#2f1d16] text-primary font-bold text-sm shadow-sm hover:shadow transition-all">
+                                Definir Lembrete
+                            </button>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 text-primary/10 dark:text-white/5">
+                            <span class="material-symbols-outlined !text-[120px]">groups</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-[#f3eae7] dark:border-[#3a251e] bg-white dark:bg-[#2f1d16] py-8 mt-12">
+            <div
+                class="max-w-7xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+                <div>
+                    <p class="text-sm text-text-secondary dark:text-gray-500">© 2024 Ágape Cursos. Todos os direitos
+                        reservados.</p>
+                </div>
+                <div class="flex gap-6">
+                    <a class="text-sm text-text-secondary hover:text-primary dark:text-gray-400 transition-colors"
+                        href="#">Suporte</a>
+                    <a class="text-sm text-text-secondary hover:text-primary dark:text-gray-400 transition-colors"
+                        href="#">Termos de Uso</a>
+                    <a class="text-sm text-text-secondary hover:text-primary dark:text-gray-400 transition-colors"
+                        href="#">Privacidade</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
