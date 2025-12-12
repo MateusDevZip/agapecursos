@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ágape Cursos - Painel Admin</title>
+    <meta name="description"
+        content="Painel administrativo da Ágape Cursos para gerenciamento de cursos, alunos e relatórios." />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f24a0d",
+                        "primary-light": "#fff0eb", // Very light peach for backgrounds
+                        "primary-dark": "#c23a08",
+                        "background-light": "#fcf9f8",
+                        "background-dark": "#221510",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2f1f18",
+                        "text-main": "#1c110d",
+                        "text-secondary": "#9c5f49",
+                        "accent-peach": "#f4eae7",
+                        "accent-pink": "#fde8e8",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #e8d5ce;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4b5aa;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 font-display overflow-hidden">
+    <div class="flex h-screen w-full">
+        <!-- Sidebar -->
+        <aside
+            class="hidden w-64 flex-col border-r border-[#f4eae7] bg-background-light dark:bg-surface-dark dark:border-gray-800 md:flex transition-all duration-300 ease-in-out">
+            <div class="flex h-20 items-center gap-3 px-6 py-4">
+                <div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shrink-0 shadow-sm"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCikPZKMnEYVTpPCST3eba7xX8rk6z6Ir309Raw4_tqxjYpFxPmYHkpYTumlGvXryFKzsSUwY6UyZ6sAOddBc0lEd8oRLP2Ag9BL1Vq-TO7c23TGvgrljRO4rVLnM55wrmTSl6sd1auG98BFhLlwJcCTf62n2QQfbPNEUAAOoJ6vUAZm_I_no9drvY42d1zrOU_HTYvRofENBu-GxiGxaAQsTgF1iyHtSf9ck2j1c7T-B0hSz7DcocOeexnAgZEycDwrWHcg9fI5zt5");'>
+                </div>
+                <div class="flex flex-col overflow-hidden">
+                    <h1 class="text-text-main dark:text-white text-lg font-bold leading-tight truncate">Ágape Cursos
+                    </h1>
+                    <p class="text-text-secondary dark:text-gray-400 text-xs font-normal leading-normal truncate">Painel
+                        Administrativo</p>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 px-4 py-4 overflow-y-auto flex-1">
+                <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-light text-primary dark:bg-primary/20 dark:text-primary transition-colors group"
+                    href="#">
+                    <span class="material-symbols-outlined text-[24px]">dashboard</span>
+                    <p class="text-sm font-medium leading-normal">Visão Geral</p>
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-accent-peach dark:hover:bg-white/5 transition-colors group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-[24px] text-text-secondary dark:text-gray-400 group-hover:text-text-main dark:group-hover:text-white transition-colors">book_2</span>
+                    <p class="text-sm font-medium leading-normal">Gerenciar Cursos</p>
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-accent-peach dark:hover:bg-white/5 transition-colors group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-[24px] text-text-secondary dark:text-gray-400 group-hover:text-text-main dark:group-hover:text-white transition-colors">groups</span>
+                    <p class="text-sm font-medium leading-normal">Gerenciar Alunos</p>
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-accent-peach dark:hover:bg-white/5 transition-colors group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-[24px] text-text-secondary dark:text-gray-400 group-hover:text-text-main dark:group-hover:text-white transition-colors">bar_chart</span>
+                    <p class="text-sm font-medium leading-normal">Relatórios</p>
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-accent-peach dark:hover:bg-white/5 transition-colors group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-[24px] text-text-secondary dark:text-gray-400 group-hover:text-text-main dark:group-hover:text-white transition-colors">receipt_long</span>
+                    <p class="text-sm font-medium leading-normal">Financeiro</p>
+                </a>
+                <div class="h-px w-full bg-[#f4eae7] dark:bg-gray-800 my-2"></div>
+                <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-main dark:text-gray-300 hover:bg-accent-peach dark:hover:bg-white/5 transition-colors group"
+                    href="#">
+                    <span
+                        class="material-symbols-outlined text-[24px] text-text-secondary dark:text-gray-400 group-hover:text-text-main dark:group-hover:text-white transition-colors">settings</span>
+                    <p class="text-sm font-medium leading-normal">Configurações</p>
+                </a>
+            </div>
+            <div class="px-6 py-4 border-t border-[#f4eae7] dark:border-gray-800">
+                <div class="flex items-center gap-3">
+                    <div class="bg-center bg-no-repeat bg-cover rounded-full size-9 border border-gray-200 dark:border-gray-700"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7LT3ZZZ14FRCWB2szD2SxKFcqfeCo36ighYSCVQwlnmalO_v9fXeOZ9l5k05ZuoKVqzPxGKhCIsu6DSnYKEq35pNBC9gYyO0fwAW9YetOSxfMMuhitJmio6o4L_GT6zFzNGRdbwfL5oNSgnVfvmy7ZTCNg5jK9dQ5Al0xcp62YrnIVuGLnkwRQhcLhzYbnZu2mbI6_99WlGipK0px6PGM3tZyuOcl4VKFqx22HFlX-NrQOCRmusmmhYLzTSYspjobOCXaehjQ2Xl8");'>
+                    </div>
+                    <div class="flex flex-col">
+                        <p class="text-text-main dark:text-white text-sm font-medium leading-tight">Admin User</p>
+                        <p class="text-text-secondary dark:text-gray-500 text-xs font-normal">admin@agape.com</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col h-full overflow-hidden relative">
+            <!-- Top Navigation -->
+            <header
+                class="flex items-center justify-between border-b border-[#f4eae7] dark:border-gray-800 bg-background-light dark:bg-background-dark px-6 py-4 shrink-0 z-10">
+                <div class="flex items-center gap-4">
+                    <button
+                        class="md:hidden text-text-main dark:text-white p-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <h2 class="text-text-main dark:text-white text-xl font-bold tracking-tight">Visão Geral</h2>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex relative group">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span
+                                class="material-symbols-outlined text-text-secondary dark:text-gray-500 text-[20px]">search</span>
+                        </div>
+                        <input
+                            class="block w-64 rounded-lg border-0 bg-accent-peach dark:bg-white/5 py-2 pl-10 pr-3 text-text-main dark:text-white placeholder:text-text-secondary dark:placeholder:text-gray-500 focus:ring-2 focus:ring-primary focus:bg-white dark:focus:bg-black transition-all text-sm"
+                            placeholder="Buscar aluno ou curso..." type="text" />
+                    </div>
+                    <button
+                        class="relative p-2 rounded-full hover:bg-accent-peach dark:hover:bg-white/5 text-text-main dark:text-gray-300 transition-colors">
+                        <span class="material-symbols-outlined text-[24px]">notifications</span>
+                        <span
+                            class="absolute top-1.5 right-1.5 size-2.5 bg-primary rounded-full border-2 border-background-light dark:border-background-dark"></span>
+                    </button>
+                    <button
+                        class="hidden sm:flex items-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-semibold py-2 px-4 rounded-lg transition-colors shadow-sm hover:shadow-md">
+                        <span class="material-symbols-outlined text-[20px]">add</span>
+                        <span>Novo Curso</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Scrollable Content Area -->
+            <div class="flex-1 overflow-y-auto bg-[#fcf9f8] dark:bg-background-dark p-6 md:p-8">
+                <div class="mx-auto max-w-7xl flex flex-col gap-8">
+                    <!-- Welcome Section -->
+                    <div class="flex flex-col gap-1">
+                        <h2 class="text-2xl font-bold text-text-main dark:text-white">Bom dia, Administrador 👋</h2>
+                        <p class="text-text-secondary dark:text-gray-400">Aqui está o resumo do desempenho da Ágape
+                            Cursos hoje.</p>
+                    </div>
+
+                    <!-- Metrics Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <!-- Metric 1 -->
+                        <div
+                            class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 border border-[#e8d5ce] dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-2 bg-primary-light dark:bg-primary/20 rounded-lg text-primary">
+                                    <span class="material-symbols-outlined">school</span>
+                                </div>
+                                <span
+                                    class="flex items-center gap-1 text-green-600 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded-full text-xs font-semibold">
+                                    <span class="material-symbols-outlined text-[14px]">trending_up</span>
+                                    +12%
+                                </span>
+                            </div>
+                            <p class="text-text-secondary dark:text-gray-400 text-sm font-medium">Total de Alunos</p>
+                            <h3 class="text-2xl font-bold text-text-main dark:text-white mt-1">1.240</h3>
+                        </div>
+
+                        <!-- Metric 2 -->
+                        <div
+                            class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 border border-[#e8d5ce] dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-blue-600">
+                                    <span class="material-symbols-outlined">menu_book</span>
+                                </div>
+                                <span
+                                    class="flex items-center gap-1 text-text-secondary dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded-full text-xs font-semibold">
+                                    0%
+                                </span>
+                            </div>
+                            <p class="text-text-secondary dark:text-gray-400 text-sm font-medium">Cursos Ativos</p>
+                            <h3 class="text-2xl font-bold text-text-main dark:text-white mt-1">12</h3>
+                        </div>
+
+                        <!-- Metric 3 -->
+                        <div
+                            class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 border border-[#e8d5ce] dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded-lg text-green-600">
+                                    <span class="material-symbols-outlined">payments</span>
+                                </div>
+                                <span
+                                    class="flex items-center gap-1 text-green-600 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded-full text-xs font-semibold">
+                                    <span class="material-symbols-outlined text-[14px]">trending_up</span>
+                                    +5%
+                                </span>
+                            </div>
+                            <p class="text-text-secondary dark:text-gray-400 text-sm font-medium">Faturamento (Mês)</p>
+                            <h3 class="text-2xl font-bold text-text-main dark:text-white mt-1">R$ 45.200</h3>
+                        </div>
+
+                        <!-- Metric 4 -->
+                        <div
+                            class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 border border-[#e8d5ce] dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-2 bg-orange-50 dark:bg-orange-900/20 rounded-lg text-orange-600">
+                                    <span class="material-symbols-outlined">pending_actions</span>
+                                </div>
+                                <span
+                                    class="flex items-center gap-1 text-red-500 bg-red-50 dark:bg-red-900/20 px-2 py-0.5 rounded-full text-xs font-semibold">
+                                    <span class="material-symbols-outlined text-[14px]">trending_down</span>
+                                    -2%
+                                </span>
+                            </div>
+                            <p class="text-text-secondary dark:text-gray-400 text-sm font-medium">Matrículas Pendentes
+                            </p>
+                            <h3 class="text-2xl font-bold text-text-main dark:text-white mt-1">8</h3>
+                        </div>
+                    </div>
+
+                    <!-- Main Dashboard Content -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Chart Section (Takes up 2 cols) -->
+                        <div
+                            class="lg:col-span-2 bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e8d5ce] dark:border-gray-800 shadow-sm overflow-hidden flex flex-col">
+                            <div
+                                class="p-6 border-b border-[#f4eae7] dark:border-gray-800 flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-lg font-bold text-text-main dark:text-white">Alunos por Pilar
+                                        Holístico</h3>
+                                    <p class="text-sm text-text-secondary dark:text-gray-500">Distribuição de matrículas
+                                        ativas por categoria</p>
+                                </div>
+                                <button
+                                    class="text-primary hover:text-primary-dark text-sm font-medium flex items-center">
+                                    Ver Detalhes
+                                    <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                                </button>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col justify-end">
+                                <!-- Simple CSS Bar Chart Representation -->
+                                <div class="flex items-end justify-around h-64 w-full gap-4 pt-4">
+                                    <!-- Bar 1 -->
+                                    <div class="flex flex-col items-center gap-2 group w-full max-w-[120px]">
+                                        <div
+                                            class="relative w-full bg-primary-light dark:bg-white/5 rounded-t-lg overflow-hidden h-full flex items-end group-hover:bg-accent-peach transition-colors">
+                                            <div class="w-full bg-primary/80 hover:bg-primary transition-all duration-500 rounded-t-lg relative"
+                                                style="height: 45%;">
+                                                <div
+                                                    class="absolute -top-8 left-1/2 -translate-x-1/2 bg-text-main text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                                    45% (558 alunos)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm font-medium text-text-main dark:text-gray-300 text-center">
+                                            Terapia Capilar</p>
+                                    </div>
+                                    <!-- Bar 2 -->
+                                    <div class="flex flex-col items-center gap-2 group w-full max-w-[120px]">
+                                        <div
+                                            class="relative w-full bg-primary-light dark:bg-white/5 rounded-t-lg overflow-hidden h-full flex items-end group-hover:bg-accent-peach transition-colors">
+                                            <div class="w-full bg-primary/60 hover:bg-primary/80 transition-all duration-500 rounded-t-lg relative"
+                                                style="height: 30%;">
+                                                <div
+                                                    class="absolute -top-8 left-1/2 -translate-x-1/2 bg-text-main text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                                    30% (372 alunos)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm font-medium text-text-main dark:text-gray-300 text-center">
+                                            Massagem</p>
+                                    </div>
+                                    <!-- Bar 3 -->
+                                    <div class="flex flex-col items-center gap-2 group w-full max-w-[120px]">
+                                        <div
+                                            class="relative w-full bg-primary-light dark:bg-white/5 rounded-t-lg overflow-hidden h-full flex items-end group-hover:bg-accent-peach transition-colors">
+                                            <div class="w-full bg-primary/40 hover:bg-primary/60 transition-all duration-500 rounded-t-lg relative"
+                                                style="height: 25%;">
+                                                <div
+                                                    class="absolute -top-8 left-1/2 -translate-x-1/2 bg-text-main text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                                    25% (310 alunos)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm font-medium text-text-main dark:text-gray-300 text-center">
+                                            Psicanálise</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Enrollments List -->
+                        <div
+                            class="lg:col-span-1 bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e8d5ce] dark:border-gray-800 shadow-sm flex flex-col">
+                            <div class="p-6 border-b border-[#f4eae7] dark:border-gray-800">
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Últimas Matrículas</h3>
+                                <p class="text-sm text-text-secondary dark:text-gray-500">Alunos registrados
+                                    recentemente</p>
+                            </div>
+                            <div class="flex-1 overflow-y-auto max-h-[400px]">
+                                <div class="flex flex-col">
+                                    <!-- Item 1 -->
+                                    <div
+                                        class="flex items-center justify-between p-4 border-b border-[#f4eae7] dark:border-gray-800 hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <div class="size-10 rounded-full bg-cover bg-center"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAR9zF7Az0p0_WBaq_XrmUjREXgDDIGHAff3cRmjF2qlsyKXxYUx2vkUGg37kHoK3cPan-XkldUj6eEXbG4f0nfJ08UbIkxwSbcrsbeDzZ8-oy_LZo6nuupVAxtj-6oBG--X7VzJB2sKxCJhEGqJyY5Pb3Vk_tHUWZwTn74nDE-VDOynHnYzA2ufmP89vZfGISDiC79nROy9RSRWnoO-deyKqYxGyOtw5IJJyTZ8SOGl87qHGacIFVpZ6Jj2Y1L_sljWiU7yIcdJ6Vz");'>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-semibold text-text-main dark:text-white">Ana
+                                                    Silva</p>
+                                                <p class="text-xs text-text-secondary dark:text-gray-500">Terapia
+                                                    Capilar</p>
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Pago</span>
+                                    </div>
+                                    <!-- Item 2 -->
+                                    <div
+                                        class="flex items-center justify-between p-4 border-b border-[#f4eae7] dark:border-gray-800 hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <div class="size-10 rounded-full bg-cover bg-center"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCim83Spk0oVqh1Y_ymWn9NgxvcyBaSrX5kiX3XfbCjBSjMl3X7-7ZFYX7uFQlGSGS10okHwPFO4qFqKYYqXTkEDV1DYuAhwMkQP9r7JPidOh8YLQLVb_oa6LNNpU9fz1OyXYxXNnLlbP6otacGaVBhHi8KYVzccJWV0z8A4erWsUQ9EpIQ0IcFWmkKAy9qPCYOqorbxyBeRXMEc7MkmiFwWXodkS3YxoqNCdKXtM1_2N23niP6RwrOY6uIEXfOSA5gax2s-R-cnEJ8");'>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-semibold text-text-main dark:text-white">Carlos
+                                                    Oliveira</p>
+                                                <p class="text-xs text-text-secondary dark:text-gray-500">Psicanálise
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="px-2 py-1 rounded text-xs font-medium bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400">Pendente</span>
+                                    </div>
+                                    <!-- Item 3 -->
+                                    <div
+                                        class="flex items-center justify-between p-4 border-b border-[#f4eae7] dark:border-gray-800 hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <div class="size-10 rounded-full bg-cover bg-center"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAm_HXWdipx1dPnXPx1nBYsWqevzRnSQtPlgqa4ws6Ek086C-kXODMlDm4LX390hsLhOuof3yDbdAKBzIxevj-b-G5dCXvtf4b3oLPeZWHeh2h6SbIYYi10VGk-2arMOFZIz6q1Q5CrgGqfyYShkseh5oPqJKspaYDsOp2UvVbC5XB8rYAY9DhTcg3VK5DSWdm28RKj9UqlxI-picOfBYbxN7Me9B0HJBUFeodt9tpPDlGL4EmDVDcGaQbQl8ETMzbg5u5twUiJyAW5");'>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-semibold text-text-main dark:text-white">Mariana
+                                                    Costa</p>
+                                                <p class="text-xs text-text-secondary dark:text-gray-500">Massagem</p>
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Pago</span>
+                                    </div>
+                                    <!-- Item 4 -->
+                                    <div
+                                        class="flex items-center justify-between p-4 hover:bg-background-light dark:hover:bg-white/5 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <div class="size-10 rounded-full bg-cover bg-center"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCBgS_Ws5SeZLdE3eCtnxpELi0TMwar24xlr6AeQ5DDgr8_MDLxObMramF_s3nt7HyYo6A-iXikjOi6xyKXuc05ALfi0ULM4JD2C17pitxEybtnULVozEk_QWlPh9HA27tGuTTjZuGchrkAyUBjC-NOL-qSXcA5nh_K46gSa75MDdAHNgyfiivoxPgZE2oq3R9uOGXzTmx1Q_tfJa1u9UPNbC-zaZD1gQZ5-KzqJk0OLm-VdWzBnYmoStqFXjj3jXKWgB4MMihwVAiY");'>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm font-semibold text-text-main dark:text-white">Julia
+                                                    Santos</p>
+                                                <p class="text-xs text-text-secondary dark:text-gray-500">Terapia
+                                                    Capilar</p>
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Pago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 border-t border-[#f4eae7] dark:border-gray-800 text-center">
+                                <a class="text-primary hover:text-primary-dark text-sm font-semibold inline-flex items-center gap-1"
+                                    href="#">
+                                    Ver todos os alunos
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Courses Table Section -->
+                    <div
+                        class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e8d5ce] dark:border-gray-800 shadow-sm overflow-hidden mb-6">
+                        <div
+                            class="p-6 border-b border-[#f4eae7] dark:border-gray-800 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Cursos Populares</h3>
+                                <p class="text-sm text-text-secondary dark:text-gray-500">Desempenho dos cursos mais
+                                    acessados</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button
+                                    class="px-3 py-1.5 text-sm font-medium rounded-lg bg-background-light dark:bg-white/5 text-text-main border border-[#e8d5ce] dark:border-gray-700 hover:bg-accent-peach dark:hover:bg-white/10 transition-colors">Exportar</button>
+                                <button
+                                    class="px-3 py-1.5 text-sm font-medium rounded-lg bg-background-light dark:bg-white/5 text-text-main border border-[#e8d5ce] dark:border-gray-700 hover:bg-accent-peach dark:hover:bg-white/10 transition-colors">Filtrar</button>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr
+                                        class="bg-background-light dark:bg-white/5 border-b border-[#f4eae7] dark:border-gray-800">
+                                        <th
+                                            class="p-4 text-xs font-semibold uppercase tracking-wider text-text-secondary dark:text-gray-400">
+                                            Nome do Curso</th>
+                                        <th
+                                            class="p-4 text-xs font-semibold uppercase tracking-wider text-text-secondary dark:text-gray-400">
+                                            Categoria</th>
+                                        <th
+                                            class="p-4 text-xs font-semibold uppercase tracking-wider text-text-secondary dark:text-gray-400 text-right">
+                                            Alunos Ativos</th>
+                                        <th
+                                            class="p-4 text-xs font-semibold uppercase tracking-wider text-text-secondary dark:text-gray-400 text-right">
+                                            Avaliação</th>
+                                        <th
+                                            class="p-4 text-xs font-semibold uppercase tracking-wider text-text-secondary dark:text-gray-400 text-right">
+                                            Status</th>
+                                        <th
+                                            class="p-4 text-xs font-semibold uppercase tracking-wider text-text-secondary dark:text-gray-400 text-center">
+                                            Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-[#f4eae7] dark:divide-gray-800">
+                                    <tr class="hover:bg-accent-peach/30 dark:hover:bg-white/5 transition-colors">
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="size-10 rounded-lg bg-cover bg-center"
+                                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAIZ884EbuKYJ_WVYd0SJuzMFGHPE3UhZETNaKNjSg_n1Zpahos08DPaAaQd2n5lKR7RTRkFXUD0tj2hUcbmlXh92dHQzrM9IZtdWrwIphp1cL5PbyRsXXTAt9hjX0LtDcaOOSK_M1hZ35IiyWBe92tvJXc6NXwG8L53zbv3RsvmtXWnnOdWwn14sgPc-lGndxmnjbGXY8j8A6qw-gKvSj3QAzRclK9ph1w0cDdQAD9PuWQpz7atPtCW2cj9hUFaC1b1Bj-PO0dYBzD");'>
+                                                </div>
+                                                <p class="font-medium text-text-main dark:text-white">Fundamentos da
+                                                    Tricologia</p>
+                                            </div>
+                                        </td>
+                                        <td class="p-4 text-sm text-text-secondary dark:text-gray-400">Terapia Capilar
+                                        </td>
+                                        <td class="p-4 text-sm text-text-main dark:text-white text-right">324</td>
+                                        <td
+                                            class="p-4 text-sm text-text-main dark:text-white text-right flex justify-end items-center gap-1">
+                                            4.9 <span
+                                                class="material-symbols-outlined text-yellow-500 text-[16px]">star</span>
+                                        </td>
+                                        <td class="p-4 text-right">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                                Ativo
+                                            </span>
+                                        </td>
+                                        <td class="p-4 text-center">
+                                            <button class="text-text-secondary hover:text-primary transition-colors">
+                                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-accent-peach/30 dark:hover:bg-white/5 transition-colors">
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="size-10 rounded-lg bg-cover bg-center"
+                                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtAiK-p0bcNf2CHDOBSSVr2swFCH1yPSR7XlScb9_oemuBej7eUNRNj3XOIVTJPPDTCq0o5JJr2fnz0NrpUisKITnAlr4XKeIwIegd_sehp_H2Rnwb2S_x8NL_W36OUpAFQYjcLd5xLnfX3vOrAJBHUR7KEpz7lDv-qbd4vO7AdxZIswvu1cRwYHqlqn3-zACaMhHUq_F4zoM6mdCcSUwty4LD-HQAS3moTBWwLew7-Bfmh766QKCDLzOWogAj1zciqKnqrwIv7H0z");'>
+                                                </div>
+                                                <p class="font-medium text-text-main dark:text-white">Técnicas de
+                                                    Massagem Relaxante</p>
+                                            </div>
+                                        </td>
+                                        <td class="p-4 text-sm text-text-secondary dark:text-gray-400">Massagem</td>
+                                        <td class="p-4 text-sm text-text-main dark:text-white text-right">215</td>
+                                        <td
+                                            class="p-4 text-sm text-text-main dark:text-white text-right flex justify-end items-center gap-1">
+                                            4.7 <span
+                                                class="material-symbols-outlined text-yellow-500 text-[16px]">star</span>
+                                        </td>
+                                        <td class="p-4 text-right">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                                Ativo
+                                            </span>
+                                        </td>
+                                        <td class="p-4 text-center">
+                                            <button class="text-text-secondary hover:text-primary transition-colors">
+                                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-accent-peach/30 dark:hover:bg-white/5 transition-colors">
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="size-10 rounded-lg bg-cover bg-center"
+                                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDO4RXmW28gV2wWZRi60DzT6qpvR8LKhtKjc-Us-jSN2W4t0Q1xcU4KoEu2iydc4j4sXHyMi79X8Pduo7MfI1IUG48uKE4_YWTHKmtDQglDWNI0ke0zmx4RbzhEoRHvogikI88yrUp9ldwanNE6Y-P2y2ht2-I1SqxC7o-OAJAvPp_XeHsg5Up3F6VGutbh-wMsDdIxeSTl64hOu_xh8rK3t84lO29TMjRZsGX_18nis2slenO_jl-j5Kz8nXmz-dpv47_gNGCDvIfa");'>
+                                                </div>
+                                                <p class="font-medium text-text-main dark:text-white">Introdução à
+                                                    Psicanálise Clínica</p>
+                                            </div>
+                                        </td>
+                                        <td class="p-4 text-sm text-text-secondary dark:text-gray-400">Psicanálise</td>
+                                        <td class="p-4 text-sm text-text-main dark:text-white text-right">189</td>
+                                        <td
+                                            class="p-4 text-sm text-text-main dark:text-white text-right flex justify-end items-center gap-1">
+                                            4.8 <span
+                                                class="material-symbols-outlined text-yellow-500 text-[16px]">star</span>
+                                        </td>
+                                        <td class="p-4 text-right">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700/50 dark:text-gray-400">
+                                                Rascunho
+                                            </span>
+                                        </td>
+                                        <td class="p-4 text-center">
+                                            <button class="text-text-secondary hover:text-primary transition-colors">
+                                                <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
