@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Gerenciar Alunos - Painel Admin - Ágape Cursos</title>
+    <meta name="description"
+        content="Gerencie todos os alunos matriculados na Ágape Cursos. Visualize, edite e acompanhe o progresso dos estudantes." />
+    <!-- Google Fonts: Lexend -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b3b",
+                        "background-light": "#fcf8f8",
+                        "background-dark": "#221012",
+                        "text-dark": "#1b0d0f",
+                        "text-muted": "#9a4c52",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-dark antialiased">
+    <div class="flex h-screen w-full overflow-hidden">
+        <!-- Sidebar -->
+        <aside
+            class="w-64 flex-shrink-0 border-r border-[#e7cfd1] bg-[#fcf8f8] flex flex-col justify-between hidden md:flex">
+            <div class="flex flex-col gap-4 p-4">
+                <!-- Logo Area -->
+                <div class="flex items-center gap-3 px-2">
+                    <div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 shadow-sm"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQsY7lznYVM-lItYLpSM_NXDtKQf4iVFSwc8pgryTyhW441T-wqRCUSQs-ZXqJ1Q3XkRy6mhZRLhPNahuvgkay-tbTtBnHO6hB64jTZpVoPSVrjbfs6CLVnPGrxH4xkZx2n8smV8yqZ9tyuFFyO1-ZkMKwzSI1lg36qALc2rG7rbGbQIRlsQdd82wBj9ND4gLHz3fsRXYaaRqUTCtuIMI7SkEuFDUxhKvhEfNdo5wSOUuSGApV7QxsbEVg-v1bON1W7t_fYoqkAQRy");'>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-[#1b0d0f] text-base font-bold leading-normal">Ágape Cursos</h1>
+                        <p class="text-[#9a4c52] text-xs font-normal leading-normal">Painel Admin</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="flex flex-col gap-2 mt-4">
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#1b0d0f] hover:bg-[#f3e7e8] transition-colors group"
+                        href="admin.html">
+                        <span class="material-symbols-outlined text-[#9a4c52] group-hover:text-primary">dashboard</span>
+                        <span class="text-sm font-medium">Dashboard</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary"
+                        href="admin-alunos.html">
+                        <span class="material-symbols-outlined fill-1">group</span>
+                        <span class="text-sm font-bold">Alunos</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#1b0d0f] hover:bg-[#f3e7e8] transition-colors group"
+                        href="admin-cursos.html">
+                        <span class="material-symbols-outlined text-[#9a4c52] group-hover:text-primary">school</span>
+                        <span class="text-sm font-medium">Cursos</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#1b0d0f] hover:bg-[#f3e7e8] transition-colors group"
+                        href="#">
+                        <span class="material-symbols-outlined text-[#9a4c52] group-hover:text-primary">payments</span>
+                        <span class="text-sm font-medium">Financeiro</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#1b0d0f] hover:bg-[#f3e7e8] transition-colors group"
+                        href="#">
+                        <span class="material-symbols-outlined text-[#9a4c52] group-hover:text-primary">settings</span>
+                        <span class="text-sm font-medium">Configurações</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Bottom Actions -->
+            <div class="p-4 border-t border-[#e7cfd1]">
+                <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#9a4c52] hover:bg-[#f3e7e8] hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="text-sm font-medium">Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col h-full overflow-hidden relative">
+            <!-- Mobile Header -->
+            <header
+                class="md:hidden h-16 border-b border-[#e7cfd1] flex items-center justify-between px-4 bg-[#fcf8f8]">
+                <div class="flex items-center gap-2">
+                    <div class="bg-center bg-no-repeat bg-cover rounded-full h-8 w-8"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRwLkFbE9BBP7zA-7yqe98v2SK25LMPIKUihHdLfI160ZDZaXvXhDiPKDk8jDiNlqeBQ1koJ1I8zTajcMkUgjoEkx7MrPcsGcpGhrNwx8PDv6Xma3dumYAE9cdoixPamcW11EckEFTRHtvs7AIygbZMYeObLcBlSbwnNXYtwS2PeJj5rlRWjU2Wz5SK8cJQKqGmeBI7gaIkSaLXGMHmr_u3ysAt7uI6T7PROUwOisnftnpPxnTUEU9MOS5blga0_ZoamsBp7hSNse0");'>
+                    </div>
+                    <span class="font-bold text-[#1b0d0f]">Ágape</span>
+                </div>
+                <button class="text-[#1b0d0f]">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </header>
+
+            <!-- Scrollable Content -->
+            <div class="flex-1 overflow-y-auto bg-white/50">
+                <div class="container mx-auto max-w-7xl p-4 md:p-8 flex flex-col gap-6">
+                    <!-- Breadcrumbs -->
+                    <div class="flex flex-wrap gap-2 items-center text-sm">
+                        <a class="text-[#9a4c52] hover:text-primary transition-colors font-medium"
+                            href="admin.html">Home</a>
+                        <span class="text-[#e7cfd1] font-medium">/</span>
+                        <a class="text-[#9a4c52] hover:text-primary transition-colors font-medium"
+                            href="admin-alunos.html">Alunos</a>
+                        <span class="text-[#e7cfd1] font-medium">/</span>
+                        <span class="text-[#1b0d0f] font-medium">Gerenciar</span>
+                    </div>
+
+                    <!-- Page Heading -->
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div class="flex flex-col gap-1">
+                            <h1 class="text-[#1b0d0f] tracking-tight text-3xl md:text-[32px] font-bold leading-tight">
+                                Gerenciar Alunos</h1>
+                            <p class="text-[#9a4c52] text-sm font-normal">Visualize e gerencie todos os alunos
+                                matriculados nos pilares da plataforma.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="flex items-center gap-2 bg-[#f3e7e8] text-[#1b0d0f] px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#e7cfd1] transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">file_download</span>
+                                Exportar
+                            </button>
+                            <button
+                                class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#d62030] transition-colors shadow-sm shadow-primary/30">
+                                <span class="material-symbols-outlined text-[20px]">add</span>
+                                Novo Aluno
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="flex flex-col gap-2 rounded-xl p-6 border border-[#e7cfd1] bg-white shadow-sm">
+                            <div class="flex items-center gap-2">
+                                <div class="p-2 rounded-md bg-[#f3e7e8] text-primary">
+                                    <span class="material-symbols-outlined">group</span>
+                                </div>
+                                <p class="text-[#1b0d0f] text-sm font-medium">Total de Alunos</p>
+                            </div>
+                            <div class="flex items-baseline gap-2 mt-2">
+                                <p class="text-[#1b0d0f] text-2xl font-bold">1,245</p>
+                                <p class="text-[#07885b] text-xs font-bold bg-[#e6f4ed] px-2 py-0.5 rounded-full">+12%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-2 rounded-xl p-6 border border-[#e7cfd1] bg-white shadow-sm">
+                            <div class="flex items-center gap-2">
+                                <div class="p-2 rounded-md bg-[#f3e7e8] text-primary">
+                                    <span class="material-symbols-outlined">person_add</span>
+                                </div>
+                                <p class="text-[#1b0d0f] text-sm font-medium">Novas Matrículas (Mês)</p>
+                            </div>
+                            <div class="flex items-baseline gap-2 mt-2">
+                                <p class="text-[#1b0d0f] text-2xl font-bold">48</p>
+                                <p class="text-[#07885b] text-xs font-bold bg-[#e6f4ed] px-2 py-0.5 rounded-full">+5%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-2 rounded-xl p-6 border border-[#e7cfd1] bg-white shadow-sm">
+                            <div class="flex items-center gap-2">
+                                <div class="p-2 rounded-md bg-[#f3e7e8] text-primary">
+                                    <span class="material-symbols-outlined">check_circle</span>
+                                </div>
+                                <p class="text-[#1b0d0f] text-sm font-medium">Alunos Ativos</p>
+                            </div>
+                            <div class="flex items-baseline gap-2 mt-2">
+                                <p class="text-[#1b0d0f] text-2xl font-bold">1,102</p>
+                                <p class="text-[#07885b] text-xs font-bold bg-[#e6f4ed] px-2 py-0.5 rounded-full">+8%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Toolbar -->
+                    <div
+                        class="flex flex-col md:flex-row gap-4 bg-white p-4 rounded-xl border border-[#e7cfd1] shadow-sm">
+                        <div class="flex-1 relative">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#9a4c52]">search</span>
+                            <input
+                                class="w-full pl-10 pr-4 h-10 rounded-lg border border-[#e7cfd1] text-sm text-[#1b0d0f] placeholder:text-[#9a4c52] focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all"
+                                placeholder="Buscar por nome, e-mail ou CPF..." type="text" />
+                        </div>
+                        <div class="flex gap-2">
+                            <div class="relative min-w-[160px]">
+                                <select
+                                    class="w-full h-10 px-3 pr-8 rounded-lg border border-[#e7cfd1] bg-white text-sm text-[#1b0d0f] focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none appearance-none cursor-pointer">
+                                    <option value="">Todos os Cursos</option>
+                                    <option value="capilar">Terapia Capilar</option>
+                                    <option value="massagem">Massagem Terapêutica</option>
+                                    <option value="psicanalise">Psicanálise Aplicada</option>
+                                </select>
+                                <span
+                                    class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-[#9a4c52] pointer-events-none text-[20px]">expand_more</span>
+                            </div>
+                            <div class="relative min-w-[140px]">
+                                <select
+                                    class="w-full h-10 px-3 pr-8 rounded-lg border border-[#e7cfd1] bg-white text-sm text-[#1b0d0f] focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none appearance-none cursor-pointer">
+                                    <option value="">Status: Todos</option>
+                                    <option value="active">Ativo</option>
+                                    <option value="inactive">Inativo</option>
+                                    <option value="pending">Pendente</option>
+                                </select>
+                                <span
+                                    class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-[#9a4c52] pointer-events-none text-[20px]">expand_more</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Students Table -->
+                    <div class="bg-white rounded-xl border border-[#e7cfd1] shadow-sm overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-[#fcf8f8] border-b border-[#e7cfd1]">
+                                        <th class="p-4 text-xs font-bold text-[#9a4c52] uppercase tracking-wider w-10">
+                                            <input class="rounded border-[#e7cfd1] text-primary focus:ring-primary"
+                                                type="checkbox" />
+                                        </th>
+                                        <th class="p-4 text-xs font-bold text-[#9a4c52] uppercase tracking-wider">Aluno
+                                        </th>
+                                        <th class="p-4 text-xs font-bold text-[#9a4c52] uppercase tracking-wider">Cursos
+                                            Matriculados</th>
+                                        <th class="p-4 text-xs font-bold text-[#9a4c52] uppercase tracking-wider">Data
+                                            de Início</th>
+                                        <th class="p-4 text-xs font-bold text-[#9a4c52] uppercase tracking-wider">Status
+                                        </th>
+                                        <th
+                                            class="p-4 text-xs font-bold text-[#9a4c52] uppercase tracking-wider text-right">
+                                            Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-[#e7cfd1]">
+                                    <!-- Row 1 -->
+                                    <tr class="hover:bg-[#fcf8f8] transition-colors group">
+                                        <td class="p-4">
+                                            <input class="rounded border-[#e7cfd1] text-primary focus:ring-primary"
+                                                type="checkbox" />
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 rounded-full bg-cover bg-center border border-[#e7cfd1]"
+                                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDoegoYf15mH_pYFgaDk3H4KRFx777tD8snv5athCt4Qht-xBeUcF-Hm_KU1_ZMmEqLV5KBq6iflRmLoNeARYUt2kdBqyjpfyUr2URRx0Is_5ROfbV9iB5P0uRKWhSIpacAdQwsrLSRi55jSNxeCaNAWsgCrs7E9vZVGyU6FL9stktSqudFr_rIRJr_Z3XO5pU_MWw7K27ZHgD_lmLPOQ1Q4FtNT2B-1AguPsrPZw6IZmheQ-ExWo_W0BhMd71rQPx0YrUHZZqomcES");'>
+                                                </div>
+                                                <div class="flex flex-col">
+                                                    <span class="text-[#1b0d0f] font-medium text-sm">Ana Silva</span>
+                                                    <span class="text-[#9a4c52] text-xs">ana.silva@email.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex flex-wrap gap-2">
+                                                <span
+                                                    class="px-2 py-1 rounded bg-[#fce7e9] text-primary text-xs font-medium border border-[#e7cfd1]">Terapia
+                                                    Capilar</span>
+                                                <span
+                                                    class="px-2 py-1 rounded bg-[#f3e7e8] text-[#9a4c52] text-xs font-medium border border-[#e7cfd1]">Massagem
+                                                    Terapêutica</span>
+                                            </div>
+                                        </td>
+                                        <td class="p-4 text-sm text-[#1b0d0f]">12 Fev, 2023</td>
+                                        <td class="p-4">
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-[#e6f4ed] text-[#07885b] border border-[#d1e9db]">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#07885b]"></span>
+                                                Ativo
+                                            </span>
+                                        </td>
+                                        <td class="p-4 text-right">
+                                            <div class="flex items-center justify-end gap-2">
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#f3e7e8] hover:text-primary transition-colors"
+                                                    title="Ver Detalhes">
+                                                    <span
+                                                        class="material-symbols-outlined text-[20px]">visibility</span>
+                                                </button>
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#f3e7e8] hover:text-primary transition-colors"
+                                                    title="Editar">
+                                                    <span class="material-symbols-outlined text-[20px]">edit</span>
+                                                </button>
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#fee2e2] hover:text-red-600 transition-colors"
+                                                    title="Excluir">
+                                                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Row 2 -->
+                                    <tr class="hover:bg-[#fcf8f8] transition-colors group">
+                                        <td class="p-4">
+                                            <input class="rounded border-[#e7cfd1] text-primary focus:ring-primary"
+                                                type="checkbox" />
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 rounded-full bg-cover bg-center border border-[#e7cfd1]"
+                                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAEHKNIfQOSoxWib0NVL3SSWqmv3EVltjtVnOuYMcNo5rnVUwxJioYRerAEMI99dctxPvIouUtV5Y8iNb1MzvwRgKgpzf9KUedJdXczkp23mHF2vGHMeB9k27drQbHQbR3UqrfSE4Hmgdi42DbeEAlUtQe6fe_lEor5jEPkrmA9jgDaG3mFsah_IBQk2soKunWYtQ7jm4s_eNhJBhqowX0Hcbj20JwjBvblDy2pMJ8n65UZgfy7077bBH3kt69Qly5qJQYDjXWeOIj");'>
+                                                </div>
+                                                <div class="flex flex-col">
+                                                    <span class="text-[#1b0d0f] font-medium text-sm">Carlos
+                                                        Mendes</span>
+                                                    <span class="text-[#9a4c52] text-xs">carlos.m@email.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex flex-wrap gap-2">
+                                                <span
+                                                    class="px-2 py-1 rounded bg-[#f3e7e8] text-[#9a4c52] text-xs font-medium border border-[#e7cfd1]">Psicanálise
+                                                    Aplicada</span>
+                                            </div>
+                                        </td>
+                                        <td class="p-4 text-sm text-[#1b0d0f]">05 Mar, 2023</td>
+                                        <td class="p-4">
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-[#fff7e6] text-[#b37400] border border-[#ffe0b3]">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#b37400]"></span>
+                                                Pendente
+                                            </span>
+                                        </td>
+                                        <td class="p-4 text-right">
+                                            <div class="flex items-center justify-end gap-2">
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#f3e7e8] hover:text-primary transition-colors"
+                                                    title="Ver Detalhes">
+                                                    <span
+                                                        class="material-symbols-outlined text-[20px]">visibility</span>
+                                                </button>
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#f3e7e8] hover:text-primary transition-colors"
+                                                    title="Editar">
+                                                    <span class="material-symbols-outlined text-[20px]">edit</span>
+                                                </button>
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#fee2e2] hover:text-red-600 transition-colors"
+                                                    title="Excluir">
+                                                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Row 3 -->
+                                    <tr class="hover:bg-[#fcf8f8] transition-colors group">
+                                        <td class="p-4">
+                                            <input class="rounded border-[#e7cfd1] text-primary focus:ring-primary"
+                                                type="checkbox" />
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 rounded-full bg-cover bg-center border border-[#e7cfd1]"
+                                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYpRxra6_VcAI9s-ITZzksQGEWCedS76c5MfHpMR2lTE_4sZTK6CVUpZhZ241anHzM-2JXnmkYqrqElr0g37-RiL6abNROn-zUEmFBWp42NuS9BA56-dG4W0p7wg0fHwc4E8HVdPqs3TmitBIinyDiRbBJgDsiAVtKMwEQzt-9__xZ34a70pgmGlG9cLe9M5BtC7fU1li9sQuRYSM23rDY4SEE2Gs_Z4FspOkQnHp1EGuEPafQAW0BT1IPyi0RQPSY1HOWaSolMDFs");'>
+                                                </div>
+                                                <div class="flex flex-col">
+                                                    <span class="text-[#1b0d0f] font-medium text-sm">Beatriz
+                                                        Souza</span>
+                                                    <span class="text-[#9a4c52] text-xs">bia.souza@email.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex flex-wrap gap-2">
+                                                <span
+                                                    class="px-2 py-1 rounded bg-[#fce7e9] text-primary text-xs font-medium border border-[#e7cfd1]">Terapia
+                                                    Capilar</span>
+                                            </div>
+                                        </td>
+                                        <td class="p-4 text-sm text-[#1b0d0f]">20 Jan, 2023</td>
+                                        <td class="p-4">
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-[#f3f4f6] text-[#4b5563] border border-[#e5e7eb]">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#4b5563]"></span>
+                                                Inativo
+                                            </span>
+                                        </td>
+                                        <td class="p-4 text-right">
+                                            <div class="flex items-center justify-end gap-2">
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#f3e7e8] hover:text-primary transition-colors"
+                                                    title="Ver Detalhes">
+                                                    <span
+                                                        class="material-symbols-outlined text-[20px]">visibility</span>
+                                                </button>
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#f3e7e8] hover:text-primary transition-colors"
+                                                    title="Editar">
+                                                    <span class="material-symbols-outlined text-[20px]">edit</span>
+                                                </button>
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#fee2e2] hover:text-red-600 transition-colors"
+                                                    title="Excluir">
+                                                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Row 4 -->
+                                    <tr class="hover:bg-[#fcf8f8] transition-colors group">
+                                        <td class="p-4">
+                                            <input class="rounded border-[#e7cfd1] text-primary focus:ring-primary"
+                                                type="checkbox" />
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 rounded-full bg-cover bg-center border border-[#e7cfd1]"
+                                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0ZlOtFHTLzAyuBitzr0LQMIx43lwnovQUrFUP-qaT37WqHV4SphNvaLbMjFQuV1x4qdVCVpXaITcnoJqkFLUI8QYqnYoQNxyoVANzo9KMUv9NWqJwQYI15AwRCAl9IGBwF7jC_L8fGYBVYhR1JLxbwzBSySrHjC0EZGjWpCYajFjNRneU8A97A54mqNdVo561jEdV1fp3978Wfulyv5LsALXxnOtWD7UMxiiT1FhDo5Sp8aqNEKjyGdcuNI3cn2obleNb0SZ2p7_j");'>
+                                                </div>
+                                                <div class="flex flex-col">
+                                                    <span class="text-[#1b0d0f] font-medium text-sm">João
+                                                        Oliveira</span>
+                                                    <span class="text-[#9a4c52] text-xs">joao.oliv@email.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-4">
+                                            <div class="flex flex-wrap gap-2">
+                                                <span
+                                                    class="px-2 py-1 rounded bg-[#f3e7e8] text-[#9a4c52] text-xs font-medium border border-[#e7cfd1]">Massagem
+                                                    Terapêutica</span>
+                                                <span
+                                                    class="px-2 py-1 rounded bg-[#f3e7e8] text-[#9a4c52] text-xs font-medium border border-[#e7cfd1]">Psicanálise</span>
+                                            </div>
+                                        </td>
+                                        <td class="p-4 text-sm text-[#1b0d0f]">10 Abr, 2023</td>
+                                        <td class="p-4">
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-[#e6f4ed] text-[#07885b] border border-[#d1e9db]">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#07885b]"></span>
+                                                Ativo
+                                            </span>
+                                        </td>
+                                        <td class="p-4 text-right">
+                                            <div class="flex items-center justify-end gap-2">
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#f3e7e8] hover:text-primary transition-colors"
+                                                    title="Ver Detalhes">
+                                                    <span
+                                                        class="material-symbols-outlined text-[20px]">visibility</span>
+                                                </button>
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#f3e7e8] hover:text-primary transition-colors"
+                                                    title="Editar">
+                                                    <span class="material-symbols-outlined text-[20px]">edit</span>
+                                                </button>
+                                                <button
+                                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-[#9a4c52] hover:bg-[#fee2e2] hover:text-red-600 transition-colors"
+                                                    title="Excluir">
+                                                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="flex items-center justify-between p-4 border-t border-[#e7cfd1] bg-[#fcf8f8]">
+                            <p class="text-sm text-[#9a4c52]">Mostrando <span
+                                    class="font-medium text-[#1b0d0f]">1</span> a <span
+                                    class="font-medium text-[#1b0d0f]">4</span> de <span
+                                    class="font-medium text-[#1b0d0f]">1245</span> resultados</p>
+                            <div class="flex gap-2">
+                                <button
+                                    class="px-3 py-1.5 rounded-lg border border-[#e7cfd1] bg-white text-sm font-medium text-[#1b0d0f] hover:bg-[#f3e7e8] disabled:opacity-50 disabled:cursor-not-allowed"
+                                    disabled="">Anterior</button>
+                                <button
+                                    class="px-3 py-1.5 rounded-lg border border-[#e7cfd1] bg-white text-sm font-medium text-[#1b0d0f] hover:bg-[#f3e7e8]">Próximo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
