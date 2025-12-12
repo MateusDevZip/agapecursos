@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Biblioteca de Apostilas - Ágape Cursos</title>
+    <meta name="description"
+        content="Explore materiais exclusivos de estudo da Ágape Cursos. Apostilas sobre Terapia Capilar, Massagem, Psicanálise e Bem-Estar." />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&family=Noto+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d17c8a",
+                        "primary-dark": "#b05e6b",
+                        "accent": "#f2c4c0",
+                        "background-light": "#fdf8f8",
+                        "background-dark": "#2d1b1e",
+                        "card-light": "#ffffff",
+                        "card-dark": "#3d2529",
+                        "surface-light": "#fcecee",
+                        "surface-dark": "#4a2e33",
+                        "text-main": "#5c3a40",
+                        "text-secondary": "#8c5e66",
+                        "text-inverted": "#fdf8f8",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .font-variation-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-text-inverted antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen">
+    <header
+        class="sticky top-0 z-50 w-full border-b border-accent/20 dark:border-surface-dark bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 md:px-10 flex justify-center py-3">
+                <div class="flex w-full max-w-[1280px] items-center justify-between">
+                    <div class="flex items-center gap-4 text-primary">
+                        <div class="size-8 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-3xl text-[#d17c8a]">spa</span>
+                        </div>
+                        <h2
+                            class="text-text-main dark:text-text-inverted text-xl font-bold leading-tight tracking-tight">
+                            Ágape Cursos</h2>
+                    </div>
+
+                    <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                        <div class="flex items-center gap-6">
+                            <a class="text-text-main dark:text-text-inverted text-sm font-medium hover:text-primary transition-colors"
+                                href="progresso.html">Meus Cursos</a>
+                            <a class="text-primary text-sm font-bold border-b-2 border-primary"
+                                href="biblioteca.html">Biblioteca</a>
+                            <a class="text-text-main dark:text-text-inverted text-sm font-medium hover:text-primary transition-colors"
+                                href="#">Minha Conta</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button
+                                class="flex items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold shadow-md shadow-primary/20 hover:bg-primary-dark transition-all">
+                                <span>Perfil</span>
+                            </button>
+                            <div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-surface-light dark:border-surface-dark"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMXMfzWYhtqJ-tyTml3YkVF0trOIddcgMgK_KNMPR8VToiFpXuZ5X7CqSadWUj0f7bCoKc9QL5nG7nTJjykHRBMVi1C3OXMT8e2IXXMCBph_TIfqQw6gtn-V2lt__xul49SwqkmT8wxizH7JBtTaPPhOQLQ3tx2zpd7mM-Z_GobTQ5u9zPqpxipTmrpOF_27JT6nNG0RjIS6fhuYY8Lcw62gk6ok36Yl3rROiLbPF3zHF_KPp9ft72LyzA4o4pixEHqSSEt9nJUFWE");'>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:hidden text-text-main dark:text-text-inverted">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 w-full flex justify-center">
+        <div class="layout-content-container flex flex-col max-w-[1280px] w-full px-4 md:px-10 py-8 gap-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div class="flex flex-col gap-3 max-w-2xl">
+                    <h1
+                        class="text-text-main dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">
+                        Biblioteca de Apostilas
+                    </h1>
+                    <p class="text-text-secondary dark:text-neutral-400 text-base font-normal leading-normal">
+                        Explore nossos materiais exclusivos de estudo. Clique no ícone de download para baixar ou
+                        favorite para acesso rápido!
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between w-full">
+                <div class="w-full lg:w-1/3 min-w-[280px]">
+                    <div
+                        class="relative flex items-center w-full h-12 rounded-xl focus-within:ring-2 focus-within:ring-primary/50 transition-shadow bg-surface-light dark:bg-surface-dark overflow-hidden border border-accent/20 dark:border-transparent">
+                        <div class="grid place-items-center h-full w-12 text-primary">
+                            <span class="material-symbols-outlined">search</span>
+                        </div>
+                        <input
+                            class="peer h-full w-full outline-none bg-transparent text-sm text-text-main dark:text-text-inverted pr-4 placeholder-text-secondary/60"
+                            id="search" placeholder="Buscar por título ou autor..." type="text" />
+                    </div>
+                </div>
+
+                <div class="flex-1 w-full overflow-x-auto pb-2 lg:pb-0 scrollbar-hide">
+                    <div class="flex gap-2 lg:justify-end min-w-max">
+                        <button
+                            class="group flex h-9 items-center justify-center gap-x-2 rounded-lg bg-primary px-4 transition-colors hover:bg-primary-dark shadow-sm shadow-primary/20">
+                            <p class="text-white text-sm font-medium">Todos</p>
+                        </button>
+                        <button
+                            class="group flex h-9 items-center justify-center gap-x-2 rounded-lg bg-surface-light dark:bg-surface-dark px-4 transition-colors hover:bg-accent/30 hover:text-primary border border-transparent hover:border-primary/20">
+                            <p
+                                class="text-text-main dark:text-neutral-300 text-sm font-medium group-hover:text-primary">
+                                Terapia Capilar</p>
+                        </button>
+                        <button
+                            class="group flex h-9 items-center justify-center gap-x-2 rounded-lg bg-surface-light dark:bg-surface-dark px-4 transition-colors hover:bg-accent/30 hover:text-primary border border-transparent hover:border-primary/20">
+                            <p
+                                class="text-text-main dark:text-neutral-300 text-sm font-medium group-hover:text-primary">
+                                Massagem</p>
+                        </button>
+                        <button
+                            class="group flex h-9 items-center justify-center gap-x-2 rounded-lg bg-surface-light dark:bg-surface-dark px-4 transition-colors hover:bg-accent/30 hover:text-primary border border-transparent hover:border-primary/20">
+                            <p
+                                class="text-text-main dark:text-neutral-300 text-sm font-medium group-hover:text-primary">
+                                Psicanálise</p>
+                        </button>
+                        <button
+                            class="group flex h-9 items-center justify-center gap-x-2 rounded-lg bg-surface-light dark:bg-surface-dark px-4 transition-colors hover:bg-accent/30 hover:text-primary border border-transparent hover:border-primary/20">
+                            <p
+                                class="text-text-main dark:text-neutral-300 text-sm font-medium group-hover:text-primary">
+                                Bem-Estar</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
+                <!-- Card 1 -->
+                <article
+                    class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-accent/20 dark:border-surface-dark hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <span
+                            class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur text-xs font-bold px-2 py-1 rounded text-primary uppercase tracking-wide z-10 shadow-sm">Terapia
+                            Capilar</span>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXC7X7j0gmpoVbg8ZA69Cr-oq5W4iLiegxsXoRI6SMeFZ3q77wF7nSQexUhc0K51Lb_vlKh5Cvrvv98_bXBV0wJwWXnv4pElX8Vu3Mj78-P0o-XHoliV334HBaNNFthdNQxUZd4oPCkMFO1PsZOxNfjyBKZ43FIkhEgrxH1S1AdClAta_ZX42jRTAqGJsqGruh2ficI_czoik4ihSSgNhm_1Df0s129j6bi-Wtv8J4QUmnGhqF-mvpngbYRjEgYZWJ4FNZjPGHwRAX");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-5 flex-1">
+                        <div class="mb-2">
+                            <h3
+                                class="text-lg font-bold text-text-main dark:text-text-inverted line-clamp-2 leading-tight group-hover:text-primary transition-colors">
+                                Fundamentos da Tricologia Integrativa</h3>
+                            <p class="text-xs font-medium text-text-secondary/80 mt-1">Autor: Vera L. S. Bortolini</p>
+                        </div>
+                        <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-3 mb-6 flex-1">
+                            Uma abordagem completa sobre a saúde do couro cabeludo e haste capilar, integrando
+                            conhecimentos ancestrais e modernos.
+                        </p>
+                        <div
+                            class="flex items-center justify-between border-t border-accent/10 dark:border-surface-dark pt-4 mt-auto">
+                            <button
+                                class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-dark transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">download</span>
+                                <span>Baixar PDF</span>
+                            </button>
+                            <button aria-label="Favoritar"
+                                class="text-text-secondary/40 hover:text-primary transition-colors focus:outline-none group/fav">
+                                <span
+                                    class="material-symbols-outlined text-[24px] group-hover/fav:font-variation-fill">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article
+                    class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-accent/20 dark:border-surface-dark hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <span
+                            class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur text-xs font-bold px-2 py-1 rounded text-primary uppercase tracking-wide z-10 shadow-sm">Psicanálise</span>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwA78zLYPGzpvMAKyMqvVdsZWFB6exZWnFgH1UxKKlBCLw6Ia4cU42laNx3FQyMeKaQk6FTn0e-dSbz8JIPRrPFZfTnzqGU3XlRIbk_Buyf96Kiuw6i5eSj_j39fN6Ce7iBH0S9AX0Ul-rmih70dJ4W8eJa49iZO5iqeLREoqObZqrprh3_tcpGz2E59llmzfuEAH-p0SbWe8liAzyI5Hr4z4f9x84m029kHIEK-7r-X0M0_fz_vVc2JEZbc-RMI1prSj4TPoScGvF");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-5 flex-1">
+                        <div class="mb-2">
+                            <h3
+                                class="text-lg font-bold text-text-main dark:text-text-inverted line-clamp-2 leading-tight group-hover:text-primary transition-colors">
+                                Introdução à Psicanálise Freudiana</h3>
+                            <p class="text-xs font-medium text-text-secondary/80 mt-1">Autor: Equipe Ágape</p>
+                        </div>
+                        <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-3 mb-6 flex-1">
+                            Apostila introdutória cobrindo os conceitos chave de Freud, o inconsciente e a estrutura da
+                            psique humana.
+                        </p>
+                        <div
+                            class="flex items-center justify-between border-t border-accent/10 dark:border-surface-dark pt-4 mt-auto">
+                            <button
+                                class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-dark transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">download</span>
+                                <span>Baixar PDF</span>
+                            </button>
+                            <button aria-label="Favoritar"
+                                class="text-primary hover:text-primary-dark transition-colors focus:outline-none">
+                                <span
+                                    class="material-symbols-outlined text-[24px] font-variation-fill icon-filled">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article
+                    class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-accent/20 dark:border-surface-dark hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <span
+                            class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur text-xs font-bold px-2 py-1 rounded text-primary uppercase tracking-wide z-10 shadow-sm">Massagem</span>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmGA4l2TjIxZrKE6pdeE68N6wagy8cteL60yNnlhqSJzcCFG6V51yCDz4u2Uua18jgRed_cIGqU54vPlHOnjzxBww3W8yeGCw-1bzjNvWdPJZ0q1G40S4FdJrGw1g0eOE0agPVW1P2ER7RdtXP3LwCDySCQof3hMQOOBlk7u5LbZrb-eE0grdDX8aD5AOAYnPxNjQfElZAe-Vce7Ta6prWgpyKK9Gyx2Ycto7dd0QOwdeYJJBBckk1SrFX5w0PqoZP_56JDfq-oA_C");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-5 flex-1">
+                        <div class="mb-2">
+                            <h3
+                                class="text-lg font-bold text-text-main dark:text-text-inverted line-clamp-2 leading-tight group-hover:text-primary transition-colors">
+                                Técnicas de Massagem Relaxante</h3>
+                            <p class="text-xs font-medium text-text-secondary/80 mt-1">Autor: Vera L. S. Bortolini</p>
+                        </div>
+                        <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-3 mb-6 flex-1">
+                            Guia prático ilustrado com os principais movimentos e pressões para uma sessão de massagem
+                            relaxante eficaz.
+                        </p>
+                        <div
+                            class="flex items-center justify-between border-t border-accent/10 dark:border-surface-dark pt-4 mt-auto">
+                            <button
+                                class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-dark transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">download</span>
+                                <span>Baixar PDF</span>
+                            </button>
+                            <button aria-label="Favoritar"
+                                class="text-text-secondary/40 hover:text-primary transition-colors focus:outline-none group/fav">
+                                <span
+                                    class="material-symbols-outlined text-[24px] group-hover/fav:font-variation-fill">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article
+                    class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-accent/20 dark:border-surface-dark hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <span
+                            class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur text-xs font-bold px-2 py-1 rounded text-primary uppercase tracking-wide z-10 shadow-sm">Bem-Estar</span>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5ivxul8ByJ7USmJronHWk4oNVEmEtkR88EpE8hCbXbY6CSwcOb2FV_m_xt5xa6PvVQQqDUJDfV-pOsMEpCBtvMXcKc2LOkZaBC4RRX99w99nV0EPvPyb_Dk8Wxb1OX-ZbX-PCQN7ny9MjVnKAuQYwBLj8ReyYRnyVm-LwcaZyQnq78ohD3OKqORNphxshUhPbdA-F1NOvUpbnVhzHm1gfgpgheGJPGPC_ZrcSjndKnNmEkrCznFglVyO-tTfEqcJ8UyMct5TOqcJ5");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-5 flex-1">
+                        <div class="mb-2">
+                            <h3
+                                class="text-lg font-bold text-text-main dark:text-text-inverted line-clamp-2 leading-tight group-hover:text-primary transition-colors">
+                                Aromaterapia no Cotidiano</h3>
+                            <p class="text-xs font-medium text-text-secondary/80 mt-1">Autor: Equipe Ágape</p>
+                        </div>
+                        <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-3 mb-6 flex-1">
+                            Descubra como os óleos essenciais podem transformar o ambiente e promover o equilíbrio
+                            emocional e físico.
+                        </p>
+                        <div
+                            class="flex items-center justify-between border-t border-accent/10 dark:border-surface-dark pt-4 mt-auto">
+                            <button
+                                class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-dark transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">download</span>
+                                <span>Baixar PDF</span>
+                            </button>
+                            <button aria-label="Favoritar"
+                                class="text-text-secondary/40 hover:text-primary transition-colors focus:outline-none group/fav">
+                                <span
+                                    class="material-symbols-outlined text-[24px] group-hover/fav:font-variation-fill">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article
+                    class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-accent/20 dark:border-surface-dark hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <span
+                            class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur text-xs font-bold px-2 py-1 rounded text-primary uppercase tracking-wide z-10 shadow-sm">Terapia
+                            Capilar</span>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJOlNCe1Fpp77uEcCBdef7jadVdfzFsLzygP9zLKog5At_hyVWeQ2cML4xYyRRKOLn0GMhmqUPTR0Rsyg0jvr0m2YV1AupP4TpZLPM4JXUkRVfpFmmzXGXlmusLEa7Q_YrvvoQWwxoZ7r6bifU6yG9kz1RAdYkIagoNWsC51XOUPMFd0RLP-_XNopWSiNvOTUutgzuhQY2vJsy4iHxI2VX60k8g8Sa4lACegh_UOHqNLLlpPF9EqQkeRS9vN2SA3EFpw30DUU-Rc_D");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-5 flex-1">
+                        <div class="mb-2">
+                            <h3
+                                class="text-lg font-bold text-text-main dark:text-text-inverted line-clamp-2 leading-tight group-hover:text-primary transition-colors">
+                                Patologias do Couro Cabeludo</h3>
+                            <p class="text-xs font-medium text-text-secondary/80 mt-1">Autor: Vera L. S. Bortolini</p>
+                        </div>
+                        <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-3 mb-6 flex-1">
+                            Estudo aprofundado sobre dermatite, caspa, psoríase e outras afecções comuns, com protocolos
+                            de tratamento.
+                        </p>
+                        <div
+                            class="flex items-center justify-between border-t border-accent/10 dark:border-surface-dark pt-4 mt-auto">
+                            <button
+                                class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-dark transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">download</span>
+                                <span>Baixar PDF</span>
+                            </button>
+                            <button aria-label="Favoritar"
+                                class="text-primary hover:text-primary-dark transition-colors focus:outline-none">
+                                <span
+                                    class="material-symbols-outlined text-[24px] font-variation-fill icon-filled">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article
+                    class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-accent/20 dark:border-surface-dark hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group">
+                    <div class="relative aspect-[16/9] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <span
+                            class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur text-xs font-bold px-2 py-1 rounded text-primary uppercase tracking-wide z-10 shadow-sm">Psicanálise</span>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDP0xReHCvy78efLCcWQTCZiJDbc9vRTyh7-irpOB1Xb9KWk73y0yHSyLXqGGRzxAqvl25XYF14kcI-HOWlO1sJWEcBi9n4IEVNugmTxFuFwnrM8OemwI99K_sNPj5q431sPukswe8jqUdad6MQEnUWKerVW28wpP_cx9Ye5vmDQ5gAOXl4EVMdhcQ1gSm30hcs5uBlMJNkJKQGJqJBsSidb3stbXUgT0hLCpbPGqDMS5TbUFGfEudthkTzZVC4WlJ84-Ftd39-Ulr");'>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-5 flex-1">
+                        <div class="mb-2">
+                            <h3
+                                class="text-lg font-bold text-text-main dark:text-text-inverted line-clamp-2 leading-tight group-hover:text-primary transition-colors">
+                                O Caso Anna O. e a Histeria</h3>
+                            <p class="text-xs font-medium text-text-secondary/80 mt-1">Autor: Equipe Ágape</p>
+                        </div>
+                        <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-3 mb-6 flex-1">
+                            Análise detalhada de um dos casos mais famosos da história da psicanálise e suas implicações
+                            teóricas.
+                        </p>
+                        <div
+                            class="flex items-center justify-between border-t border-accent/10 dark:border-surface-dark pt-4 mt-auto">
+                            <button
+                                class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-dark transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">download</span>
+                                <span>Baixar PDF</span>
+                            </button>
+                            <button aria-label="Favoritar"
+                                class="text-text-secondary/40 hover:text-primary transition-colors focus:outline-none group/fav">
+                                <span
+                                    class="material-symbols-outlined text-[24px] group-hover/fav:font-variation-fill">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="flex justify-center pb-8">
+                <button
+                    class="px-6 py-3 rounded-xl bg-surface-light dark:bg-surface-dark text-primary font-bold hover:bg-primary/10 hover:shadow-inner transition-all border border-transparent hover:border-primary/10">
+                    Carregar mais apostilas
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer
+        class="bg-surface-light dark:bg-surface-dark py-8 mt-auto border-t border-accent/20 dark:border-surface-dark">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3 text-primary">
+                <span class="material-symbols-outlined">spa</span>
+                <span class="text-text-main dark:text-text-inverted font-bold">Ágape Cursos</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-text-secondary dark:text-gray-400">
+                <a class="hover:text-primary transition-colors" href="#">Termos de Uso</a>
+                <a class="hover:text-primary transition-colors" href="#">Política de Privacidade</a>
+                <a class="hover:text-primary transition-colors" href="#">Suporte</a>
+            </div>
+            <p class="text-sm text-text-secondary/60 dark:text-gray-500">© 2024 Ágape Cursos. Todos os direitos
+                reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
