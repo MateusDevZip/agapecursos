@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Login - Ágape Cursos</title>
+    <meta name="description"
+        content="Acesse sua conta na Ágape Cursos e continue sua jornada de aprendizado em Terapia Capilar, Massagem Terapêutica e Psicanálise Aplicada." />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "primary-dark": "#d61a48",
+                        "background-light": "#fcf8f9",
+                        "background-dark": "#221015",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d151c",
+                        "text-main": "#1b0d11",
+                        "text-light": "#f3e7ea",
+                        "peach": "#f3e7ea",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .form-input:focus {
+            box-shadow: 0 0 0 2px rgba(238, 43, 91, 0.2);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main dark:text-text-light min-h-screen flex flex-col font-display transition-colors duration-300">
+    <!-- Top Navigation (Simplified for Login) -->
+    <header
+        class="w-full border-b border-solid border-b-[#f3e7ea] dark:border-b-white/10 px-6 py-4 lg:px-10 lg:py-5 bg-surface-light dark:bg-surface-dark z-20">
+        <div class="layout-container max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html"
+                class="flex items-center gap-3 text-text-main dark:text-white hover:opacity-80 transition-opacity">
+                <div class="size-8 text-primary">
+                    <span class="material-symbols-outlined text-3xl">spa</span>
+                </div>
+                <h2 class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white">Ágape
+                    Cursos</h2>
+            </a>
+            <div class="hidden sm:flex gap-4 items-center">
+                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Ainda não tem uma conta?</span>
+                <a class="text-primary font-bold text-sm hover:underline" href="#">Cadastre-se</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area: Split View -->
+    <main class="flex-1 flex w-full">
+        <!-- Left Column: Login Form -->
+        <div
+            class="w-full lg:w-1/2 flex flex-col justify-center items-center p-6 sm:p-12 lg:p-24 bg-background-light dark:bg-background-dark relative z-10">
+            <div class="w-full max-w-[440px] flex flex-col gap-8">
+                <!-- Header Text -->
+                <div class="space-y-2 text-center lg:text-left">
+                    <h1 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Bem-vindo de volta
+                    </h1>
+                    <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Sua jornada em Terapia Capilar, Massagem e Psicanálise continua aqui.
+                    </p>
+                </div>
+
+                <!-- Form -->
+                <form action="#" class="flex flex-col gap-5" method="POST">
+                    <!-- Email Input -->
+                    <div class="space-y-2">
+                        <label
+                            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900 dark:text-gray-200"
+                            for="email">
+                            E-mail ou Usuário
+                        </label>
+                        <div class="relative">
+                            <input
+                                class="flex h-12 w-full rounded-lg border border-[#e7cfd5] dark:border-gray-700 bg-surface-light dark:bg-surface-dark px-3 py-2 text-sm text-gray-900 dark:text-white placeholder:text-[#9a4c5f] dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all pl-10"
+                                id="email" placeholder="exemplo@email.com" type="text" />
+                            <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                                <span class="material-symbols-outlined text-[20px]">person</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <label class="text-sm font-medium leading-none text-gray-900 dark:text-gray-200"
+                                for="password">
+                                Senha
+                            </label>
+                            <a class="text-sm font-medium text-primary hover:text-primary-dark hover:underline"
+                                href="#">
+                                Esqueceu a senha?
+                            </a>
+                        </div>
+                        <div class="relative group">
+                            <input
+                                class="flex h-12 w-full rounded-lg border border-[#e7cfd5] dark:border-gray-700 bg-surface-light dark:bg-surface-dark px-3 py-2 text-sm text-gray-900 dark:text-white placeholder:text-[#9a4c5f] dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all pl-10 pr-10"
+                                id="password" placeholder="Digite sua senha" type="password" />
+                            <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                                <span class="material-symbols-outlined text-[20px]">lock</span>
+                            </div>
+                            <button
+                                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 cursor-pointer"
+                                type="button" onclick="togglePassword()">
+                                <span class="material-symbols-outlined text-[20px]" id="toggleIcon">visibility</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button
+                        class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-primary-dark text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors shadow-sm mt-2"
+                        type="submit">
+                        Entrar
+                    </button>
+
+                    <!-- Mobile Signup Link (Visible only on small screens) -->
+                    <div class="sm:hidden text-center mt-4">
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Não tem conta? </span>
+                        <a class="text-primary font-bold text-sm" href="#">Cadastre-se</a>
+                    </div>
+                </form>
+
+                <!-- Footer / Copyright -->
+                <div class="pt-6 border-t border-gray-100 dark:border-white/5 text-center lg:text-left">
+                    <p class="text-xs text-gray-400 dark:text-gray-500">
+                        © 2024 Ágape Cursos. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Decorative Image -->
+        <div class="hidden lg:block lg:w-1/2 relative bg-[#fcf8f9] dark:bg-[#1a0c10] overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform hover:scale-105 duration-[2s]"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2lJNTT725kFBzpC1vkRuxK15rbHkJ_crv3KrcMwSOd1EVwrh92YbWmN3Nym8XKPjUA5oDCXiv59mi9KlkVfz4ndyjsnlFcGJFVzPATNORH_KaWvdlunWxA7f8s8OrA0-lEC5aEgxQ2J7mpIhs8HyLzGFalhsMPjKi5Wll30ZWPHg5eL4HGwnfE4lcf9TK4RDsRpCS_3Oi9dQMwlgxFLAN9ih99H2vTjsNzxx0LWvDxz-qUW0U1_o5Ob3Wv0KCKC6VC8VGvOEC9Rim');">
+            </div>
+            <!-- Overlay Gradient for better text readability if we add text over image later, and to tint it slightly -->
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-black/10"></div>
+
+            <!-- Optional Floating Quote/Element -->
+            <div class="absolute bottom-12 left-12 right-12">
+                <div
+                    class="bg-white/90 dark:bg-surface-dark/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20 dark:border-white/5 max-w-lg">
+                    <div class="flex gap-4 items-start">
+                        <div class="p-3 bg-primary/10 rounded-full text-primary shrink-0">
+                            <span class="material-symbols-outlined">psychology_alt</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-800 dark:text-gray-200 font-medium italic mb-2">"O equilíbrio entre
+                                corpo e mente é a chave para uma vida plena."</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">
+                                Metodologia Ágape</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Theme Toggle Script
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Toggle Password Visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggleIcon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = 'visibility_off';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = 'visibility';
+            }
+        }
+    </script>
+</body>
+
+</html>
