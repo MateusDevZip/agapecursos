@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html class="light" lang="pt-BR">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Ágape Cursos - Bem-Estar Holístico</title>
-    <meta name="description" content="Descubra a harmonia perfeita entre Terapia Capilar, Massagem Terapêutica e Psicanálise Aplicada. Uma abordagem integrada para profissionais que desejam ir além."/>
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <meta name="description"
+        content="Descubra a harmonia perfeita entre Terapia Capilar, Massagem Terapêutica e Psicanálise Aplicada. Uma abordagem integrada para profissionais que desejam ir além." />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
         tailwind.config = {
@@ -29,7 +33,7 @@
                         "display": ["Lexend", "sans-serif"],
                         "body": ["Lexend", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
                 },
             },
         }
@@ -38,14 +42,18 @@
         body {
             font-family: 'Lexend', sans-serif;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="bg-background-light text-text-main antialiased overflow-x-hidden">
     <!-- Header -->
-    <header class="sticky top-0 z-50 w-full border-b border-[#ebd5d8] bg-background-light/95 backdrop-blur supports-[backdrop-filter]:bg-background-light/60">
+    <header
+        class="sticky top-0 z-50 w-full border-b border-[#ebd5d8] bg-background-light/95 backdrop-blur supports-[backdrop-filter]:bg-background-light/60">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center gap-2">
@@ -55,16 +63,23 @@
                     <span class="text-xl font-bold tracking-tight text-secondary">Ágape Cursos</span>
                 </div>
                 <nav class="hidden md:flex gap-8">
-                    <a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#">Início</a>
-                    <a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#metodologia">Metodologia</a>
-                    <a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#beneficios">Benefícios</a>
-                    <a class="text-sm font-medium text-text-main hover:text-primary transition-colors" href="#depoimentos">Depoimentos</a>
+                    <a class="text-sm font-medium text-text-main hover:text-primary transition-colors"
+                        href="index.html">Início</a>
+                    <a class="text-sm font-medium text-text-main hover:text-primary transition-colors"
+                        href="pilares.html">Pilares</a>
+                    <a class="text-sm font-medium text-text-main hover:text-primary transition-colors"
+                        href="cursos.html">Cursos</a>
+                    <a class="text-sm font-medium text-text-main hover:text-primary transition-colors"
+                        href="sobre.html">Sobre</a>
+                    <a class="text-sm font-medium text-text-main hover:text-primary transition-colors"
+                        href="contato.html">Contato</a>
                 </nav>
                 <div class="flex items-center gap-4">
-                    <button class="hidden sm:flex items-center justify-center h-10 px-6 rounded-full bg-primary text-white text-sm font-bold hover:bg-primary-dark transition-colors shadow-md shadow-primary/20">
-                        Área do Aluno
+                    <button data-auth-button
+                        class="hidden sm:flex items-center justify-center h-10 px-6 rounded-full bg-primary text-white text-sm font-bold hover:bg-primary-dark transition-colors shadow-md shadow-primary/20">
+                        Entrar
                     </button>
-                    <button class="md:hidden p-2 text-text-main">
+                    <button data-mobile-menu-toggle class="md:hidden p-2 text-text-main">
                         <span class="material-symbols-outlined">menu</span>
                     </button>
                 </div>
@@ -74,40 +89,53 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 bg-gradient-to-br from-background-light via-[#f3e6ea] to-[#e8d5d8]">
+        <section
+            class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 bg-gradient-to-br from-background-light via-[#f3e6ea] to-[#e8d5d8]">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="flex flex-col lg:flex-row gap-12 items-center">
                     <div class="flex-1 max-w-2xl text-center lg:text-left space-y-8">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-wider">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-wider">
                             <span class="material-symbols-outlined text-sm">spa</span>
                             Método Exclusivo Vera
                         </div>
-                        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-secondary leading-[1.15] tracking-tight">
-                            Bem-Estar Holístico em <span class="text-primary">3 Pilares</span>: Transforme Corpos, Mentes e Cabelos
+                        <h1
+                            class="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-secondary leading-[1.15] tracking-tight">
+                            Bem-Estar Holístico em <span class="text-primary">3 Pilares</span>: Transforme Corpos,
+                            Mentes e Cabelos
                         </h1>
                         <p class="text-lg text-text-light leading-relaxed max-w-xl mx-auto lg:mx-0">
-                            Descubra a harmonia perfeita entre Terapia Capilar, Massagem Terapêutica e Psicanálise Aplicada. Uma abordagem integrada para profissionais que desejam ir além.
+                            Descubra a harmonia perfeita entre Terapia Capilar, Massagem Terapêutica e Psicanálise
+                            Aplicada. Uma abordagem integrada para profissionais que desejam ir além.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <button class="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white shadow-lg shadow-primary/30 hover:bg-primary-dark transition-all hover:scale-105">
+                            <a href="checkout.html"
+                                class="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white shadow-lg shadow-primary/30 hover:bg-primary-dark transition-all hover:scale-105">
                                 Inscreva-se Agora
-                            </button>
-                            <button class="inline-flex h-12 items-center justify-center rounded-lg border-2 border-secondary text-secondary px-8 text-base font-bold hover:bg-secondary hover:text-white transition-all">
+                            </a>
+                            <a href="pilares.html"
+                                class="inline-flex h-12 items-center justify-center rounded-lg border-2 border-secondary text-secondary px-8 text-base font-bold hover:bg-secondary hover:text-white transition-all">
                                 Explorar Pilares
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div class="flex-1 w-full max-w-xl lg:max-w-full">
-                        <div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-secondary group cursor-pointer">
-                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
+                        <div
+                            class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-secondary group cursor-pointer">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10">
+                            </div>
                             <div class="absolute inset-0 flex items-center justify-center z-20">
-                                <div class="size-16 sm:size-20 rounded-full bg-white/90 backdrop-blur text-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 pl-1">
+                                <div
+                                    class="size-16 sm:size-20 rounded-full bg-white/90 backdrop-blur text-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 pl-1">
                                     <span class="material-symbols-outlined text-5xl">play_arrow</span>
                                 </div>
                             </div>
-                            <img alt="Therapist explaining holistic wellness methods in a calm spa setting" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbOaeGnV1L95G5WE72kAMttrdXsqvUYKNdqNVBfoTjcAswLdmqkOfuEeJbdpQMVGv2PEo21qZN8hZG-iN0-sR9m7xxvWTpYhBVQANdA-FGksbpvTkj7Gz6zqNVrz6xhj8-Aadp5-U7tyteZNvP6xhoXaQIh5qLTerWqmQ5IHmyjK8XbW27B7b3Lf-mXcPnwKi94kKA8TE4eF3RDkP24LCnpkiDx68vh_2LOUmogAxCPgi9Xjj92zhAWOXXAONm-pok7W4UZkPi0aZn"/>
+                            <img alt="Therapist explaining holistic wellness methods in a calm spa setting"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbOaeGnV1L95G5WE72kAMttrdXsqvUYKNdqNVBfoTjcAswLdmqkOfuEeJbdpQMVGv2PEo21qZN8hZG-iN0-sR9m7xxvWTpYhBVQANdA-FGksbpvTkj7Gz6zqNVrz6xhj8-Aadp5-U7tyteZNvP6xhoXaQIh5qLTerWqmQ5IHmyjK8XbW27B7b3Lf-mXcPnwKi94kKA8TE4eF3RDkP24LCnpkiDx68vh_2LOUmogAxCPgi9Xjj92zhAWOXXAONm-pok7W4UZkPi0aZn" />
                         </div>
-                        <div class="hidden lg:flex absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                        <div class="hidden lg:flex absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl items-center gap-3 animate-bounce"
+                            style="animation-duration: 3s;">
                             <div class="bg-red-50 p-2 rounded-full text-primary">
                                 <span class="material-symbols-outlined">groups</span>
                             </div>
@@ -123,7 +151,8 @@
                 <svg fill="none" height="600" viewBox="0 0 600 600" width="600" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="300" cy="300" fill="url(#paint0_radial_1_5)" r="300"></circle>
                     <defs>
-                        <radialGradient cx="0" cy="0" gradientTransform="translate(300 300) rotate(90) scale(300)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_5" r="1">
+                        <radialGradient cx="0" cy="0" gradientTransform="translate(300 300) rotate(90) scale(300)"
+                            gradientUnits="userSpaceOnUse" id="paint0_radial_1_5" r="1">
                             <stop stop-color="#D9808E"></stop>
                             <stop offset="1" stop-color="#D9808E" stop-opacity="0"></stop>
                         </radialGradient>
@@ -137,14 +166,18 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-3xl font-bold text-secondary mb-4">Nossa Metodologia Tríade</h2>
-                    <p class="text-text-light text-lg">Um ecossistema completo de aprendizado focado na integração do ser humano. Conheça nossos pilares fundamentais.</p>
+                    <p class="text-text-light text-lg">Um ecossistema completo de aprendizado focado na integração do
+                        ser humano. Conheça nossos pilares fundamentais.</p>
                 </div>
                 <div class="flex flex-col gap-8">
                     <!-- Pilar 01 -->
-                    <div class="group relative overflow-hidden rounded-2xl bg-background-light border border-[#ebd5d8] transition-all hover:shadow-lg hover:border-primary/50">
+                    <div
+                        class="group relative overflow-hidden rounded-2xl bg-background-light border border-[#ebd5d8] transition-all hover:shadow-lg hover:border-primary/50">
                         <div class="flex flex-col md:flex-row items-stretch">
                             <div class="w-full md:w-2/5 min-h-[250px] relative overflow-hidden">
-                                <img alt="Close up of hair therapy treatment with hands massaging scalp" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUQfrZFgXSOWgH69LVYWNOzNWLu6C-FxXo7xY1C3qlN84iHsLkl6kZwrIKsnwP_IspkY_kawPc-9aOHGkCluZMTypVEJPVXY738oGkB16uTlVJK_zYKAKc2MMuH02-4ozOeCJe9J-rtG-VwDk01D-DYMgKtL0B0rejeNxvYZ5IHO0PrGfAYT0MA2dg8iaT96knFJQsOW4N0niN0CurTaI-9WEbj__eyOrLaZjSAC_HPLJgNk4jxbqLj5rjC8G9tXqM1J5yl8xITEM6"/>
+                                <img alt="Close up of hair therapy treatment with hands massaging scalp"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUQfrZFgXSOWgH69LVYWNOzNWLu6C-FxXo7xY1C3qlN84iHsLkl6kZwrIKsnwP_IspkY_kawPc-9aOHGkCluZMTypVEJPVXY738oGkB16uTlVJK_zYKAKc2MMuH02-4ozOeCJe9J-rtG-VwDk01D-DYMgKtL0B0rejeNxvYZ5IHO0PrGfAYT0MA2dg8iaT96knFJQsOW4N0niN0CurTaI-9WEbj__eyOrLaZjSAC_HPLJgNk4jxbqLj5rjC8G9tXqM1J5yl8xITEM6" />
                                 <div class="absolute inset-0 bg-secondary/10"></div>
                             </div>
                             <div class="flex-1 p-8 flex flex-col justify-center relative">
@@ -155,23 +188,30 @@
                                     <div class="p-2 bg-secondary text-white rounded-lg">
                                         <span class="material-symbols-outlined">content_cut</span>
                                     </div>
-                                    <span class="text-sm font-bold text-primary tracking-wider uppercase">Pilar 01</span>
+                                    <span class="text-sm font-bold text-primary tracking-wider uppercase">Pilar
+                                        01</span>
                                 </div>
                                 <h3 class="text-2xl font-bold text-secondary mb-3">Terapia Capilar</h3>
-                                <p class="text-text-light mb-6 leading-relaxed">Aprofunde-se no tratamento e saúde do couro cabeludo com técnicas exclusivas que unem ciência e toque terapêutico.</p>
-                                <a class="inline-flex items-center font-bold text-secondary hover:text-primary transition-colors gap-2 group/link" href="#">
+                                <p class="text-text-light mb-6 leading-relaxed">Aprofunde-se no tratamento e saúde do
+                                    couro cabeludo com técnicas exclusivas que unem ciência e toque terapêutico.</p>
+                                <a class="inline-flex items-center font-bold text-secondary hover:text-primary transition-colors gap-2 group/link"
+                                    href="#">
                                     Ver Curso Completo
-                                    <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                                    <span
+                                        class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Pilar 02 -->
-                    <div class="group relative overflow-hidden rounded-2xl bg-background-light border border-[#ebd5d8] transition-all hover:shadow-lg hover:border-primary/50">
+                    <div
+                        class="group relative overflow-hidden rounded-2xl bg-background-light border border-[#ebd5d8] transition-all hover:shadow-lg hover:border-primary/50">
                         <div class="flex flex-col md:flex-row-reverse items-stretch">
                             <div class="w-full md:w-2/5 min-h-[250px] relative overflow-hidden">
-                                <img alt="Relaxing back massage session with hot stones and oil" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_IxPaYY9qkzKDnZWK7m2aGi8bee1le-_UlRQDGTA-22emJnnUpdkLUsFA_kfK0LRpwUOXK2vo2BgudO_J381Hh_bVwWcPlsNXn7V7vfJDNjG2Ax2ENMjQQyZp2sDcRu0_e9MKdL4fmpODQQsKQMCISH4ySqUMtJt4uHxGAmyF-zlslNFjuqInwxmcurKD5B2n4o3ty_0xrZE0wOu13c8wPchtKjMw6xK39LmEmI7ELYYppG1bRsXXXaqM6I3QO8qAJmiAWAY4oeFg"/>
+                                <img alt="Relaxing back massage session with hot stones and oil"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_IxPaYY9qkzKDnZWK7m2aGi8bee1le-_UlRQDGTA-22emJnnUpdkLUsFA_kfK0LRpwUOXK2vo2BgudO_J381Hh_bVwWcPlsNXn7V7vfJDNjG2Ax2ENMjQQyZp2sDcRu0_e9MKdL4fmpODQQsKQMCISH4ySqUMtJt4uHxGAmyF-zlslNFjuqInwxmcurKD5B2n4o3ty_0xrZE0wOu13c8wPchtKjMw6xK39LmEmI7ELYYppG1bRsXXXaqM6I3QO8qAJmiAWAY4oeFg" />
                                 <div class="absolute inset-0 bg-secondary/10"></div>
                             </div>
                             <div class="flex-1 p-8 flex flex-col justify-center relative">
@@ -182,23 +222,31 @@
                                     <div class="p-2 bg-secondary text-white rounded-lg">
                                         <span class="material-symbols-outlined">self_improvement</span>
                                     </div>
-                                    <span class="text-sm font-bold text-primary tracking-wider uppercase">Pilar 02</span>
+                                    <span class="text-sm font-bold text-primary tracking-wider uppercase">Pilar
+                                        02</span>
                                 </div>
                                 <h3 class="text-2xl font-bold text-secondary mb-3">Massagem Terapêutica</h3>
-                                <p class="text-text-light mb-6 leading-relaxed">Domine a arte do toque que cura. Técnicas ancestrais e modernas para promover o relaxamento profundo e aliviar tensões.</p>
-                                <a class="inline-flex items-center font-bold text-secondary hover:text-primary transition-colors gap-2 group/link" href="#">
+                                <p class="text-text-light mb-6 leading-relaxed">Domine a arte do toque que cura.
+                                    Técnicas ancestrais e modernas para promover o relaxamento profundo e aliviar
+                                    tensões.</p>
+                                <a class="inline-flex items-center font-bold text-secondary hover:text-primary transition-colors gap-2 group/link"
+                                    href="#">
                                     Ver Curso Completo
-                                    <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                                    <span
+                                        class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Pilar 03 -->
-                    <div class="group relative overflow-hidden rounded-2xl bg-background-light border border-[#ebd5d8] transition-all hover:shadow-lg hover:border-primary/50">
+                    <div
+                        class="group relative overflow-hidden rounded-2xl bg-background-light border border-[#ebd5d8] transition-all hover:shadow-lg hover:border-primary/50">
                         <div class="flex flex-col md:flex-row items-stretch">
                             <div class="w-full md:w-2/5 min-h-[250px] relative overflow-hidden">
-                                <img alt="Two women talking in a comfortable therapy office setting" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_4ig2nnu8eLIxuwA-q8FmvTvfUvD0ys_FCSYUbVHHqdplEspPU_Kr2Z2rDVLhxtryISEtTpNZqxPegw9ns9tU_K9sYq5bxhwii-8CFeSgXRaQvembt7FrmZjGKaN7NpeMZNZm7Xq-8kJ0nCUuo5kmo-ZMFThwSN6JDCvMFwO4HiGz_1bJcIbaAwCwZfHgUk7CiF_HMvHRVTGz7wbFhksvjxkMuMhV_g8xpuSxD7fH8ungGrF4s1fpdyXIwqdWwaCY632vOmStOVRk"/>
+                                <img alt="Two women talking in a comfortable therapy office setting"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_4ig2nnu8eLIxuwA-q8FmvTvfUvD0ys_FCSYUbVHHqdplEspPU_Kr2Z2rDVLhxtryISEtTpNZqxPegw9ns9tU_K9sYq5bxhwii-8CFeSgXRaQvembt7FrmZjGKaN7NpeMZNZm7Xq-8kJ0nCUuo5kmo-ZMFThwSN6JDCvMFwO4HiGz_1bJcIbaAwCwZfHgUk7CiF_HMvHRVTGz7wbFhksvjxkMuMhV_g8xpuSxD7fH8ungGrF4s1fpdyXIwqdWwaCY632vOmStOVRk" />
                                 <div class="absolute inset-0 bg-secondary/10"></div>
                             </div>
                             <div class="flex-1 p-8 flex flex-col justify-center relative">
@@ -209,13 +257,18 @@
                                     <div class="p-2 bg-secondary text-white rounded-lg">
                                         <span class="material-symbols-outlined">psychology</span>
                                     </div>
-                                    <span class="text-sm font-bold text-primary tracking-wider uppercase">Pilar 03</span>
+                                    <span class="text-sm font-bold text-primary tracking-wider uppercase">Pilar
+                                        03</span>
                                 </div>
                                 <h3 class="text-2xl font-bold text-secondary mb-3">Psicanálise Aplicada</h3>
-                                <p class="text-text-light mb-6 leading-relaxed">Compreenda a mente humana para oferecer um atendimento verdadeiramente integrado, cuidando das emoções por trás dos sintomas.</p>
-                                <a class="inline-flex items-center font-bold text-secondary hover:text-primary transition-colors gap-2 group/link" href="#">
+                                <p class="text-text-light mb-6 leading-relaxed">Compreenda a mente humana para oferecer
+                                    um atendimento verdadeiramente integrado, cuidando das emoções por trás dos
+                                    sintomas.</p>
+                                <a class="inline-flex items-center font-bold text-secondary hover:text-primary transition-colors gap-2 group/link"
+                                    href="#">
                                     Ver Curso Completo
-                                    <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                                    <span
+                                        class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
                                 </a>
                             </div>
                         </div>
@@ -224,7 +277,8 @@
                 <div class="mt-16 flex justify-center">
                     <div class="bg-secondary/5 rounded-full p-8 inline-flex items-center gap-4 text-center">
                         <span class="material-symbols-outlined text-secondary">link</span>
-                        <span class="text-sm font-medium text-secondary">Todos os cursos são interconectados para sua formação completa.</span>
+                        <span class="text-sm font-medium text-secondary">Todos os cursos são interconectados para sua
+                            formação completa.</span>
                     </div>
                 </div>
             </div>
@@ -239,28 +293,32 @@
                             <span class="material-symbols-outlined">workspace_premium</span>
                         </div>
                         <h4 class="text-xl font-bold mb-2 text-primary">Certificação Profissional</h4>
-                        <p class="text-white/80 text-sm">Receba um certificado reconhecido em todo o território nacional ao concluir.</p>
+                        <p class="text-white/80 text-sm">Receba um certificado reconhecido em todo o território nacional
+                            ao concluir.</p>
                     </div>
                     <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                         <div class="size-12 rounded-full bg-primary flex items-center justify-center text-white mb-4">
                             <span class="material-symbols-outlined">all_inclusive</span>
                         </div>
                         <h4 class="text-xl font-bold mb-2 text-primary">Acesso Vitalício</h4>
-                        <p class="text-white/80 text-sm">Estude no seu ritmo. Você terá acesso ao conteúdo e atualizações para sempre.</p>
+                        <p class="text-white/80 text-sm">Estude no seu ritmo. Você terá acesso ao conteúdo e
+                            atualizações para sempre.</p>
                     </div>
                     <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                         <div class="size-12 rounded-full bg-primary flex items-center justify-center text-white mb-4">
                             <span class="material-symbols-outlined">diversity_3</span>
                         </div>
                         <h4 class="text-xl font-bold mb-2 text-primary">Comunidade Exclusiva</h4>
-                        <p class="text-white/80 text-sm">Troque experiências e faça networking com outros profissionais da área.</p>
+                        <p class="text-white/80 text-sm">Troque experiências e faça networking com outros profissionais
+                            da área.</p>
                     </div>
                     <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                         <div class="size-12 rounded-full bg-primary flex items-center justify-center text-white mb-4">
                             <span class="material-symbols-outlined">verified_user</span>
                         </div>
                         <h4 class="text-xl font-bold mb-2 text-primary">Garantia de 7 Dias</h4>
-                        <p class="text-white/80 text-sm">Teste o método sem riscos. Se não gostar, devolvemos seu investimento.</p>
+                        <p class="text-white/80 text-sm">Teste o método sem riscos. Se não gostar, devolvemos seu
+                            investimento.</p>
                     </div>
                 </div>
             </div>
@@ -281,10 +339,12 @@
                             <span class="material-symbols-outlined text-sm">star</span>
                             <span class="material-symbols-outlined text-sm">star</span>
                         </div>
-                        <p class="text-text-main italic mb-6">"A metodologia da Vera mudou completamente a forma como atendo meus clientes. Hoje vejo o ser humano como um todo."</p>
+                        <p class="text-text-main italic mb-6">"A metodologia da Vera mudou completamente a forma como
+                            atendo meus clientes. Hoje vejo o ser humano como um todo."</p>
                         <div class="flex items-center gap-3">
                             <div class="size-10 rounded-full bg-gray-200 overflow-hidden">
-                                <img alt="Portrait of happy student" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzN5V9ymGXxnnYHi9PccOD5oU4vKmWyCFYJMGNCKq2Lv2flDcju3NA7VVLmOm4YQ4gLOnh-MyYBdA_aeFQe4ITK0Z4bgvL_Mm5eezafbU6dTXdJG-pJgOdKXuz20YILfX4IzrXYSd0x17eErhx6EWgb6vH8tgcV5bCphL65P6Nasyya7WX4XQ9UfSmEMaC4xrQLlr3mNCsjkTmt6dF1NZv-EkdUd95l91091A9XcvuZgHexi-0Hi0l5TFjEJCir0Lss8judaZJNUwH"/>
+                                <img alt="Portrait of happy student" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzN5V9ymGXxnnYHi9PccOD5oU4vKmWyCFYJMGNCKq2Lv2flDcju3NA7VVLmOm4YQ4gLOnh-MyYBdA_aeFQe4ITK0Z4bgvL_Mm5eezafbU6dTXdJG-pJgOdKXuz20YILfX4IzrXYSd0x17eErhx6EWgb6vH8tgcV5bCphL65P6Nasyya7WX4XQ9UfSmEMaC4xrQLlr3mNCsjkTmt6dF1NZv-EkdUd95l91091A9XcvuZgHexi-0Hi0l5TFjEJCir0Lss8judaZJNUwH" />
                             </div>
                             <div>
                                 <p class="text-sm font-bold text-secondary">Mariana Costa</p>
@@ -300,10 +360,12 @@
                             <span class="material-symbols-outlined text-sm">star</span>
                             <span class="material-symbols-outlined text-sm">star</span>
                         </div>
-                        <p class="text-text-main italic mb-6">"Incrível como a psicanálise se encaixa na massagem. Meus resultados melhoraram 100% após o curso."</p>
+                        <p class="text-text-main italic mb-6">"Incrível como a psicanálise se encaixa na massagem. Meus
+                            resultados melhoraram 100% após o curso."</p>
                         <div class="flex items-center gap-3">
                             <div class="size-10 rounded-full bg-gray-200 overflow-hidden">
-                                <img alt="Portrait of happy student" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYBBfbQ9hvxqxJw3JqxGimw5xdWig2C4c7syo3Q1N6T0T2oZ-zcqh-9dujS3aczyy233mtB3ZCQoaE70OEJ7JD7h_b14ZWu3UnzmNtZZeQTdNxAsoaS0neowwjXRVBHigLxcuS-lLBqCSU2BZq_jxHO6aiHda-n9EcxTae9OXVSqAoXdG5-mTQxP7LBBl_yu6mw6TyM7NN_SObVknJBtuOoewLBowLKInqhj5nlo_JAvCyuS-nvvaWnseiSm-0Zq_sXxc3jARrSAgM"/>
+                                <img alt="Portrait of happy student" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYBBfbQ9hvxqxJw3JqxGimw5xdWig2C4c7syo3Q1N6T0T2oZ-zcqh-9dujS3aczyy233mtB3ZCQoaE70OEJ7JD7h_b14ZWu3UnzmNtZZeQTdNxAsoaS0neowwjXRVBHigLxcuS-lLBqCSU2BZq_jxHO6aiHda-n9EcxTae9OXVSqAoXdG5-mTQxP7LBBl_yu6mw6TyM7NN_SObVknJBtuOoewLBowLKInqhj5nlo_JAvCyuS-nvvaWnseiSm-0Zq_sXxc3jARrSAgM" />
                             </div>
                             <div>
                                 <p class="text-sm font-bold text-secondary">Ricardo Silva</p>
@@ -319,10 +381,12 @@
                             <span class="material-symbols-outlined text-sm">star</span>
                             <span class="material-symbols-outlined text-sm">star_half</span>
                         </div>
-                        <p class="text-text-main italic mb-6">"Didática excelente e suporte maravilhoso. Me sinto acolhida e parte de uma família. Recomendo demais!"</p>
+                        <p class="text-text-main italic mb-6">"Didática excelente e suporte maravilhoso. Me sinto
+                            acolhida e parte de uma família. Recomendo demais!"</p>
                         <div class="flex items-center gap-3">
                             <div class="size-10 rounded-full bg-gray-200 overflow-hidden">
-                                <img alt="Portrait of happy student" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYo8GJ3S7sPeKwDJY5GkPQOLm43Dv8iihBoYRgSoluouwOdCHAcY8fD4HYfIXLknFWLuykqHnol1G-gx8-KkMbqHREIRT9NDi-kvXuaM0is5WoevLDrwN3PgjQYW_Dypu21b7MoqMEf9yALz7sEXDCKC4yVP_wluKPjyFt2PKM47wJEyQkkGhNDFTuTR0Cm0yhcuKhOMzungluA7xCbjw-zXNnC4oXwLjIfgyDqg2ZL8jNowHKevwsK0hlUcCk0tdYQLWmYT4HlZjT"/>
+                                <img alt="Portrait of happy student" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYo8GJ3S7sPeKwDJY5GkPQOLm43Dv8iihBoYRgSoluouwOdCHAcY8fD4HYfIXLknFWLuykqHnol1G-gx8-KkMbqHREIRT9NDi-kvXuaM0is5WoevLDrwN3PgjQYW_Dypu21b7MoqMEf9yALz7sEXDCKC4yVP_wluKPjyFt2PKM47wJEyQkkGhNDFTuTR0Cm0yhcuKhOMzungluA7xCbjw-zXNnC4oXwLjIfgyDqg2ZL8jNowHKevwsK0hlUcCk0tdYQLWmYT4HlZjT" />
                             </div>
                             <div>
                                 <p class="text-sm font-bold text-secondary">Fernanda Lima</p>
@@ -338,10 +402,12 @@
         <section class="py-24 bg-background-light relative overflow-hidden">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-6">Pronto para transformar vidas?</h2>
-                <p class="text-text-light text-lg mb-10 max-w-2xl mx-auto">Junte-se a milhares de profissionais que já descobriram o poder do bem-estar holístico. Sua jornada começa agora.</p>
-                <button class="inline-flex h-14 items-center justify-center rounded-lg bg-primary px-10 text-lg font-bold text-white shadow-xl shadow-primary/30 hover:bg-primary-dark transition-all hover:-translate-y-1">
+                <p class="text-text-light text-lg mb-10 max-w-2xl mx-auto">Junte-se a milhares de profissionais que já
+                    descobriram o poder do bem-estar holístico. Sua jornada começa agora.</p>
+                <a href="cursos.html"
+                    class="inline-flex h-14 items-center justify-center rounded-lg bg-primary px-10 text-lg font-bold text-white shadow-xl shadow-primary/30 hover:bg-primary-dark transition-all hover:-translate-y-1">
                     Ver Todos os Cursos
-                </button>
+                </a>
             </div>
             <div class="absolute left-0 bottom-0 opacity-5 text-secondary transform -translate-x-1/4 translate-y-1/4">
                 <span class="material-symbols-outlined text-[400px]">spa</span>
@@ -359,22 +425,26 @@
                         <span class="text-xl font-bold">Ágape Cursos</span>
                     </div>
                     <p class="text-white/70 text-sm leading-relaxed">
-                        Plataforma líder em ensino holístico. Unindo corpo, mente e alma para formar profissionais completos.
+                        Plataforma líder em ensino holístico. Unindo corpo, mente e alma para formar profissionais
+                        completos.
                     </p>
                     <div class="flex gap-4 pt-2">
-                        <a class="text-white/70 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a> 
-                        <a class="text-white/70 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
-                        <a class="text-white/70 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">call</span></a>
+                        <a class="text-white/70 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">public</span></a>
+                        <a class="text-white/70 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">alternate_email</span></a>
+                        <a class="text-white/70 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">call</span></a>
                     </div>
                 </div>
                 <div>
                     <h5 class="text-lg font-bold mb-4">Navegação</h5>
                     <ul class="space-y-2 text-sm text-white/70">
-                        <li><a class="hover:text-primary transition-colors" href="#">Início</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Sobre Nós</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Cursos</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Contato</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="index.html">Início</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="sobre.html">Sobre Nós</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="cursos.html">Cursos</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="biblioteca.html">Biblioteca</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="contato.html">Contato</a></li>
                     </ul>
                 </div>
                 <div>
@@ -388,12 +458,15 @@
                 <div>
                     <h5 class="text-lg font-bold mb-4">Newsletter</h5>
                     <p class="text-white/70 text-sm mb-4">Receba dicas exclusivas de bem-estar.</p>
-                    <div class="flex gap-2">
-                        <input class="bg-white/10 border border-white/20 rounded px-3 py-2 text-sm w-full text-white placeholder-white/50 focus:outline-none focus:border-primary" placeholder="Seu e-mail" type="email"/>
-                        <button class="bg-primary text-secondary px-4 py-2 rounded font-bold text-sm hover:bg-white hover:text-secondary transition-colors">
+                    <form data-newsletter-form class="flex gap-2">
+                        <input
+                            class="bg-white/10 border border-white/20 rounded px-3 py-2 text-sm w-full text-white placeholder-white/50 focus:outline-none focus:border-primary"
+                            placeholder="Seu e-mail" type="email" required />
+                        <button type="submit"
+                            class="bg-primary text-secondary px-4 py-2 rounded font-bold text-sm hover:bg-white hover:text-secondary transition-colors">
                             OK
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="border-t border-white/10 pt-8 text-center text-sm text-white/50">
@@ -401,5 +474,10 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
 </body>
+
 </html>
