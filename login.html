@@ -52,6 +52,7 @@
             box-shadow: 0 0 0 2px rgba(238, 43, 91, 0.2);
         }
     </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body
@@ -92,9 +93,9 @@
                 </div>
 
                 <!-- Form -->
-                <form action="#" class="flex flex-col gap-5" method="POST">
+                <form id="loginForm" action="#" class="flex flex-col gap-5" method="POST">
                     <!-- Email Input -->
-                    <div class="space-y-2">
+                    <div class="form-group space-y-2">
                         <label
                             class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900 dark:text-gray-200"
                             for="email">
@@ -102,7 +103,7 @@
                         </label>
                         <div class="relative">
                             <input
-                                class="flex h-12 w-full rounded-lg border border-[#e7cfd5] dark:border-gray-700 bg-surface-light dark:bg-surface-dark px-3 py-2 text-sm text-gray-900 dark:text-white placeholder:text-[#9a4c5f] dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all pl-10"
+                                class="form-input flex h-12 w-full rounded-lg border border-[#e7cfd5] dark:border-gray-700 bg-surface-light dark:bg-surface-dark px-3 py-2 text-sm text-gray-900 dark:text-white placeholder:text-[#9a4c5f] dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all pl-10"
                                 id="email" placeholder="exemplo@email.com" type="text" />
                             <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
                                 <span class="material-symbols-outlined text-[20px]">person</span>
@@ -111,7 +112,7 @@
                     </div>
 
                     <!-- Password Input -->
-                    <div class="space-y-2">
+                    <div class="form-group space-y-2">
                         <div class="flex items-center justify-between">
                             <label class="text-sm font-medium leading-none text-gray-900 dark:text-gray-200"
                                 for="password">
@@ -129,9 +130,9 @@
                             <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
                                 <span class="material-symbols-outlined text-[20px]">lock</span>
                             </div>
-                            <button
+                            <button id="togglePassword"
                                 class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 cursor-pointer"
-                                type="button" onclick="togglePassword()">
+                                type="button">
                                 <span class="material-symbols-outlined text-[20px]" id="toggleIcon">visibility</span>
                             </button>
                         </div>
@@ -191,28 +192,8 @@
     </main>
 
     <!-- Scripts -->
-    <script>
-        // Theme Toggle Script
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-
-        // Toggle Password Visibility
-        function togglePassword() {
-            const passwordInput = document.getElementById('password');
-            const toggleIcon = document.getElementById('toggleIcon');
-
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                toggleIcon.textContent = 'visibility_off';
-            } else {
-                passwordInput.type = 'password';
-                toggleIcon.textContent = 'visibility';
-            }
-        }
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
 </body>
 
 </html>
