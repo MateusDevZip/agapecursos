@@ -108,8 +108,8 @@
                     nossos cursos.</p>
             </div>
 
-            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-start">
-                <div class="lg:col-span-8 space-y-8">
+            <div class="flex flex-col lg:flex-row lg:gap-8 items-start">
+                <div class="w-full lg:w-2/3 space-y-8">
                     <!-- Progress Steps -->
                     <div class="hidden sm:flex items-center justify-between w-full mb-8">
                         <div class="flex items-center text-primary font-bold">
@@ -507,92 +507,100 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
 
-            <!-- Order Summary Sidebar -->
-            <div class="lg:col-span-4 mt-8 lg:mt-0">
-                <div class="sticky top-24 space-y-6">
-                    <div class="bg-white dark:bg-[#2a1d17] p-6 rounded-xl border border-border-color shadow-lg">
-                        <div class="flex items-center justify-between border-b border-border-color pb-4 mb-4">
-                            <h3 class="text-lg font-bold text-text-main dark:text-white">Resumo do Pedido</h3>
-                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded">33%
-                                OFF</span>
-                        </div>
-                        <div class="flex gap-4 mb-4">
-                            <div class="w-16 h-16 rounded-lg bg-cover bg-center shrink-0 border border-border-color"
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZEo2e0XdSjkMIW_-9nXD82Kq7chiBhy5w6DTaA4QsjbKROwwnK7VM-QAvG3LKPNBoDz_tURrQBe4UpR2AXZMASUW61q2Tt1Rwn6CHjtiPIPzHe0UCuH3m51fzbpxBcEVhWSGRSOEolwxBuguohYkBPhuXwLYO6NB1GRuknWJMF3sy-wTi1AMVAUh5EuykqgS5q0vUJ_HhNuxidzeuTbAHsHzymNIcKzbC8iLdm5kuRs0PoSVtAPZ4LyaTkG26bsWizBavNaCL5Fhm");'>
-                            </div>
-                            <div>
-                                <p class="font-bold text-text-main dark:text-white text-sm line-clamp-2">Combo:
-                                    Terapia Capilar + Massagem + Psicanálise</p>
-                                <p class="text-xs text-text-secondary mt-1 flex items-center gap-1">
-                                    <span
-                                        class="material-symbols-outlined text-[10px]">indeterminate_question_box</span>
-                                    Acesso Vitalício
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 text-sm border-b border-border-color pb-4 mb-4">
-                            <div class="flex justify-between text-gray-500">
-                                <span>Preço Original</span>
-                                <span class="line-through">R$ 594,00</span>
-                            </div>
-                            <div class="flex justify-between text-gray-500">
-                                <span>Taxa de Matrícula</span>
-                                <span class="text-green-600 font-medium">Grátis</span>
-                            </div>
-                            <div class="flex justify-between text-green-600 font-medium bg-green-50 p-1 rounded">
-                                <span>Desconto Combo</span>
-                                <span>- R$ 97,00</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-end mb-6">
-                            <span class="text-text-main dark:text-white font-medium text-lg">Total a Pagar</span>
-                            <div class="text-right">
-                                <span class="block text-2xl font-bold text-primary">R$ 497,00</span>
-                                <span class="text-xs text-text-secondary">ou 12x de R$ 59,58</span>
-                            </div>
-                        </div>
-                        <a class="group flex w-full items-center justify-center rounded-lg bg-primary hover:bg-primary-hover py-4 px-4 text-white text-base font-bold shadow-md transition-all hover:shadow-lg transform active:scale-[0.98]"
-                            href="#success-modal">
-                            <span>Finalizar Compra Agora</span>
-                            <span
-                                class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
-                        <div class="mt-4 grid grid-cols-2 gap-2 text-center">
-                            <div
-                                class="flex items-center justify-center gap-1 text-[10px] text-gray-500 bg-gray-50 p-1 rounded">
-                                <span class="material-symbols-outlined text-sm text-green-600">verified_user</span>
-                                Site Seguro
-                            </div>
-                            <div
-                                class="flex items-center justify-center gap-1 text-[10px] text-gray-500 bg-gray-50 p-1 rounded">
-                                <span class="material-symbols-outlined text-sm text-blue-600">verified</span>
-                                Garantia
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Order Summary Sidebar -->
+                        <div class="w-full lg:w-1/3 mt-8 lg:mt-0">
+                            <div class="sticky top-24 space-y-6">
+                                <div
+                                    class="bg-white dark:bg-[#2a1d17] p-6 rounded-xl border border-border-color shadow-lg">
+                                    <div
+                                        class="flex items-center justify-between border-b border-border-color pb-4 mb-4">
+                                        <h3 class="text-lg font-bold text-text-main dark:text-white">Resumo do Pedido
+                                        </h3>
+                                        <span
+                                            class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded">33%
+                                            OFF</span>
+                                    </div>
+                                    <div class="flex gap-4 mb-4">
+                                        <div class="w-16 h-16 rounded-lg bg-cover bg-center shrink-0 border border-border-color"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZEo2e0XdSjkMIW_-9nXD82Kq7chiBhy5w6DTaA4QsjbKROwwnK7VM-QAvG3LKPNBoDz_tURrQBe4UpR2AXZMASUW61q2Tt1Rwn6CHjtiPIPzHe0UCuH3m51fzbpxBcEVhWSGRSOEolwxBuguohYkBPhuXwLYO6NB1GRuknWJMF3sy-wTi1AMVAUh5EuykqgS5q0vUJ_HhNuxidzeuTbAHsHzymNIcKzbC8iLdm5kuRs0PoSVtAPZ4LyaTkG26bsWizBavNaCL5Fhm");'>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-text-main dark:text-white text-sm line-clamp-2">
+                                                Combo:
+                                                Terapia Capilar + Massagem + Psicanálise</p>
+                                            <p class="text-xs text-text-secondary mt-1 flex items-center gap-1">
+                                                <span
+                                                    class="material-symbols-outlined text-[10px]">indeterminate_question_box</span>
+                                                Acesso Vitalício
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-3 text-sm border-b border-border-color pb-4 mb-4">
+                                        <div class="flex justify-between text-gray-500">
+                                            <span>Preço Original</span>
+                                            <span class="line-through">R$ 594,00</span>
+                                        </div>
+                                        <div class="flex justify-between text-gray-500">
+                                            <span>Taxa de Matrícula</span>
+                                            <span class="text-green-600 font-medium">Grátis</span>
+                                        </div>
+                                        <div
+                                            class="flex justify-between text-green-600 font-medium bg-green-50 p-1 rounded">
+                                            <span>Desconto Combo</span>
+                                            <span>- R$ 97,00</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-end mb-6">
+                                        <span class="text-text-main dark:text-white font-medium text-lg">Total a
+                                            Pagar</span>
+                                        <div class="text-right">
+                                            <span class="block text-2xl font-bold text-primary">R$ 497,00</span>
+                                            <span class="text-xs text-text-secondary">ou 12x de R$ 59,58</span>
+                                        </div>
+                                    </div>
+                                    <a class="group flex w-full items-center justify-center rounded-lg bg-primary hover:bg-primary-hover py-4 px-4 text-white text-base font-bold shadow-md transition-all hover:shadow-lg transform active:scale-[0.98]"
+                                        href="#success-modal">
+                                        <span>Finalizar Compra Agora</span>
+                                        <span
+                                            class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                    </a>
+                                    <div class="mt-4 grid grid-cols-2 gap-2 text-center">
+                                        <div
+                                            class="flex items-center justify-center gap-1 text-[10px] text-gray-500 bg-gray-50 p-1 rounded">
+                                            <span
+                                                class="material-symbols-outlined text-sm text-green-600">verified_user</span>
+                                            Site Seguro
+                                        </div>
+                                        <div
+                                            class="flex items-center justify-center gap-1 text-[10px] text-gray-500 bg-gray-50 p-1 rounded">
+                                            <span
+                                                class="material-symbols-outlined text-sm text-blue-600">verified</span>
+                                            Garantia
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div
-                        class="bg-background-light dark:bg-gray-800 p-4 rounded-xl border border-dashed border-primary/30 text-center relative overflow-hidden">
-                        <div
-                            class="absolute -right-4 -top-4 bg-yellow-400 text-yellow-900 text-[10px] font-bold py-1 px-8 rotate-45 shadow-sm">
-                            RISCO ZERO</div>
-                        <div
-                            class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">
-                            <span class="material-symbols-outlined text-2xl">verified_user</span>
+                                <div
+                                    class="bg-background-light dark:bg-gray-800 p-4 rounded-xl border border-dashed border-primary/30 text-center relative overflow-hidden">
+                                    <div
+                                        class="absolute -right-4 -top-4 bg-yellow-400 text-yellow-900 text-[10px] font-bold py-1 px-8 rotate-45 shadow-sm">
+                                        RISCO ZERO</div>
+                                    <div
+                                        class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">
+                                        <span class="material-symbols-outlined text-2xl">verified_user</span>
+                                    </div>
+                                    <h4 class="font-bold text-text-main dark:text-white text-sm">Garantia Incondicional
+                                        de 7
+                                        Dias</h4>
+                                    <p class="text-xs text-text-secondary mt-1">Se não gostar do conteúdo, devolvemos
+                                        100% do
+                                        seu dinheiro. Sem letras miúdas.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h4 class="font-bold text-text-main dark:text-white text-sm">Garantia Incondicional de 7
-                            Dias</h4>
-                        <p class="text-xs text-text-secondary mt-1">Se não gostar do conteúdo, devolvemos 100% do
-                            seu dinheiro. Sem letras miúdas.</p>
                     </div>
-                </div>
             </div>
-        </div>
-        </div>
     </main>
 
     <footer class="bg-white dark:bg-[#2a1d17] border-t border-border-color mt-auto py-8">
