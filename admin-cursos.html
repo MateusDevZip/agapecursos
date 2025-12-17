@@ -57,6 +57,7 @@
             font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="bg-background-light dark:bg-background-dark text-text-main h-screen flex overflow-hidden">
@@ -120,8 +121,8 @@
         <header
             class="h-16 bg-white dark:bg-[#2a141c] border-b border-[#f3e7eb] flex items-center justify-between px-6 shrink-0">
             <!-- Mobile Menu Toggle -->
-            <button class="md:hidden p-2 text-text-muted hover:bg-secondary rounded-lg">
-                <span class="material-symbols-outlined">menu</span>
+            <button data-mobile-menu-toggle class="md:hidden p-2 text-text-muted hover:bg-secondary rounded-lg">
+                        <span class="material-symbols-outlined">menu</span>
             </button>
 
             <!-- Search -->
@@ -431,6 +432,11 @@
             </div>
         </div>
     </main>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/filters.js"></script>
 </body>
 
 </html>

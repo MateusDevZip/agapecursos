@@ -51,6 +51,7 @@
                 'opsz' 24
         }
     </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white transition-colors duration-200">
@@ -89,7 +90,7 @@
                         </div>
                     </a>
                     <!-- Mobile Menu Button -->
-                    <button class="md:hidden p-2 text-text-main dark:text-white">
+                    <button data-mobile-menu-toggle class="md:hidden p-2 text-text-main dark:text-white">
                         <span class="material-symbols-outlined">menu</span>
                     </button>
                 </div>
@@ -398,6 +399,10 @@
             </div>
         </footer>
     </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
 </body>
 
 </html>

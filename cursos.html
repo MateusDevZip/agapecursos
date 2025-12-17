@@ -73,6 +73,7 @@
             background: #B56576;
         }
     </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="bg-background-light text-text-main font-body flex flex-col min-h-screen">
@@ -91,19 +92,19 @@
                     <a class="text-text-main hover:text-secondary font-medium transition-colors"
                         href="index.html">Home</a>
                     <a class="text-secondary font-semibold transition-colors" href="cursos.html">Cursos</a>
-                    <a class="text-text-main hover:text-secondary font-medium transition-colors" href="#">Sobre</a>
-                    <a class="text-text-main hover:text-secondary font-medium transition-colors" href="#">Contato</a>
+                    <a class="text-text-main hover:text-secondary font-medium transition-colors" href="sobre.html">Sobre</a>
+                    <a class="text-text-main hover:text-secondary font-medium transition-colors" href="contato.html">Contato</a>
                 </nav>
                 <div class="flex items-center gap-4">
                     <button
-                        class="hidden sm:flex text-sm font-bold text-secondary border-2 border-secondary px-4 py-2 rounded-lg hover:bg-secondary hover:text-white transition-all">
+                        class="hidden sm:flex text-sm font-bold text-secondary border-2 border-secondary px-4 py-2 rounded-lg hover:bg-secondary hover:text-white transition-all" data-auth-button>
                         Login
                     </button>
                     <button
                         class="flex items-center justify-center bg-secondary hover:bg-secondary-dark text-white text-sm font-bold px-5 py-2.5 rounded-lg shadow-md transition-colors shadow-secondary/20">
                         Área do Aluno
                     </button>
-                    <button class="md:hidden p-2 text-secondary">
+                    <button data-mobile-menu-toggle class="md:hidden p-2 text-secondary">
                         <span class="material-symbols-outlined">menu</span>
                     </button>
                 </div>
@@ -723,6 +724,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/filters.js"></script>
 </body>
 
 </html>

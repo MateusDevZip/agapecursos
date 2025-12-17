@@ -54,6 +54,7 @@
             background: #d1d5db;
         }
     </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body
@@ -76,13 +77,13 @@
                     <a class="text-sm font-medium hover:text-primary transition-colors" href="contato.html">Contato</a>
                 </nav>
                 <button
-                    class="flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+                    class="flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20" data-auth-button>
                     Entrar
                 </button>
             </div>
             <!-- Mobile Menu Icon -->
-            <button class="md:hidden text-text-main dark:text-white">
-                <span class="material-symbols-outlined">menu</span>
+            <button data-mobile-menu-toggle class="md:hidden text-text-main dark:text-white">
+                        <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </header>
@@ -382,6 +383,10 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
 </body>
 
 </html>
