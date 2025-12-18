@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script para atualizar todas as páginas HTML com a nova logo e paleta de cores
+Script para atualizar todas as páginas HTML com a nova logo, paleta de cores e nome da plataforma
 """
 
 import re
@@ -26,7 +26,7 @@ HTML_FILES = [
     "admin-alunos.html",
 ]
 
-# Nova paleta de cores
+# Nova paleta de cores baseada na logo
 NEW_COLORS = {
     '"primary": "#ee2b[^"]*"': '"primary": "#A76B7D"',
     '"primary-dark": "#[^"]*"': '"primary-dark": "#8C5E66"',
@@ -42,37 +42,45 @@ NEW_COLORS = {
 }
 
 def update_html_file(filepath):
-    """Atualiza um arquivo HTML com nova logo e cores"""
+    """Atualiza um arquivo HTML com nova logo, cores e nome"""
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
     
     original_content = content
     
-    # 1. Adicionar favicon se não existir
+    # 1. Atualizar nome da plataforma (Ágape Cursos -> Ágape Cursos e Terapia)
+    # Evita duplicação se já estiver atualizado
+    # Regex: Encontra 'Ágape Cursos' que NÃO é seguido por ' e Terapia'
+    content = re.sub(r'Ágape Cursos(?! e Terapia)', 'Ágape Cursos e Terapia', content)
+    
+    # 2. Adicionar favicon se não existir
     if '<link rel="icon"' not in content and '<link rel="shortcut icon"' not in content:
         content = content.replace(
             '</title>',
             '</title>\n    <link rel="icon" type="image/png" href="logo.png"/>'
         )
     
-    # 2. Substituir ícone spa por logo
+    # 3. Substituir ícone spa por logo (agora com o nome atualizado no alt)
     # Padrão: <span class="material-symbols-outlined">spa</span>
     content = re.sub(
         r'<span class="material-symbols-outlined[^"]*"[^>]*>spa</span>',
-        '<img src="logo.png" alt="Ágape Cursos" class="h-8 w-auto"/>',
+        '<img src="logo.png" alt="Ágape Cursos e Terapia" class="h-8 w-auto"/>',
         content
     )
     
-    # Também substituir divs com ícone spa
+    # Também substituir divs com ícone spa que podem ter sobrado ou variações
     content = re.sub(
         r'<div[^>]*>\s*<span class="material-symbols-outlined[^"]*"[^>]*>spa</span>\s*</div>',
-        '<img src="logo.png" alt="Ágape Cursos" class="h-8 w-auto"/>',
+        '<img src="logo.png" alt="Ágape Cursos e Terapia" class="h-8 w-auto"/>',
         content
     )
     
-    # 3. Atualizar paleta de cores
+    # 4. Atualizar paleta de cores
     for pattern, replacement in NEW_COLORS.items():
         content = re.sub(pattern, replacement, content)
+        
+    # 5. Correção específica para o alt da logo se já foi substituído antes com o nome antigo
+    content = content.replace('alt="Ágape Cursos"', 'alt="Ágape Cursos e Terapia"')
     
     # Salvar apenas se houver mudanças
     if content != original_content:
@@ -85,14 +93,18 @@ def main():
     """Função principal"""
     updated_count = 0
     
+    print("Iniciando atualização...")
     for html_file in HTML_FILES:
         filepath = PROJECT_DIR / html_file
         if filepath.exists():
-            if update_html_file(filepath):
-                print(f"✓ Atualizado: {html_file}")
-                updated_count += 1
-            else:
-                print(f"- Sem alterações: {html_file}")
+            try:
+                if update_html_file(filepath):
+                    print(f"✓ Atualizado: {html_file}")
+                    updated_count += 1
+                else:
+                    print(f"- Sem alterações: {html_file}")
+            except Exception as e:
+                print(f"Erro ao processar {html_file}: {e}")
         else:
             print(f"✗ Não encontrado: {html_file}")
     

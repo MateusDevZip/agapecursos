@@ -151,22 +151,40 @@ function initLoginForm() {
 
         if (!isValid) return;
 
-        // Show loading
+        // Call API
         const submitBtn = loginForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.classList.add('btn-loading');
         submitBtn.disabled = true;
 
-        // Simulate API call
-        setTimeout(() => {
-            Auth.login(email, password);
-            Notifications.success('Login realizado com sucesso!');
+        try {
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            });
 
-            // Redirect after a short delay
-            setTimeout(() => {
-                window.location.href = 'progresso.html';
-            }, 1000);
-        }, 1000);
+            const data = await response.json();
+
+            if (response.ok) {
+                Auth.login(data.user);
+                Notifications.success('Login realizado com sucesso!');
+                setTimeout(() => {
+                    window.location.href = 'progresso.html';
+                }, 1000);
+            } else {
+                Notifications.error(data.error || 'Erro ao fazer login');
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('btn-loading');
+            }
+        } catch (error) {
+            console.error('Erro:', error);
+            Notifications.error('Erro de conexão com o servidor');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('btn-loading');
+        }
     });
 }
 
@@ -329,7 +347,7 @@ function initCheckoutForm() {
     });
 
     // Form submission
-    checkoutForm.addEventListener('submit', (e) => {
+    checkoutForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         // Validate all fields
@@ -356,13 +374,45 @@ function initCheckoutForm() {
             submitBtn.classList.add('btn-loading');
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                Notifications.success('Compra realizada com sucesso! Você receberá um email de confirmação.');
+            const selectedCourse = document.querySelector('input[name="course"]:checked').value;
+            const user = Auth.getUser();
 
-                setTimeout(() => {
-                    window.location.href = 'progresso.html';
-                }, 2000);
-            }, 1500);
+            if (!user) {
+                Notifications.error('Faça login para continuar');
+                window.location.href = 'login.html';
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        user_id: user.id,
+                        course_id: selectedCourse,
+                        amount: selectedCourse === 'combo' ? 497.00 : 297.00,
+                        payment_method: document.querySelector('input[name="payment_method"]:checked').id
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    Notifications.success('Compra realizada com sucesso!');
+                    setTimeout(() => {
+                        window.location.href = '#success-modal';
+                    }, 1500);
+                } else {
+                    Notifications.error(data.error || 'Erro ao processar compra');
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('btn-loading');
+                }
+            } catch (error) {
+                console.error(error);
+                Notifications.error('Erro na conexão');
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('btn-loading');
+            }
         }
     });
 }

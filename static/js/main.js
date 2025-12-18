@@ -28,15 +28,15 @@ const Navigation = {
 
     document.addEventListener('click', (e) => {
       const toggleBtn = e.target.closest('[data-mobile-menu-toggle]');
-      
+
       if (toggleBtn) {
         e.preventDefault();
         const menu = document.querySelector('[data-mobile-menu]');
         const overlay = document.querySelector('[data-mobile-overlay]');
-        
+
         if (menu && overlay) {
           const isOpen = menu.classList.contains('active');
-          
+
           if (isOpen) {
             this.closeMobileMenu();
           } else {
@@ -67,7 +67,7 @@ const Navigation = {
   createMobileMenu() {
     // Find all mobile menu buttons (usually hamburger icons)
     const hamburgerButtons = document.querySelectorAll('.md\\:hidden button');
-    
+
     hamburgerButtons.forEach(btn => {
       const icon = btn.querySelector('.material-symbols-outlined');
       if (icon && icon.textContent.includes('menu')) {
@@ -106,7 +106,7 @@ const Navigation = {
 
   getMobileMenuLinks() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    
+
     const links = [
       { href: 'index.html', label: 'Início', icon: 'home' },
       { href: 'pilares.html', label: 'Pilares', icon: 'spa' },
@@ -131,7 +131,7 @@ const Navigation = {
   openMobileMenu() {
     const menu = document.querySelector('[data-mobile-menu]');
     const overlay = document.querySelector('[data-mobile-overlay]');
-    
+
     if (menu && overlay) {
       menu.classList.add('active');
       overlay.classList.add('active');
@@ -145,7 +145,7 @@ const Navigation = {
   closeMobileMenu() {
     const menu = document.querySelector('[data-mobile-menu]');
     const overlay = document.querySelector('[data-mobile-overlay]');
-    
+
     if (menu && overlay) {
       menu.classList.remove('active');
       overlay.classList.remove('active');
@@ -160,12 +160,12 @@ const Navigation = {
   setupSmoothScroll() {
     document.addEventListener('click', (e) => {
       const link = e.target.closest('a[href^="#"]');
-      
+
       if (link && link.getAttribute('href') !== '#') {
         e.preventDefault();
         const targetId = link.getAttribute('href');
         const target = document.querySelector(targetId);
-        
+
         if (target) {
           const headerOffset = 80;
           const elementPosition = target.getBoundingClientRect().top;
@@ -184,7 +184,7 @@ const Navigation = {
   setupActiveNavLinks() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('header nav a, aside nav a');
-    
+
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
       if (href === currentPage || href === `./${currentPage}`) {
@@ -198,7 +198,7 @@ const Navigation = {
   updateAuthButtons() {
     const isLoggedIn = Auth.isLoggedIn();
     const authButtons = document.querySelectorAll('[data-auth-button]');
-    
+
     authButtons.forEach(button => {
       if (isLoggedIn) {
         button.textContent = 'Área do Aluno';
@@ -220,14 +220,7 @@ const Auth = {
     return localStorage.getItem('agape_user') !== null;
   },
 
-  login(email, password) {
-    // Simulate authentication (replace with real API call)
-    const user = {
-      email: email,
-      name: email.split('@')[0],
-      loginTime: new Date().toISOString()
-    };
-    
+  login(user) {
     localStorage.setItem('agape_user', JSON.stringify(user));
     return true;
   },
@@ -273,7 +266,7 @@ const Notifications = {
 
     const notification = document.createElement('div');
     notification.className = `agape-notification agape-notification-${type}`;
-    
+
     const icons = {
       success: 'check_circle',
       error: 'error',
@@ -329,7 +322,7 @@ const Modal = {
     if (modal) {
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
-      
+
       // Focus trap
       const focusableElements = modal.querySelectorAll('button, a, input, textarea, select');
       if (focusableElements.length) {
@@ -339,10 +332,10 @@ const Modal = {
   },
 
   close(modalId) {
-    const modal = modalId 
+    const modal = modalId
       ? document.querySelector(`[data-modal="${modalId}"]`)
       : document.querySelector('[data-modal].active');
-    
+
     if (modal) {
       modal.classList.remove('active');
       document.body.style.overflow = '';
@@ -355,7 +348,7 @@ const Modal = {
       if (e.target.hasAttribute('data-modal-overlay')) {
         this.close();
       }
-      
+
       const closeBtn = e.target.closest('[data-modal-close]');
       if (closeBtn) {
         this.close();
@@ -416,7 +409,7 @@ const Utils = {
 document.addEventListener('DOMContentLoaded', () => {
   Navigation.init();
   Modal.init();
-  
+
   console.log('✅ Ágape Cursos - Sistema inicializado');
 });
 

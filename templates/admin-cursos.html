@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Gerenciar Cursos - Painel Admin - Ágape Cursos</title>
+    <title>Gerenciar Cursos - Painel Admin - Ágape Cursos e Terapia</title>
     <meta name="description"
         content="Gerencie o catálogo de cursos da Ágape. Visualize, edite e adicione novos cursos." />
     <!-- Tailwind CSS -->
@@ -21,14 +21,14 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#ee2b6c",
-                        "primary-dark": "#d41b55",
-                        "primary-light": "#fff0f5",
+                        "primary": "#A76B7D",
+                        "primary-dark": "#8C5E66",
+                        "primary-light": "#C88B9A",
                         "secondary": "#f3e7eb",
-                        "text-main": "#1b0d12",
-                        "text-muted": "#9a4c66",
-                        "background-light": "#f8f6f6",
-                        "background-dark": "#221016",
+                        "text-main": "#5C3A40",
+                        "text-muted": "#A76B7D",
+                        "background-light": "#FFF9F9",
+                        "background-dark": "#2D1B1E",
                     },
                     fontFamily: {
                         "display": ["Lexend", "sans-serif"]
@@ -57,10 +57,10 @@
             font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" href="/static/img/logo.png">
+    <link rel="apple-touch-icon" href="/static/img/logo.png">
 
 </head>
 
@@ -68,9 +68,9 @@
     <!-- Sidebar -->
     <aside class="w-64 bg-white dark:bg-[#2a141c] border-r border-[#f3e7eb] flex-col hidden md:flex h-full shrink-0">
         <div class="p-6 flex items-center gap-3 border-b border-[#f3e7eb]">
-            <img src="logo.png" alt="Ágape Cursos Logo" class="h-10 w-auto">
+            <img src="/static/img/logo.png" alt="Ágape Cursos e Terapia Logo" class="h-10 w-auto">
             <div class="flex flex-col">
-                <h1 class="text-text-main font-bold text-lg leading-tight">Ágape Cursos</h1>
+                <h1 class="text-text-main font-bold text-lg leading-tight">Ágape Cursos e Terapia</h1>
                 <p class="text-text-muted text-xs">Painel Admin</p>
             </div>
         </div>
@@ -436,9 +436,9 @@
     </main>
 
     <!-- JavaScript Files -->
-    <script src="js/main.js"></script>
-    <script src="js/forms.js"></script>
-    <script src="js/filters.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/forms.js"></script>
+    <script src="/static/js/filters.js"></script>
 </body>
 
 </html>
