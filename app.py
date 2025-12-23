@@ -2,15 +2,18 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import db, User, Course, Order
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 # Configuração Padrão Flask (templates/ e static/ são automáticos)
 app = Flask(__name__)
 CORS(app) 
 
-# Configuração do Banco de Dados SQLite
+# Configuração do Banco de Dados
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'agape.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///' + os.path.join(basedir, 'agape.db'))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'uma-chave-secreta-muito-segura'
 
