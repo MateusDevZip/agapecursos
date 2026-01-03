@@ -179,6 +179,58 @@ function initLoginForm() {
 }
 
 // ============================================
+// REGISTER FORM
+// ============================================
+
+function initRegisterForm() {
+    const registerForm = document.querySelector('#registerForm');
+    if (!registerForm) return;
+
+    registerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(registerForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const password = formData.get('password');
+
+        if (!name || !email || !password) {
+            Notifications.error('Preencha todos os campos obrigatórios');
+            return;
+        }
+
+        const submitBtn = registerForm.querySelector('button[type="submit"]');
+        submitBtn.classList.add('btn-loading');
+        submitBtn.disabled = true;
+
+        try {
+            const { data, error } = await SupabaseAuth.register(email, password, {
+                full_name: name,
+                phone: phone
+            });
+
+            if (data?.user) {
+                Notifications.success('Cadastro realizado com sucesso! Bem-vindo(a).');
+                // Auto login or redirect
+                setTimeout(() => {
+                    window.location.href = 'progresso.html';
+                }, 1500);
+            } else if (error) {
+                Notifications.error(error.message || 'Erro ao cadastrar.');
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('btn-loading');
+            }
+        } catch (error) {
+            console.error(error);
+            Notifications.error('Erro de conexão');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('btn-loading');
+        }
+    });
+}
+
+// ============================================
 // CONTACT FORM
 // ============================================
 
