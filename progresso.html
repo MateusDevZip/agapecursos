@@ -58,8 +58,24 @@
     <link rel="icon" type="image/png" href="/static/img/logo.png">
     <link rel="apple-touch-icon" href="/static/img/logo.png">
 
-<script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
     <script src='/static/js/supabase.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const user = await SupabaseAuth.getUser();
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Update user name
+            const userNameElement = document.querySelector('h2');
+            if (userNameElement && user.user_metadata?.full_name) {
+                const firstName = user.user_metadata.full_name.split(' ')[0];
+                userNameElement.textContent = `Olá, ${firstName}!`;
+            }
+        });
+    </script>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white transition-colors duration-200">
@@ -71,7 +87,8 @@
                 <!-- Logo Area -->
                 <div class="flex items-center gap-3">
                     <img src="/static/img/logo.png" alt="Ágape Cursos e Terapia Logo" class="h-10 w-auto">
-                    <h1 class="text-xl font-bold tracking-tight text-text-main dark:text-white">Ágape Cursos e Terapia</h1>
+                    <h1 class="text-xl font-bold tracking-tight text-text-main dark:text-white">Ágape Cursos e Terapia
+                    </h1>
                 </div>
                 <!-- Desktop Nav -->
                 <nav class="hidden md:flex items-center gap-8">
@@ -354,7 +371,8 @@
             <div
                 class="max-w-7xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
                 <div>
-                    <p class="text-sm text-text-secondary dark:text-gray-500">© 2024 Ágape Cursos e Terapia. Todos os direitos
+                    <p class="text-sm text-text-secondary dark:text-gray-500">© 2024 Ágape Cursos e Terapia. Todos os
+                        direitos
                         reservados.</p>
                 </div>
                 <div class="flex gap-6">
