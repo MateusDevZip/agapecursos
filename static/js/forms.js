@@ -479,6 +479,29 @@ function updateCheckoutPrice(discount) {
     });
 }
 
+function initGoogleLogin() {
+    const googleButtons = document.querySelectorAll('.google-login-btn');
+
+    googleButtons.forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            btn.classList.add('btn-loading');
+            btn.disabled = true;
+
+            try {
+                const { error } = await SupabaseAuth.loginWithGoogle();
+                if (error) throw error;
+                // Redirect happens automatically
+            } catch (error) {
+                console.error(error);
+                Notifications.error('Erro ao conectar com Google');
+                btn.classList.remove('btn-loading');
+                btn.disabled = false;
+            }
+        });
+    });
+}
+
 // ============================================
 // INIT ALL FORMS
 // ============================================
@@ -489,4 +512,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initNewsletterForms();
     initCheckoutForm();
+    initGoogleLogin();
 });
