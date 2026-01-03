@@ -31,6 +31,17 @@ const SupabaseAuth = {
         return { data, error };
     },
 
+    // Login with Google
+    async loginWithGoogle() {
+        const { data, error } = await supabaseForClient.auth.signInWithOAuth({
+            provider: 'google',
+            options: {
+                redirectTo: window.location.origin
+            }
+        });
+        return { data, error };
+    },
+
     // Logout
     async logout() {
         const { error } = await supabaseForClient.auth.signOut();
