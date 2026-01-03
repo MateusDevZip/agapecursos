@@ -13,6 +13,7 @@ const Navigation = {
     this.setupSmoothScroll();
     this.setupActiveNavLinks();
     this.updateAuthButtons();
+    Auth.init(); // Initialize Auth Listeners
   },
 
   // Mobile Menu Toggle
@@ -216,41 +217,46 @@ const Navigation = {
 // ============================================
 
 const Auth = {
-  isLoggedIn() {
-    return localStorage.getItem('agape_user') !== null;
+  async isLoggedIn() {
+    const user = await SupabaseAuth.getUser();
+    return !!user;
   },
 
-  login(user) {
-    localStorage.setItem('agape_user', JSON.stringify(user));
-    return true;
+  async login(email, password) {
+    const { data, error } = await SupabaseAuth.login(email, password);
+    if (error) throw error;
+    return data.user;
   },
 
-  logout() {
-    localStorage.removeItem('agape_user');
-    localStorage.removeItem('agape_cart');
+  async logout() {
+    await SupabaseAuth.logout();
     window.location.href = 'index.html';
   },
 
-  getUser() {
-    const userStr = localStorage.getItem('agape_user');
-    return userStr ? JSON.parse(userStr) : null;
+  async getUser() {
+    return await SupabaseAuth.getUser();
   },
 
-  requireAuth() {
-    if (!this.isLoggedIn()) {
+  async requireAuth() {
+    const user = await this.getUser();
+    if (!user) {
       window.location.href = 'login.html';
       return false;
     }
     return true;
   },
 
-  requireAdmin() {
-    const user = this.getUser();
-    if (!user || user.role !== 'admin') {
-      window.location.href = 'index.html';
-      return false;
-    }
-    return true;
+  // Initialize Auth State Listener
+  init() {
+    SupabaseAuth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN') {
+        console.log('Usuário logado:', session.user.email);
+        Navigation.updateAuthButtons(true);
+      } else if (event === 'SIGNED_OUT') {
+        console.log('Usuário deslogado');
+        Navigation.updateAuthButtons(false);
+      }
+    });
   }
 };
 

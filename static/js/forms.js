@@ -151,31 +151,21 @@ function initLoginForm() {
 
         if (!isValid) return;
 
-        // Call API
+        // Supabase Login
         const submitBtn = loginForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
         submitBtn.classList.add('btn-loading');
         submitBtn.disabled = true;
 
         try {
-            const response = await fetch('/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email, password })
-            });
+            const { data, error } = await SupabaseAuth.login(email, password);
 
-            const data = await response.json();
-
-            if (response.ok) {
-                Auth.login(data.user);
+            if (data?.user) {
                 Notifications.success('Login realizado com sucesso!');
                 setTimeout(() => {
                     window.location.href = 'progresso.html';
                 }, 1000);
-            } else {
-                Notifications.error(data.error || 'Erro ao fazer login');
+            } else if (error) {
+                Notifications.error(error.message || 'Erro ao fazer login. Verifique suas credenciais.');
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('btn-loading');
             }
