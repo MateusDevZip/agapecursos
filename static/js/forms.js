@@ -211,11 +211,18 @@ function initRegisterForm() {
             });
 
             if (data?.user) {
-                Notifications.success('Cadastro realizado com sucesso! Bem-vindo(a).');
-                // Auto login or redirect
-                setTimeout(() => {
-                    window.location.href = 'progresso.html';
-                }, 1500);
+                if (data.session) {
+                    Notifications.success('Cadastro realizado com sucesso! Redirecionando...');
+                    setTimeout(() => {
+                        window.location.href = 'progresso.html';
+                    }, 1500);
+                } else {
+                    // User created but needs confirmation
+                    Notifications.success('Cadastro realizado! Verifique seu email para confirmar sua conta.');
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 3000);
+                }
             } else if (error) {
                 Notifications.error(error.message || 'Erro ao cadastrar.');
                 submitBtn.disabled = false;
