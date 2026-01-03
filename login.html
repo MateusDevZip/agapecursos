@@ -57,7 +57,7 @@
     <link rel="icon" type="image/png" href="/static/img/logo.png">
     <link rel="apple-touch-icon" href="/static/img/logo.png">
 
-<script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
     <script src='/static/js/supabase.js'></script>
 </head>
 
@@ -67,137 +67,123 @@
     <header
         class="w-full border-b border-solid border-b-[#f3e7ea] dark:border-b-white/10 px-6 py-4 lg:px-10 lg:py-5 bg-surface-light dark:bg-surface-dark z-20">
         <div class="layout-container max-w-7xl mx-auto flex items-center justify-between">
-            <a href="index.html"
-                class="flex items-center gap-3 text-text-main dark:text-white hover:opacity-80 transition-opacity">
-                <img src="/static/img/logo.png" alt="Ágape Cursos e Terapia Logo" class="h-10 w-auto">
-                <h2 class="text-xl font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white">Ágape
-                    Cursos</h2>
-            </a>
-            <div class="hidden sm:flex gap-4 items-center">
-                <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Ainda não tem uma conta?</span>
-                <a class="text-primary font-bold text-sm hover:underline" href="#">Cadastre-se</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content Area: Split View -->
-    <main class="flex-1 flex w-full">
-        <!-- Left Column: Login Form -->
-        <div
-            class="w-full lg:w-1/2 flex flex-col justify-center items-center p-6 sm:p-12 lg:p-24 bg-background-light dark:bg-background-dark relative z-10">
-            <div class="w-full max-w-[440px] flex flex-col gap-8">
-                <!-- Header Text -->
-                <div class="space-y-2 text-center lg:text-left">
-                    <h1 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        Bem-vindo de volta
-                    </h1>
-                    <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Sua jornada em Terapia Capilar, Massagem continua aqui.
-                    </p>
-                </div>
-
-                <!-- Form -->
-                <form id="loginForm" action="#" class="flex flex-col gap-5" method="POST">
-                    <!-- Email Input -->
-                    <div class="form-group space-y-2">
-                        <label
-                            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900 dark:text-gray-200"
-                            for="email">
-                            E-mail ou Usuário
-                        </label>
-                        <div class="relative">
-                            <input
-                                class="form-input flex h-12 w-full rounded-lg border border-[#e7cfd5] dark:border-gray-700 bg-surface-light dark:bg-surface-dark px-3 py-2 text-sm text-gray-900 dark:text-white placeholder:text-[#9a4c5f] dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all pl-10"
-                                id="email" placeholder="exemplo@email.com" type="text" />
-                            <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                                <span class="material-symbols-outlined text-[20px]">person</span>
-                            </div>
-                        </div>
+            <!-- Left Column: Login Form -->
+            <div
+                class="w-full lg:w-1/2 flex flex-col justify-center items-center p-6 sm:p-12 lg:p-24 bg-background-light dark:bg-background-dark relative z-10">
+                <div class="w-full max-w-[440px] flex flex-col gap-8">
+                    <!-- Header Text -->
+                    <div class="space-y-2 text-center lg:text-left">
+                        <h1 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            Bem-vindo de volta
+                        </h1>
+                        <p class="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Sua jornada em Terapia Capilar, Massagem continua aqui.
+                        </p>
                     </div>
 
-                    <!-- Password Input -->
-                    <div class="form-group space-y-2">
-                        <div class="flex items-center justify-between">
-                            <label class="text-sm font-medium leading-none text-gray-900 dark:text-gray-200"
-                                for="password">
-                                Senha
+                    <!-- Form -->
+                    <form id="loginForm" action="#" class="flex flex-col gap-5" method="POST">
+                        <!-- Email Input -->
+                        <div class="form-group space-y-2">
+                            <label
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900 dark:text-gray-200"
+                                for="email">
+                                E-mail ou Usuário
                             </label>
-                            <a class="text-sm font-medium text-primary hover:text-primary-dark hover:underline"
-                                href="#">
-                                Esqueceu a senha?
-                            </a>
-                        </div>
-                        <div class="relative group">
-                            <input
-                                class="flex h-12 w-full rounded-lg border border-[#e7cfd5] dark:border-gray-700 bg-surface-light dark:bg-surface-dark px-3 py-2 text-sm text-gray-900 dark:text-white placeholder:text-[#9a4c5f] dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all pl-10 pr-10"
-                                id="password" placeholder="Digite sua senha" type="password" />
-                            <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                                <span class="material-symbols-outlined text-[20px]">lock</span>
+                            <div class="relative">
+                                <input
+                                    class="form-input flex h-12 w-full rounded-lg border border-[#e7cfd5] dark:border-gray-700 bg-surface-light dark:bg-surface-dark px-3 py-2 text-sm text-gray-900 dark:text-white placeholder:text-[#9a4c5f] dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all pl-10"
+                                    id="email" placeholder="exemplo@email.com" type="text" />
+                                <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                                    <span class="material-symbols-outlined text-[20px]">person</span>
+                                </div>
                             </div>
-                            <button id="togglePassword"
-                                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 cursor-pointer"
-                                type="button">
-                                <span class="material-symbols-outlined text-[20px]" id="toggleIcon">visibility</span>
-                            </button>
                         </div>
-                    </div>
 
-                    <!-- Submit Button -->
-                    <button
-                        class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-primary-dark text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors shadow-sm mt-2"
-                        type="submit">
-                        Entrar
-                    </button>
-
-                    <!-- Mobile Signup Link (Visible only on small screens) -->
-                    <div class="sm:hidden text-center mt-4">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Não tem conta? </span>
-                        <a class="text-primary font-bold text-sm" href="#">Cadastre-se</a>
-                    </div>
-                </form>
-
-                <!-- Footer / Copyright -->
-                <div class="pt-6 border-t border-gray-100 dark:border-white/5 text-center lg:text-left">
-                    <p class="text-xs text-gray-400 dark:text-gray-500">
-                        © 2024 Ágape Cursos e Terapia. Todos os direitos reservados.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Column: Decorative Image -->
-        <div class="hidden lg:block lg:w-1/2 relative bg-[#fcf8f9] dark:bg-[#1a0c10] overflow-hidden">
-            <!-- Background Image -->
-            <div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform hover:scale-105 duration-[2s]"
-                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2lJNTT725kFBzpC1vkRuxK15rbHkJ_crv3KrcMwSOd1EVwrh92YbWmN3Nym8XKPjUA5oDCXiv59mi9KlkVfz4ndyjsnlFcGJFVzPATNORH_KaWvdlunWxA7f8s8OrA0-lEC5aEgxQ2J7mpIhs8HyLzGFalhsMPjKi5Wll30ZWPHg5eL4HGwnfE4lcf9TK4RDsRpCS_3Oi9dQMwlgxFLAN9ih99H2vTjsNzxx0LWvDxz-qUW0U1_o5Ob3Wv0KCKC6VC8VGvOEC9Rim');">
-            </div>
-            <!-- Overlay Gradient for better text readability if we add text over image later, and to tint it slightly -->
-            <div class="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent mix-blend-multiply"></div>
-            <div class="absolute inset-0 bg-black/10"></div>
-
-            <!-- Optional Floating Quote/Element -->
-            <div class="absolute bottom-12 left-12 right-12">
-                <div
-                    class="bg-white/90 dark:bg-surface-dark/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20 dark:border-white/5 max-w-lg">
-                    <div class="flex gap-4 items-start">
-                        <div class="p-3 bg-primary/10 rounded-full text-primary shrink-0">
-                            <span class="material-symbols-outlined">psychology_alt</span>
+                        <!-- Password Input -->
+                        <div class="form-group space-y-2">
+                            <div class="flex items-center justify-between">
+                                <label class="text-sm font-medium leading-none text-gray-900 dark:text-gray-200"
+                                    for="password">
+                                    Senha
+                                </label>
+                                <a class="text-sm font-medium text-primary hover:text-primary-dark hover:underline"
+                                    href="#">
+                                    Esqueceu a senha?
+                                </a>
+                            </div>
+                            <div class="relative group">
+                                <input
+                                    class="flex h-12 w-full rounded-lg border border-[#e7cfd5] dark:border-gray-700 bg-surface-light dark:bg-surface-dark px-3 py-2 text-sm text-gray-900 dark:text-white placeholder:text-[#9a4c5f] dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-all pl-10 pr-10"
+                                    id="password" placeholder="Digite sua senha" type="password" />
+                                <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                                    <span class="material-symbols-outlined text-[20px]">lock</span>
+                                </div>
+                                <button id="togglePassword"
+                                    class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 cursor-pointer"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        id="toggleIcon">visibility</span>
+                                </button>
+                            </div>
                         </div>
-                        <div>
-                            <p class="text-gray-800 dark:text-gray-200 font-medium italic mb-2">"O equilíbrio entre
-                                corpo e mente é a chave para uma vida plena."</p>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">
-                                Metodologia Ágape</p>
+
+                        <!-- Submit Button -->
+                        <button
+                            class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-primary-dark text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors shadow-sm mt-2"
+                            type="submit">
+                            Entrar
+                        </button>
+
+                        <!-- Mobile Signup Link (Visible only on small screens) -->
+                        <div class="sm:hidden text-center mt-4">
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Não tem conta? </span>
+                            <a class="text-primary font-bold text-sm" href="#">Cadastre-se</a>
                         </div>
+                    </form>
+
+                    <!-- Footer / Copyright -->
+                    <div class="pt-6 border-t border-gray-100 dark:border-white/5 text-center lg:text-left">
+                        <p class="text-xs text-gray-400 dark:text-gray-500">
+                            © 2024 Ágape Cursos e Terapia. Todos os direitos reservados.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
 
-    <!-- Scripts -->
-    <script src="/static/js/main.js"></script>
-    <script src="/static/js/forms.js"></script>
+            <!-- Right Column: Decorative Image -->
+            <div class="hidden lg:block lg:w-1/2 relative bg-[#fcf8f9] dark:bg-[#1a0c10] overflow-hidden">
+                <!-- Background Image -->
+                <div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform hover:scale-105 duration-[2s]"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2lJNTT725kFBzpC1vkRuxK15rbHkJ_crv3KrcMwSOd1EVwrh92YbWmN3Nym8XKPjUA5oDCXiv59mi9KlkVfz4ndyjsnlFcGJFVzPATNORH_KaWvdlunWxA7f8s8OrA0-lEC5aEgxQ2J7mpIhs8HyLzGFalhsMPjKi5Wll30ZWPHg5eL4HGwnfE4lcf9TK4RDsRpCS_3Oi9dQMwlgxFLAN9ih99H2vTjsNzxx0LWvDxz-qUW0U1_o5Ob3Wv0KCKC6VC8VGvOEC9Rim');">
+                </div>
+                <!-- Overlay Gradient for better text readability if we add text over image later, and to tint it slightly -->
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent mix-blend-multiply"></div>
+                <div class="absolute inset-0 bg-black/10"></div>
+
+                <!-- Optional Floating Quote/Element -->
+                <div class="absolute bottom-12 left-12 right-12">
+                    <div
+                        class="bg-white/90 dark:bg-surface-dark/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20 dark:border-white/5 max-w-lg">
+                        <div class="flex gap-4 items-start">
+                            <div class="p-3 bg-primary/10 rounded-full text-primary shrink-0">
+                                <span class="material-symbols-outlined">psychology_alt</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-800 dark:text-gray-200 font-medium italic mb-2">"O equilíbrio entre
+                                    corpo e mente é a chave para uma vida plena."</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">
+                                    Metodologia Ágape</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </main>
+
+            <!-- Scripts -->
+            <script src="/static/js/main.js"></script>
+            <script src="/static/js/forms.js"></script>
 </body>
 
 </html>

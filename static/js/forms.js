@@ -426,6 +426,7 @@ function updateCheckoutPrice(discount) {
 
 document.addEventListener('DOMContentLoaded', () => {
     initLoginForm();
+    initRegisterForm();
     initContactForm();
     initNewsletterForms();
     initCheckoutForm();
