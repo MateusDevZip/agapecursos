@@ -440,14 +440,39 @@ function initCheckoutForm() {
                         user_id: user.id,
                         course_id: selectedCourse,
                         amount: selectedCourse === 'combo' ? 497.00 : 297.00,
-                        payment_method: document.querySelector('input[name="payment_method"]:checked').id
+                        payment_method: document.querySelector('input[name="payment_method"]:checked').id,
+                        customer: {
+                            name: document.querySelector('input[name="name"]')?.value || user.user_metadata.full_name,
+                            email: document.querySelector('input[name="email"]')?.value || user.email,
+                            cpf: document.querySelector('input[name="cpf"]')?.value,
+                            phone: document.querySelector('input[name="phone"]')?.value
+                        },
+                        card: (document.querySelector('input[name="payment_method"]:checked').id === 'pay_cc') ? {
+                            number: document.querySelector('input[name="card_number"]')?.value,
+                            holder_name: document.querySelector('input[name="card_holder"]')?.value,
+                            expiry_month: document.querySelector('input[name="card_expiry"]')?.value?.split('/')[0],
+                            expiry_year: document.querySelector('input[name="card_expiry"]')?.value?.split('/')[1],
+                            ccv: document.querySelector('input[name="card_ccv"]')?.value
+                        } : null
                     })
                 });
 
                 const data = await response.json();
 
                 if (response.ok) {
-                    Notifications.success('Compra realizada com sucesso!');
+                    Notifications.success('Pedido criado com sucesso!');
+
+                    // Handle specific payment methods
+                    if (data.payment && data.payment.billingType === 'PIX') {
+                        // Show Pix Modal or Redirect
+                        // For now, let's just log or alert
+                        console.log('Pix Payload:', data.payment.pix_qrcode);
+                        // TODO: Implement a specific Pix Modal in HTML to show the QR Code
+                        alert('Pagamento PIX gerado! Copie o código no console (implementação visual pendente).');
+                    } else if (data.payment && data.payment.billingType === 'BOLETO') {
+                        window.open(data.payment.bankSlipUrl, '_blank');
+                    }
+
                     setTimeout(() => {
                         window.location.href = '#success-modal';
                     }, 1500);
