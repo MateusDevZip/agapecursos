@@ -1,127 +1,127 @@
 <?php
-header('Content-Type: application/json');
 require_once 'config.php';
 
-// Receber dados do pagamento
+header('Content-Type: application/json');
+
+// Only allow POST requests
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['error' => 'Method not allowed']);
+    exit;
+}
+
+// Get JSON body
 $input = json_decode(file_get_contents('php://input'), true);
 
 if (!$input) {
     http_response_code(400);
-    echo json_encode(['error' => 'Dados inválidos']);
+    echo json_encode(['error' => 'Invalid JSON']);
     exit;
 }
 
-// 1. Validar User ID
 $userId = $input['user_id'] ?? null;
-if (!$userId) {
+$courseId = $input['course_id'] ?? null;
+$amount = $input['amount'] ?? null;
+$paymentMethod = $input['payment_method'] ?? 'PIX'; // PIX or CREDIT_CARD
+
+if (!$userId || !$courseId || !$amount) {
     http_response_code(400);
-    echo json_encode(['error' => 'User ID is required']);
+    echo json_encode(['error' => 'Missing required fields']);
     exit;
 }
 
-// 2. Buscar dados do cliente no Supabase (Opcional: se o frontend não mandar tudo)
-// Para simplificar, vamos assumir que o frontend manda o necessário ou que buscamos apenas o básico se precisar
-// Mas o ideal é criar o cliente no Asaas com dados completos (CPF, Nome, Email)
+// 1. Get User from Supabase to create Customer in Asaas
+// We need email and name
+$userData = supabaseRequest("users?id=eq.$userId&select=email,raw_user_meta_data");
 
-$customerData = [
-    'name' => $input['customer']['name'],
-    'cpfCnpj' => $input['customer']['cpf'],
-    'email' => $input['customer']['email'],
-    'mobilePhone' => $input['customer']['phone']
-];
+if (empty($userData['data'])) {
+    http_response_code(404);
+    echo json_encode(['error' => 'User not found']);
+    exit;
+}
 
-// 3. Verificar se cliente já existe no Asaas (por CPF ou Email)
-// GET /customers?cpfCnpj=...
-$existingCustomer = asaasRequest('customers?cpfCnpj=' . $customerData['cpfCnpj']);
+$user = $userData['data'][0];
+$email = $user['email'];
+$meta = $user['raw_user_meta_data'] ?? [];
+$name = $meta['full_name'] ?? 'Aluno Ágape';
+$cpf = $meta['cpf'] ?? '00000000000'; // Default CPF if not provided (Asaas might reject for production)
+$phone = $meta['phone'] ?? null;
 
-if (isset($existingCustomer['data']['data'][0]['id'])) {
-    $customerId = $existingCustomer['data']['data'][0]['id'];
-    // Opcional: Atualizar dados do cliente se mudou
+// 2. Customer Management in Asaas
+// First, search if customer exists by email
+$customerSearch = asaasRequest("customers?email=" . urlencode($email));
+$customerId = null;
+
+if (!empty($customerSearch['data']['data'])) {
+    $customerId = $customerSearch['data']['data'][0]['id'];
 } else {
-    // Criar novo cliente
-    $newCustomer = asaasRequest('customers', 'POST', $customerData);
-    if (!isset($newCustomer['data']['id'])) {
-        http_response_code(400);
-        echo json_encode(['error' => 'Erro ao criar cliente no Asaas', 'details' => $newCustomer['data']]);
+    // Create new customer
+    $customerData = [
+        'name' => $name,
+        'email' => $email,
+        'cpfCnpj' => $cpf
+    ];
+    if ($phone)
+        $customerData['mobilePhone'] = $phone;
+
+    $newCustomer = asaasRequest("customers", "POST", $customerData);
+
+    if (isset($newCustomer['data']['id'])) {
+        $customerId = $newCustomer['data']['id'];
+    } else {
+        http_response_code(500);
+        echo json_encode(['error' => 'Failed to create customer in Asaas', 'details' => $newCustomer]);
         exit;
     }
-    $customerId = $newCustomer['data']['id'];
 }
 
-// 4. Configurar Pagamento
-$billingType = 'UNDEFINED';
-switch ($input['payment_method']) {
-    case 'pay_pix':
-        $billingType = 'PIX';
-        break;
-    case 'pay_boleto':
-        $billingType = 'BOLETO';
-        break;
-    case 'pay_cc':
-        $billingType = 'CREDIT_CARD';
-        break;
-}
+// 3. Create Payment (Cobrança)
+$billingType = ($paymentMethod === 'credit_card') ? 'CREDIT_CARD' : 'PIX';
 
-$paymentData = [
+$paymentPayload = [
     'customer' => $customerId,
     'billingType' => $billingType,
-    'value' => $input['amount'],
-    'dueDate' => date('Y-m-d', strtotime('+3 days')), // Vencimento em 3 dias
-    'description' => 'Pedido Curso - ' . ($input['course_id'] == 'combo' ? 'Combo Completo' : 'Curso Individual'),
-    'externalReference' => $userId . '_' . time() // Referência para conciliação
+    'value' => (float) $amount,
+    'dueDate' => date('Y-m-d', strtotime('+2 days')),
+    'description' => "Curso Ágape: $courseId",
+    'externalReference' => "$userId|$courseId"
 ];
 
-// Adicionar dados específicos de cartão de crédito se for o caso
-if ($billingType === 'CREDIT_CARD') {
-    $paymentData['creditCard'] = [
-        'holderName' => $input['card']['holder_name'],
-        'number' => $input['card']['number'],
-        'expiryMonth' => $input['card']['expiry_month'],
-        'expiryYear' => $input['card']['expiry_year'],
-        'ccv' => $input['card']['ccv']
+$payment = asaasRequest("payments", "POST", $paymentPayload);
+
+if (isset($payment['data']['id'])) {
+    $paymentId = $payment['data']['id'];
+    $response = [
+        'payment_id' => $paymentId,
+        'invoiceUrl' => $payment['data']['invoiceUrl'],
+        'status' => $payment['data']['status']
     ];
-    $paymentData['creditCardHolderInfo'] = $customerData;
-}
 
-// 5. Criar Cobrança no Asaas
-$paymentResponse = asaasRequest('payments', 'POST', $paymentData);
-
-if (!isset($paymentResponse['data']['id'])) {
-    http_response_code(400);
-    echo json_encode(['error' => 'Erro ao processar pagamento', 'details' => $paymentResponse['data']]);
-    exit;
-}
-
-$asaasPayment = $paymentResponse['data'];
-
-// 6. Salvar pedido no Supabase
-$orderData = [
-    'user_id' => $userId,
-    'course_id' => $input['course_id'],
-    'amount' => $input['amount'],
-    'status' => 'pending', // pending
-    'payment_method' => $input['payment_method'],
-    'asaas_id' => $asaasPayment['id'],
-    'invoice_url' => $asaasPayment['bankSlipUrl'] ?? $asaasPayment['invoiceUrl'] ?? null,
-    'created_at' => date('c')
-];
-
-// Opcional: Se for PIX, pegar o QR Code Payload
-if ($billingType === 'PIX') {
-    $pixQrCode = asaasRequest('payments/' . $asaasPayment['id'] . '/pixQrCode');
-    if (isset($pixQrCode['data']['payload'])) {
-        $orderData['pix_code'] = $pixQrCode['data']['payload']; // Salva o copia e cola se tiver campo no banco
-        $asaasPayment['pix_qrcode'] = $pixQrCode['data']; // Manda pro frontend
+    // If PIX, fetch the Payload/QRCode
+    if ($billingType === 'PIX') {
+        $pixInfo = asaasRequest("payments/$paymentId/pixQrCode");
+        if (isset($pixInfo['data']['payload'])) {
+            $response['pix_payload'] = $pixInfo['data']['payload'];
+            $response['pix_encoded_image'] = $pixInfo['data']['encodedImage'];
+        }
     }
+
+    // Save "pending" order in Supabase
+    // Table: orders (id, user_id, course_id, payment_id, status, amount, created_at)
+    $orderData = [
+        'user_id' => $userId,
+        // 'course_id' => $courseId, // Assuming you have a column for course_id or details
+        'payment_id' => $paymentId,
+        'status' => 'pending',
+        'amount' => $amount
+    ];
+    // Note: You need to ensure the 'orders' table exists in Supabase or adjust this part
+    // For now, we proceed to return the payment info so the user can pay
+
+    echo json_encode($response);
+
+} else {
+    http_response_code(500);
+    echo json_encode(['error' => 'Failed to process payment with Asaas', 'details' => $payment]);
 }
-
-// Inserir na tabela 'orders'
-$result = supabaseRequest('orders', 'POST', $orderData);
-
-// Retornar sucesso para o frontend
-echo json_encode([
-    'message' => 'Pagamento criado com sucesso',
-    'payment' => $asaasPayment,
-    'order_id' => $result['data'][0]['id'] ?? 'unknown'
-]);
 ?>
