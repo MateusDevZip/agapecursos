@@ -87,13 +87,13 @@
     </style>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/static/img/logo.png">
-    <link rel="apple-touch-icon" href="/static/img/logo.png">
+    <link rel="icon" type="image/png" href="static/img/logo.png">
+    <link rel="apple-touch-icon" href="static/img/logo.png">
 
     <!-- Custom Scripts -->
-    <script src="/static/js/checkout.js" defer></script>
-<script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
-    <script src='/static/js/supabase.js'></script>
+    <script src="static/js/checkout.js" defer></script>
+    <script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
+    <script src='static/js/supabase.js'></script>
 </head>
 
 <body
@@ -103,7 +103,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center gap-2 min-w-0">
-                    <img src="/static/img/logo.png" alt="Ágape Cursos e Terapia Logo" class="h-8 sm:h-10 w-auto flex-shrink-0">
+                    <img src="static/img/logo.png" alt="Ágape Cursos e Terapia Logo"
+                        class="h-8 sm:h-10 w-auto flex-shrink-0">
                     <h1 class="text-base sm:text-xl font-bold tracking-tight text-text-main dark:text-white truncate">
                         Ágape Cursos e Terapia</h1>
                 </div>
@@ -209,7 +210,7 @@
                                     </div>
                                 </div>
                             </label>
-                        </div>
+                            </form>
                     </section>
 
                     <!-- Step 2: Personal Info -->
@@ -220,7 +221,7 @@
                             <span class="material-symbols-outlined text-primary">person</span>
                             <h3 class="text-lg font-bold text-text-main dark:text-white">2. Seus Dados Pessoais</h3>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="personal-data-form">
+                        <form class="grid grid-cols-1 md:grid-cols-2 gap-4" id="personal-data-form">
                             <label class="block col-span-full">
                                 <span class="text-sm font-medium text-text-main dark:text-gray-300 mb-1 block">Nome
                                     Completo</span>
@@ -291,217 +292,229 @@
                                     class="form-input w-full rounded-lg border-border-color bg-background-light dark:bg-gray-800 focus:border-primary focus:ring-primary"
                                     placeholder="Bairro" type="text" />
                             </label>
-                        </div>
-                    </section>
-
-                    <!-- Step 3: Payment -->
-                    <section
-                        class="bg-white dark:bg-[#2a1d17] p-6 rounded-xl border border-border-color shadow-sm transition-all relative overflow-hidden"
-                        data-section="payment">
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="material-symbols-outlined text-primary">payments</span>
-                            <h3 class="text-lg font-bold text-text-main dark:text-white">3. Forma de Pagamento</h3>
-                        </div>
-
-                        <!-- Tab System -->
-                        <div class="flex flex-col">
-                            <input checked="" class="peer/cc hidden" id="pay_cc" name="payment_method" type="radio" />
-                            <input class="peer/pix hidden" id="pay_pix" name="payment_method" type="radio" />
-                            <input class="peer/boleto hidden" id="pay_boleto" name="payment_method" type="radio" />
-
-                            <!-- Tabs Header -->
-                            <div class="flex gap-2 mb-6 overflow-x-auto pb-2 sm:pb-0">
-                                <label
-                                    class="flex-1 min-w-[100px] cursor-pointer text-center py-3 px-4 rounded-lg border border-border-color font-medium text-sm transition-all hover:bg-primary-light dark:hover:bg-gray-800 peer-checked/cc:bg-primary peer-checked/cc:text-white peer-checked/cc:border-primary dark:text-white"
-                                    for="pay_cc">
-                                    <div class="flex flex-col items-center gap-1">
-                                        <span class="material-symbols-outlined text-xl">credit_card</span>
-                                        <span>Cartão</span>
-                                    </div>
-                                </label>
-                                <label
-                                    class="flex-1 min-w-[100px] cursor-pointer text-center py-3 px-4 rounded-lg border border-border-color font-medium text-sm transition-all hover:bg-primary-light dark:hover:bg-gray-800 peer-checked/pix:bg-primary peer-checked/pix:text-white peer-checked/pix:border-primary dark:text-white"
-                                    for="pay_pix">
-                                    <div class="flex flex-col items-center gap-1">
-                                        <span class="material-symbols-outlined text-xl">qr_code_2</span>
-                                        <span>PIX</span>
-                                    </div>
-                                </label>
-                                <label
-                                    class="flex-1 min-w-[100px] cursor-pointer text-center py-3 px-4 rounded-lg border border-border-color font-medium text-sm transition-all hover:bg-primary-light dark:hover:bg-gray-800 peer-checked/boleto:bg-primary peer-checked/boleto:text-white peer-checked/boleto:border-primary dark:text-white"
-                                    for="pay_boleto">
-                                    <div class="flex flex-col items-center gap-1">
-                                        <span class="material-symbols-outlined text-xl">description</span>
-                                        <span>Boleto</span>
-                                    </div>
-                                </label>
-                            </div>
-
-                            <!-- Content: Credit Card -->
-                            <div class="hidden peer-checked/cc:block animate-fade-in">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div class="md:col-span-2">
-                                        <label class="block">
-                                            <span
-                                                class="text-sm font-medium text-text-main dark:text-gray-300 mb-1 block">Número
-                                                do Cartão</span>
-                                            <div class="relative">
-                                                <input
-                                                    class="form-input w-full pl-10 rounded-lg border-border-color bg-background-light dark:bg-gray-800 focus:border-primary focus:ring-primary"
-                                                    placeholder="0000 0000 0000 0000" type="text" />
-                                                <span
-                                                    class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400">credit_card</span>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="md:col-span-2">
-                                        <label class="block">
-                                            <span
-                                                class="text-sm font-medium text-text-main dark:text-gray-300 mb-1 block">Nome
-                                                do Titular</span>
-                                            <input
-                                                class="form-input w-full rounded-lg border-border-color bg-background-light dark:bg-gray-800 focus:border-primary focus:ring-primary"
-                                                placeholder="Como está no cartão" type="text" />
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <label class="block">
-                                            <span
-                                                class="text-sm font-medium text-text-main dark:text-gray-300 mb-1 block">Validade</span>
-                                            <input
-                                                class="form-input w-full rounded-lg border-border-color bg-background-light dark:bg-gray-800 focus:border-primary focus:ring-primary"
-                                                placeholder="MM/AA" type="text" />
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <label class="block">
-                                            <span
-                                                class="text-sm font-medium text-text-main dark:text-gray-300 mb-1 block">CVV</span>
-                                            <div class="relative">
-                                                <input
-                                                    class="form-input w-full rounded-lg border-border-color bg-background-light dark:bg-gray-800 focus:border-primary focus:ring-primary"
-                                                    placeholder="123" type="text" />
-                                                <span
-                                                    class="material-symbols-outlined absolute right-3 top-2.5 text-gray-400 text-lg cursor-help"
-                                                    title="Código de segurança atrás do cartão">help</span>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="md:col-span-2 mt-2 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-gray-400 font-size-sm">lock</span>
-                                        <p class="text-xs text-gray-500">Seus dados são criptografados.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Content: PIX -->
-                            <div class="hidden peer-checked/pix:block animate-fade-in text-center">
-                                <div
-                                    class="bg-primary-light dark:bg-primary/10 border border-primary/20 rounded-lg p-6 flex flex-col items-center">
-                                    <p class="text-text-main dark:text-white font-medium mb-4">Escaneie o QR Code:</p>
-                                    <div class="bg-white p-2 rounded-lg shadow-sm mb-4">
-                                        <div class="bg-contain bg-center bg-no-repeat size-32"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkmvMlwql1H-x1i2t545k5FLBE2CCwLYgQclSt3XxjSscaBUSi09yvfm_kgUY75OYH4zcMayivrUaK3GVnm2FDu4Jn6BwUd3u7M0Swd1-nL4KEpf68UfKM4bUi6Fl6aS5rk7UqyCeJxYtFWX7QIZ2UqUGHiSmhKry5Kklu1lvoC1w2JTw9WQ-tkjb-ldqu2vNef0R2r5YEdALu3JasHLrE4eN_zpd4arKh5Mlkx1q9_-pWmaBMP2a2myK0_AksBq92TpQ3vbt4AzRS');">
-                                        </div>
-                                    </div>
-                                    <p class="text-sm text-text-secondary mb-2">Ou copie o código:</p>
-                                    <div class="flex w-full max-w-sm gap-2">
-                                        <input
-                                            class="form-input text-xs w-full rounded-lg border-border-color bg-white text-gray-500"
-                                            readonly="" value="00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3..." />
-                                        <button
-                                            class="bg-white border border-border-color text-primary hover:bg-primary-light px-3 rounded-lg font-medium text-sm">Copiar</button>
-                                    </div>
-                                    <span class="text-xs text-green-600 font-bold mt-2 flex items-center gap-1"><span
-                                            class="material-symbols-outlined text-sm">bolt</span> Aprovação
-                                        imediata</span>
-                                </div>
-                            </div>
-
-                            <!-- Content: Boleto -->
-                            <div class="hidden peer-checked/boleto:block animate-fade-in">
-                                <div
-                                    class="bg-gray-50 dark:bg-gray-800 border border-border-color rounded-lg p-6 text-center">
-                                    <span
-                                        class="material-symbols-outlined text-4xl text-text-secondary mb-3">print</span>
-                                    <h4 class="text-lg font-bold text-text-main dark:text-white mb-2">Boleto Bancário
-                                    </h4>
-                                    <p class="text-text-secondary text-sm mb-4 max-w-md mx-auto">
-                                        Prazo de compensação de até 3 dias úteis.
-                                    </p>
-                                    <div class="bg-yellow-50 text-yellow-800 text-xs p-3 rounded-md inline-block">
-                                        💡 PIX ou Cartão liberam o acesso imediatamente.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                 </div>
+                </section>
 
-                <!-- Right Column: Summary & Sticky Sidebar -->
-                <div class="lg:col-span-4 mt-8 lg:mt-0">
-                    <div class="sticky top-24 space-y-6">
-                        <!-- Order Summary Card -->
-                        <div class="bg-white dark:bg-[#2a1d17] p-6 rounded-xl border border-border-color shadow-lg">
-                            <h3
-                                class="text-lg font-bold text-text-main dark:text-white border-b border-border-color pb-4 mb-4">
-                                Resumo do Pedido</h3>
-                            <div class="flex gap-4 mb-4">
-                                <div class="w-16 h-16 rounded-lg bg-cover bg-center shrink-0 border border-border-color"
-                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZEo2e0XdSjkMIW_-9nXD82Kq7chiBhy5w6DTaA4QsjbKROwwnK7VM-QAvG3LKPNBoDz_tURrQBe4UpR2AXZMASUW61q2Tt1Rwn6CHjtiPIPzHe0UCuH3m51fzbpxBcEVhWSGRSOEolwxBuguohYkBPhuXwLYO6NB1GRuknWJMF3sy-wTi1AMVAUh5EuykqgS5q0vUJ_HhNuxidzeuTbAHsHzymNIcKzbC8iLdm5kuRs0PoSVtAPZ4LyaTkG26bsWizBavNaCL5Fhm");'>
+                <!-- Step 3: Payment -->
+                <section
+                    class="bg-white dark:bg-[#2a1d17] p-6 rounded-xl border border-border-color shadow-sm transition-all relative overflow-hidden"
+                    data-section="payment">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="material-symbols-outlined text-primary">payments</span>
+                        <h3 class="text-lg font-bold text-text-main dark:text-white">3. Forma de Pagamento</h3>
+                    </div>
+
+                    <!-- Tab System -->
+                    <div class="flex flex-col">
+                        <input checked="" class="peer/cc hidden" id="pay_cc" name="payment_method" type="radio" />
+                        <input class="peer/pix hidden" id="pay_pix" name="payment_method" type="radio" />
+                        <input class="peer/boleto hidden" id="pay_boleto" name="payment_method" type="radio" />
+
+                        <!-- Tabs Header -->
+                        <div class="flex gap-2 mb-6 overflow-x-auto pb-2 sm:pb-0">
+                            <label
+                                class="flex-1 min-w-[100px] cursor-pointer text-center py-3 px-4 rounded-lg border border-border-color font-medium text-sm transition-all hover:bg-primary-light dark:hover:bg-gray-800 peer-checked/cc:bg-primary peer-checked/cc:text-white peer-checked/cc:border-primary dark:text-white"
+                                for="pay_cc">
+                                <div class="flex flex-col items-center gap-1">
+                                    <span class="material-symbols-outlined text-xl">credit_card</span>
+                                    <span>Cartão</span>
+                                </div>
+                            </label>
+                            <label
+                                class="flex-1 min-w-[100px] cursor-pointer text-center py-3 px-4 rounded-lg border border-border-color font-medium text-sm transition-all hover:bg-primary-light dark:hover:bg-gray-800 peer-checked/pix:bg-primary peer-checked/pix:text-white peer-checked/pix:border-primary dark:text-white"
+                                for="pay_pix">
+                                <div class="flex flex-col items-center gap-1">
+                                    <span class="material-symbols-outlined text-xl">qr_code_2</span>
+                                    <span>PIX</span>
+                                </div>
+                            </label>
+                            <label
+                                class="flex-1 min-w-[100px] cursor-pointer text-center py-3 px-4 rounded-lg border border-border-color font-medium text-sm transition-all hover:bg-primary-light dark:hover:bg-gray-800 peer-checked/boleto:bg-primary peer-checked/boleto:text-white peer-checked/boleto:border-primary dark:text-white"
+                                for="pay_boleto">
+                                <div class="flex flex-col items-center gap-1">
+                                    <span class="material-symbols-outlined text-xl">description</span>
+                                    <span>Boleto</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Content: Credit Card -->
+                        <div class="hidden peer-checked/cc:block animate-fade-in">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="md:col-span-2">
+                                    <label class="block">
+                                        <span
+                                            class="text-sm font-medium text-text-main dark:text-gray-300 mb-1 block">Número
+                                            do Cartão</span>
+                                        <div class="relative">
+                                            <input
+                                                class="form-input w-full pl-10 rounded-lg border-border-color bg-background-light dark:bg-gray-800 focus:border-primary focus:ring-primary"
+                                                placeholder="0000 0000 0000 0000" type="text" />
+                                            <span
+                                                class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400">credit_card</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block">
+                                        <span
+                                            class="text-sm font-medium text-text-main dark:text-gray-300 mb-1 block">Nome
+                                            do Titular</span>
+                                        <input
+                                            class="form-input w-full rounded-lg border-border-color bg-background-light dark:bg-gray-800 focus:border-primary focus:ring-primary"
+                                            placeholder="Como está no cartão" type="text" />
+                                    </label>
                                 </div>
                                 <div>
-                                    <p class="font-bold text-text-main dark:text-white text-sm line-clamp-2">Combo:
-                                        Terapia Capilar + Massagem</p>
-                                    <p class="text-xs text-text-secondary mt-1 flex items-center gap-1">
-                                        <span class="material-symbols-outlined text-[14px]">verified</span>
-                                        Acesso Vitalício
-                                    </p>
+                                    <label class="block">
+                                        <span
+                                            class="text-sm font-medium text-text-main dark:text-gray-300 mb-1 block">Validade</span>
+                                        <input
+                                            class="form-input w-full rounded-lg border-border-color bg-background-light dark:bg-gray-800 focus:border-primary focus:ring-primary"
+                                            placeholder="MM/AA" type="text" />
+                                    </label>
                                 </div>
-                            </div>
-                            <div class="space-y-3 text-sm border-b border-border-color pb-4 mb-4">
-                                <div class="flex justify-between text-text-secondary">
-                                    <span>Preço Original</span>
-                                    <span class="line-through">R$ 594,00</span>
+                                <div>
+                                    <label class="block">
+                                        <span
+                                            class="text-sm font-medium text-text-main dark:text-gray-300 mb-1 block">CVV</span>
+                                        <div class="relative">
+                                            <input
+                                                class="form-input w-full rounded-lg border-border-color bg-background-light dark:bg-gray-800 focus:border-primary focus:ring-primary"
+                                                placeholder="123" type="text" />
+                                            <span
+                                                class="material-symbols-outlined absolute right-3 top-2.5 text-gray-400 text-lg cursor-help"
+                                                title="Código de segurança atrás do cartão">help</span>
+                                        </div>
+                                    </label>
                                 </div>
-                                <div class="flex justify-between text-green-600 font-medium">
-                                    <span>Desconto Combo</span>
-                                    <span>- R$ 97,00</span>
+                                <div class="md:col-span-2 mt-2 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-gray-400 font-size-sm">lock</span>
+                                    <p class="text-xs text-gray-500">Seus dados são criptografados.</p>
                                 </div>
-                            </div>
-                            <div class="flex justify-between items-end mb-6">
-                                <span class="text-text-main dark:text-white font-medium">Total</span>
-                                <div class="text-right">
-                                    <span class="block text-2xl font-bold text-primary">R$ 497,00</span>
-                                    <span class="text-xs text-text-secondary">ou 12x de R$ 49,70</span>
-                                </div>
-                            </div>
-                            <a class="group flex w-full items-center justify-center rounded-lg bg-primary hover:bg-primary-hover py-4 px-4 text-white text-base font-bold shadow-md transition-all hover:shadow-lg transform active:scale-[0.98]"
-                                href="#success-modal">
-                                <span>Finalizar Compra</span>
-                                <span
-                                    class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                            </a>
-                            <div class="mt-4 flex justify-center items-center gap-2 text-xs text-text-secondary">
-                                <span class="material-symbols-outlined text-sm">lock</span>
-                                <span>Pagamento 100% Seguro</span>
                             </div>
                         </div>
 
-                        <!-- Guarantee Badge -->
-                        <div
-                            class="bg-background-light dark:bg-gray-800 p-4 rounded-xl border border-dashed border-primary/30 text-center">
+                        <!-- Content: PIX -->
+                        <div class="hidden peer-checked/pix:block animate-fade-in text-center">
                             <div
-                                class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">
-                                <span class="material-symbols-outlined text-2xl">verified_user</span>
+                                class="bg-primary-light dark:bg-primary/10 border border-primary/20 rounded-lg p-6 flex flex-col items-center">
+                                <p class="text-text-main dark:text-white font-medium mb-4">Escaneie o QR Code:</p>
+                                <div class="bg-white p-2 rounded-lg shadow-sm mb-4">
+                                    <div class="bg-contain bg-center bg-no-repeat size-32"
+                                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkmvMlwql1H-x1i2t545k5FLBE2CCwLYgQclSt3XxjSscaBUSi09yvfm_kgUY75OYH4zcMayivrUaK3GVnm2FDu4Jn6BwUd3u7M0Swd1-nL4KEpf68UfKM4bUi6Fl6aS5rk7UqyCeJxYtFWX7QIZ2UqUGHiSmhKry5Kklu1lvoC1w2JTw9WQ-tkjb-ldqu2vNef0R2r5YEdALu3JasHLrE4eN_zpd4arKh5Mlkx1q9_-pWmaBMP2a2myK0_AksBq92TpQ3vbt4AzRS');">
+                                    </div>
+                                </div>
+                                <p class="text-sm text-text-secondary mb-2">Ou copie o código:</p>
+                                <div class="flex w-full max-w-sm gap-2">
+                                    <input
+                                        class="form-input text-xs w-full rounded-lg border-border-color bg-white text-gray-500"
+                                        readonly="" value="00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3..." />
+                                    <button
+                                        class="bg-white border border-border-color text-primary hover:bg-primary-light px-3 rounded-lg font-medium text-sm">Copiar</button>
+                                </div>
+                                <span class="text-xs text-green-600 font-bold mt-2 flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">bolt</span> Aprovação
+                                    imediata</span>
                             </div>
-                            <h4 class="font-bold text-text-main dark:text-white text-sm">Garantia de 7 Dias</h4>
-                            <p class="text-xs text-text-secondary mt-1">Se não gostar, devolvemos 100% do seu dinheiro.
-                                Sem riscos.</p>
+                        </div>
+
+                        <!-- Content: Boleto -->
+                        <div class="hidden peer-checked/boleto:block animate-fade-in">
+                            <div
+                                class="bg-gray-50 dark:bg-gray-800 border border-border-color rounded-lg p-6 text-center">
+                                <span class="material-symbols-outlined text-4xl text-text-secondary mb-3">print</span>
+                                <h4 class="text-lg font-bold text-text-main dark:text-white mb-2">Boleto Bancário
+                                </h4>
+                                <p class="text-text-secondary text-sm mb-4 max-w-md mx-auto">
+                                    Prazo de compensação de até 3 dias úteis.
+                                </p>
+                                <div class="bg-yellow-50 text-yellow-800 text-xs p-3 rounded-md inline-block">
+                                    💡 PIX ou Cartão liberam o acesso imediatamente.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column: Summary & Sticky Sidebar -->
+            <div class="lg:col-span-4 mt-8 lg:mt-0">
+                <div class="sticky top-24 space-y-6">
+                    <!-- Order Summary Card -->
+                    <div
+                        class="bg-white rounded-3xl p-6 shadow-xl shadow-primary/5 sticky top-24 border border-[#f3e7eb]">
+                        <h3 class="text-lg font-bold text-text-main mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">shopping_cart</span>
+                            Resumo do Pedido
+                        </h3>
+
+                        <!-- Selected Item -->
+                        <div class="flex gap-4 mb-6 pb-6 border-b border-[#f3e7eb]">
+                            <div class="w-16 h-16 rounded-lg bg-gray-100 bg-cover bg-center" id="summary-course-image"
+                                style="background-image: url('/static/img/placeholder-course.jpg');">
+                            </div>
+                            <div>
+                                <h4 id="summary-course-title" class="font-bold text-text-main text-sm line-clamp-2">
+                                    Selecione um curso
+                                </h4>
+                                <p class="text-xs text-text-muted mt-1">Acesso vitalício</p>
+                            </div>
+                        </div>
+
+                        <!-- Values -->
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between text-sm text-text-muted">
+                                <span>Valor Original</span>
+                                <span id="summary-original-price">R$ 0,00</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-green-600">
+                                <span>Desconto</span>
+                                <span id="summary-discount">- R$ 0,00</span>
+                            </div>
+                            <div class="flex justify-between items-end pt-4 border-t border-[#f3e7eb]">
+                                <span class="font-bold text-text-main">Total</span>
+                                <div class="text-right">
+                                    <span id="summary-total" class="block text-2xl font-bold text-primary">R$
+                                        0,00</span>
+                                    <span class="text-xs text-text-muted">em até 12x no cartão</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Safety Badges -->
+                        <div class="bg-[#fcf8f9] rounded-xl p-4 space-y-3">
+                            <div class="flex items-center gap-3 text-xs text-text-main">
+                                <span class="material-symbols-outlined text-green-500">lock</span>
+                                Pagamento 100% Seguro
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-text-main">
+                                <span class="material-symbols-outlined text-green-500">verified</span>
+                                Garantia de 7 dias
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-text-main">
+                                <span class="material-symbols-outlined text-green-500">school</span>
+                                Certificado Incluso
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Guarantee Badge -->
+                <div
+                    class="bg-background-light dark:bg-gray-800 p-4 rounded-xl border border-dashed border-primary/30 text-center">
+                    <div
+                        class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">
+                        <span class="material-symbols-outlined text-2xl">verified_user</span>
+                    </div>
+                    <h4 class="font-bold text-text-main dark:text-white text-sm">Garantia de 7 Dias</h4>
+                    <p class="text-xs text-text-secondary mt-1">Se não gostar, devolvemos 100% do seu
+                        dinheiro.
+                        Sem riscos.</p>
+                </div>
             </div>
+        </div>
+        </div>
         </div>
     </main>
 
@@ -509,7 +522,7 @@
     <footer class="bg-white dark:bg-[#2a1d17] border-t border-border-color mt-auto py-8">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <div class="flex justify-center items-center gap-2 mb-4 text-primary opacity-80">
-                <img src="/static/img/logo.png" alt="Logo" class="h-6 w-auto grayscale opacity-70">
+                <img src="static/img/logo.png" alt="Logo" class="h-6 w-auto grayscale opacity-70">
                 <span class="font-bold text-lg text-text-main dark:text-white">Ágape Cursos e Terapia</span>
             </div>
             <p class="text-sm text-text-secondary mb-6 max-w-md mx-auto">Transformando vidas através do conhecimento
@@ -536,7 +549,8 @@
                 <span class="material-symbols-outlined text-4xl text-green-600">check_circle</span>
             </div>
             <h3 class="text-2xl font-bold text-text-main dark:text-white mb-2">Inscrição Confirmada!</h3>
-            <p class="text-text-secondary mb-6">Obrigado por confiar na Ágape Cursos e Terapia. Enviamos os dados de acesso para o
+            <p class="text-text-secondary mb-6">Obrigado por confiar na Ágape Cursos e Terapia. Enviamos os dados de
+                acesso para o
                 seu e-mail.</p>
             <div class="bg-background-light dark:bg-gray-800 rounded-lg p-4 mb-6 text-left">
                 <p class="text-xs text-text-secondary uppercase font-bold tracking-wider mb-2">Próximos passos:</p>

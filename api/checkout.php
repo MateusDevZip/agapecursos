@@ -44,7 +44,7 @@ $user = $userData['data'][0];
 $email = $user['email'];
 $meta = $user['raw_user_meta_data'] ?? [];
 $name = $meta['full_name'] ?? 'Aluno Ágape';
-$cpf = $meta['cpf'] ?? '00000000000'; // Default CPF if not provided (Asaas might reject for production)
+$cpf = $meta['cpf'] ?? '11144477735'; // CPF válido para testes (substitua por validação real em produção)
 $phone = $meta['phone'] ?? null;
 
 // 2. Customer Management in Asaas

@@ -32,8 +32,42 @@
                     fontFamily: {
                         "display": ["Lexend", "sans-serif"],
                         "body": ["Lexend", "sans-serif"]
+                            < !DOCTYPE html>
+                        <html class="light" lang="pt-BR">
+
+                            <head>
+                                <meta charset="utf-8" />
+                                <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+                                <title>Ágape Cursos e Terapia - Bem-Estar Holístico</title>
+                                <meta name="description"
+                                    content="Descubra a harmonia perfeita entre Terapia Capilar, Massagem Terapêutica. Uma abordagem integrada para profissionais que desejam ir além." />
+                                <link href="https://fonts.googleapis.com" rel="preconnect" />
+                                <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+                                <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap"
+                                    rel="stylesheet" />
+                                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+                                    rel="stylesheet" />
+                                <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+                                    tailwind.config = {
+                                        darkMode: "class",
+                                    theme: {
+                                        extend: {
+                                        colors: {
+                                        "primary": "#D9808E", // Rose Pink (extracted from lotus petals)
+                                    "primary-dark": "#8C5E66", // Darker Rose
+                                    "secondary": "#4F2630", // Deep Burgundy/Blackberry (Dark contrast)
+                                    "background-light": "#FFF9F9", // Blush White
+                                    "background-white": "#FFFFFF",
+                                    "background-dark": "#2D1B1E",
+                                    "text-main": "#5C3A40", // Warm dark grey/brown
+                                    "text-light": "#8C7B7D"  // Warm medium grey
                     },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                                    fontFamily: {
+                                        "display": ["Lexend", "sans-serif"],
+                                    "body": ["Lexend", "sans-serif"]
+                    },
+                                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
                 },
             },
         }
@@ -47,13 +81,13 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="static/css/styles.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/static/img/logo.png">
-    <link rel="apple-touch-icon" href="/static/img/logo.png">
+    <link rel="icon" type="image/png" href="static/img/logo.png">
+    <link rel="apple-touch-icon" href="static/img/logo.png">
 
-<script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
-    <script src='/static/js/supabase.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
+    <script src='static/js/supabase.js'></script>
 </head>
 
 <body class="bg-background-light text-text-main antialiased overflow-x-hidden">
@@ -63,7 +97,7 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center gap-2">
-                    <img src="/static/img/logo.png" alt="Ágape Cursos e Terapia Logo" class="h-10 w-auto">
+                    <img src="static/img/logo.png" alt="Ágape Cursos e Terapia Logo" class="h-10 w-auto">
                     <span class="text-xl font-bold tracking-tight text-secondary">Ágape Cursos e Terapia</span>
                 </div>
                 <nav class="hidden md:flex gap-8">
@@ -100,7 +134,7 @@
                     <div class="flex-1 max-w-2xl text-center lg:text-left space-y-8">
                         <div
                             class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-wider">
-                            <img src="/static/img/logo.png" alt="Ágape Cursos e Terapia" class="h-8 w-auto"/>
+                            <img src="static/img/logo.png" alt="Ágape Cursos e Terapia" class="h-8 w-auto" />
                             Método Exclusivo Vera
                         </div>
                         <h1
@@ -109,7 +143,8 @@
                             Mentes e Cabelos
                         </h1>
                         <p class="text-lg text-text-light leading-relaxed max-w-xl mx-auto lg:mx-0">
-                            Descubra a harmonia perfeita entre Terapia Capilar, Massagem Terapêutica. Uma abordagem integrada para profissionais que desejam ir além.
+                            Descubra a harmonia perfeita entre Terapia Capilar, Massagem Terapêutica. Uma abordagem
+                            integrada para profissionais que desejam ir além.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <a href="checkout.html"
@@ -135,7 +170,7 @@
                             </div>
                             <img alt="Therapist explaining holistic wellness methods in a calm spa setting"
                                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbOaeGnV1L95G5WE72kAMttrdXsqvUYKNdqNVBfoTjcAswLdmqkOfuEeJbdpQMVGv2PEo21qZN8hZG-iN0-sR9m7xxvWTpYhBVQANdA-FGksbpvTkj7Gz6zqNVrz6xhj8-Aadp5-U7tyteZNvP6xhoXaQIh5qLTerWqmQ5IHmyjK8XbW27B7b3Lf-mXcPnwKi94kKA8TE4eF3RDkP24LCnpkiDx68vh_2LOUmogAxCPgi9Xjj92zhAWOXXAONm-pok7W4UZkPi0aZn" />
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbOaeGnV1L95G5WE72kAMttrdXsqvUYKNdqNVBfoTjcAswLdmqkOfuEeJbdpQMVGv2PEo21qZN8hZG-iN0-sR9m7xxvWTpYhBVQANdA-FGksbpvTkj7Gz6zqNVrz6xhj8-Aadp5-U7tyteZNvP6xhoXaQIh5qLTerWqmQ5IHmyjK8XbW27B7b3Lf-mXcPnwKi94kKA8TE4eF3RDkP24LCnpkiDx68vh_2LOUmogAxCPgi9Xjj92zhAWOXXAONn-pok7W4UZkPi0aZn" />
                         </div>
                         <div class="hidden lg:flex absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl items-center gap-3 animate-bounce"
                             style="animation-duration: 3s;">
@@ -185,7 +220,7 @@
                             </div>
                             <div class="flex-1 p-8 flex flex-col justify-center relative">
                                 <div class="absolute top-0 right-0 p-8 opacity-10 text-secondary pointer-events-none">
-                                    <img src="/static/img/logo.png" alt="Ágape Cursos e Terapia" class="h-8 w-auto"/>
+                                    <img src="static/img/logo.png" alt="Ágape Cursos e Terapia" class="h-8 w-auto" />
                                 </div>
                                 <div class="flex items-center gap-3 mb-3">
                                     <div class="p-2 bg-secondary text-white rounded-lg">
@@ -368,7 +403,7 @@
                         <div class="flex items-center gap-3">
                             <div class="size-10 rounded-full bg-gray-200 overflow-hidden">
                                 <img alt="Portrait of happy student" class="w-full h-full object-cover"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYBBfbQ9hvxqxJw3JqxGimw5xdWig2C4c7syo3Q1N6T0T2oZ-zcqh-9dujS3aczyy233mtB3ZCQoaE70OEJ7JD7h_b14ZWu3UnzmNtZZeQTdNxAsoaS0neowwjXRVBHigLxcuS-lLBqCSU2BZq_jxHO6aiHda-n9EcxTae9OXVSqAoXdG5-mTQxP7LBBl_yu6mw6TyM7NN_SObVknJBtuOoewLBowLKInqhj5nlo_JAvCyuS-nvvaWnseiSm-0Zq_sXxc3jARrSAgM" />
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYBBfbQ9hvxqxJw3JqxGimw5xdWig2C4c7syo3Q1N6T0T2oZ-zcqh-9dujS3aczyy233mtB3ZCQoaE70OEJ7JD7h_b14ZWu3UnzmNtZZeQTjDNjG2Ax2ENMjQQyZp2sDcRu0_e9MKdL4fmpODQQsKQMCISH4ySqUMtJt4uHxGAmyF-zlslNFjuqInwxmcurKD5B2n4o3ty_0xrZE0wOu13c8wPchtKjMw6xK39LmEmI7ELYYppG1bRsXXXaqM6I3QO8qAJmiAWAY4oeFg" />
                             </div>
                             <div>
                                 <p class="text-sm font-bold text-secondary">Ricardo Silva</p>
@@ -413,7 +448,7 @@
                 </a>
             </div>
             <div class="absolute left-0 bottom-0 opacity-5 text-secondary transform -translate-x-1/4 translate-y-1/4">
-                <img src="/static/img/logo.png" alt="Ágape Cursos e Terapia" class="h-8 w-auto"/>
+                <img src="static/img/logo.png" alt="Ágape Cursos e Terapia" class="h-8 w-auto" />
             </div>
         </section>
     </main>
@@ -424,7 +459,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <div class="space-y-4">
                     <div class="flex items-center gap-2 text-primary">
-                        <img src="/static/img/logo.png" alt="Ágape Cursos e Terapia" class="h-8 w-auto"/>
+                        <img src="static/img/logo.png" alt="Ágape Cursos e Terapia" class="h-8 w-auto" />
                         <span class="text-xl font-bold">Ágape Cursos e Terapia</span>
                     </div>
                     <p class="text-white/70 text-sm leading-relaxed">
@@ -479,8 +514,8 @@
     </footer>
 
     <!-- JavaScript Files -->
-    <script src="/static/js/main.js"></script>
-    <script src="/static/js/forms.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/forms.js"></script>
 </body>
 
 </html>

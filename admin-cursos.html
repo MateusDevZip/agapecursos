@@ -29,6 +29,7 @@
                         "text-muted": "#A76B7D",
                         "background-light": "#FFF9F9",
                         "background-dark": "#2D1B1E",
+                        "border-color": "#e7d7cf",
                     },
                     fontFamily: {
                         "display": ["Lexend", "sans-serif"]
@@ -56,14 +57,34 @@
         .icon-filled {
             font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #C88B9A;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #A76B7D;
+        }
     </style>
     <link rel="stylesheet" href="/static/css/styles.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/static/img/logo.png">
     <link rel="apple-touch-icon" href="/static/img/logo.png">
 
-<script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
     <script src='/static/js/supabase.js'></script>
+    <script src="static/js/auth-guard.js"></script>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark text-text-main h-screen flex overflow-hidden">
@@ -126,13 +147,13 @@
             class="h-16 bg-white dark:bg-[#2a141c] border-b border-[#f3e7eb] flex items-center justify-between px-6 shrink-0">
             <!-- Mobile Menu Toggle -->
             <button data-mobile-menu-toggle class="md:hidden p-2 text-text-muted hover:bg-secondary rounded-lg">
-                        <span class="material-symbols-outlined">menu</span>
+                <span class="material-symbols-outlined">menu</span>
             </button>
 
             <!-- Search -->
             <div class="hidden md:flex items-center max-w-md w-full bg-[#f3e7eb] rounded-lg px-3 py-2">
                 <span class="material-symbols-outlined text-text-muted">search</span>
-                <input
+                <input data-search-courses
                     class="bg-transparent border-none focus:ring-0 text-sm w-full text-text-main placeholder:text-text-muted/70"
                     placeholder="Buscar em todo o painel..." type="text" />
             </div>
@@ -144,7 +165,8 @@
                     <span class="absolute top-2 right-2 size-2 bg-primary rounded-full border border-white"></span>
                 </button>
                 <div class="h-8 w-px bg-[#f3e7eb]"></div>
-                <button class="flex items-center gap-2 text-text-muted hover:text-primary text-sm font-medium">
+                <button data-admin-logout
+                    class="flex items-center gap-2 text-text-muted hover:text-primary text-sm font-medium">
                     <span>Sair</span>
                     <span class="material-symbols-outlined text-[20px]">logout</span>
                 </button>
@@ -160,7 +182,7 @@
                         <h2 class="text-3xl font-bold text-text-main tracking-tight">Gerenciamento de Cursos</h2>
                         <p class="text-text-muted">Visualize e edite o catálogo de cursos e valores.</p>
                     </div>
-                    <button
+                    <button data-add-course
                         class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-5 py-3 rounded-xl font-medium shadow-sm hover:shadow-md transition-all active:scale-95 shrink-0">
                         <span class="material-symbols-outlined">add_circle</span>
                         Adicionar Novo Curso
@@ -174,21 +196,21 @@
                     <div class="w-full lg:w-96 relative">
                         <span
                             class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted">search</span>
-                        <input
+                        <input data-search-courses
                             class="w-full pl-10 pr-4 py-2.5 bg-background-light border-transparent focus:bg-white focus:border-primary/30 focus:ring-4 focus:ring-primary/10 rounded-lg text-sm transition-all text-text-main placeholder:text-text-muted"
                             placeholder="Buscar curso por título..." type="text" />
                     </div>
 
                     <!-- Category Chips -->
                     <div class="flex gap-2 w-full lg:w-auto overflow-x-auto pb-2 lg:pb-0 no-scrollbar">
-                        <button
+                        <button data-filter-pilar="all"
                             class="px-4 py-1.5 rounded-full bg-primary text-white text-sm font-medium whitespace-nowrap shadow-sm">Todos</button>
-                        <button
+                        <button data-filter-pilar="terapia-capilar"
                             class="px-4 py-1.5 rounded-full bg-[#f3e7eb] text-text-muted hover:bg-primary/10 hover:text-primary text-sm font-medium whitespace-nowrap transition-colors">Terapia
                             Capilar</button>
-                        <button
+                        <button data-filter-pilar="massagem"
                             class="px-4 py-1.5 rounded-full bg-[#f3e7eb] text-text-muted hover:bg-primary/10 hover:text-primary text-sm font-medium whitespace-nowrap transition-colors">Massagem</button>
-                        <button
+                        <button data-filter-pilar="psicanalise"
                             class="px-4 py-1.5 rounded-full bg-[#f3e7eb] text-text-muted hover:bg-primary/10 hover:text-primary text-sm font-medium whitespace-nowrap transition-colors">Psicanálise</button>
                     </div>
                 </div>
@@ -196,7 +218,7 @@
                 <!-- Data Table -->
                 <div class="bg-white rounded-xl shadow-sm border border-[#f3e7eb] overflow-hidden">
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
+                        <table class="w-full text-left border-collapse" data-courses-table>
                             <thead>
                                 <tr
                                     class="bg-[#fcf8f9] border-b border-[#f3e7eb] text-text-muted text-xs uppercase tracking-wider font-semibold">
@@ -209,201 +231,13 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-[#f3e7eb]">
-                                <!-- Row 1 -->
-                                <tr class="group hover:bg-[#fffcfd] transition-colors">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-4">
-                                            <div class="size-12 rounded-lg bg-cover bg-center shrink-0 border border-secondary"
-                                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCB33O6UWcF1fCFM479zqG9fIe-4KQ68Fz17AAf3kvQxbM4VScZ8xWfBqt80OWqLionEmxzhkXh9w-l9SjrXtwiSS2X_UCPARSnXTBqvbiFmZYhGwL9QnvU5yrAawyS20pxKM11-ugj3efMz6M1UiSU26ehr3BmB54zvVnWw6k5W95A8Z3QHus5XtqQNIux-D0gB0tBZh6fFwz5Stnv0lWrysYFRMWcgqLILYmAxjYxlQZ3BL1ipXw-u7FxDgRNLQ4-fNgemtIXmXyU');">
-                                            </div>
-                                            <div>
-                                                <p class="font-semibold text-text-main">Fundamentos da Terapia Capilar
-                                                </p>
-                                                <p class="text-xs text-text-muted">ID: #TC-001</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-pink-100 text-pink-800">
-                                            Terapia Capilar
-                                        </span>
-                                    </td>
-                                    <td class="px-6 py-4 text-sm text-text-main">
-                                        <div class="flex items-center gap-1.5">
+                                <!-- Content will be loaded dynamically by static/js/admin-courses.js -->
+                                <tr>
+                                    <td colspan="6" class="px-6 py-12 text-center">
+                                        <div class="flex items-center justify-center gap-2 text-primary">
                                             <span
-                                                class="material-symbols-outlined text-text-muted text-[18px]">schedule</span>
-                                            40 Horas
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <p class="font-bold text-text-main">R$ 597,00</p>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <span
-                                            class="inline-flex size-2.5 rounded-full bg-green-500 ring-2 ring-green-100"></span>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-end gap-2">
-                                            <button
-                                                class="size-8 flex items-center justify-center rounded-lg text-text-muted hover:bg-primary hover:text-white transition-colors"
-                                                title="Editar">
-                                                <span class="material-symbols-outlined text-[18px]">edit</span>
-                                            </button>
-                                            <button
-                                                class="size-8 flex items-center justify-center rounded-lg text-text-muted hover:bg-red-50 hover:text-red-500 transition-colors"
-                                                title="Excluir">
-                                                <span class="material-symbols-outlined text-[18px]">delete</span>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <!-- Row 2 -->
-                                <tr class="group hover:bg-[#fffcfd] transition-colors">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-4">
-                                            <div class="size-12 rounded-lg bg-cover bg-center shrink-0 border border-secondary"
-                                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCx1f_MW3JXL6jK_ZiSOHEM0EhdznaxGrt62bt43a8Lbw-1CFCDiQ_CP_MbpBIVgPMyuCl8SiwqVylqCTnhGpTM38Jb6OLaQu8zcqmxfab09vgob9xUDsIsTHv9aIqjKR5gnMcMORylIDar1Gc1zTRcP_c5MdboISIxJCdwU_d_k8Kwhg2JBDZHNLzBdOWF1qioty1oufwCNTTYwp8TnqXw6yoAlHZ2b7ZsNLcN2QMZuGfQMU-32709BXXUVEGk-9s-0_PEvF259Kwc');">
-                                            </div>
-                                            <div>
-                                                <p class="font-semibold text-text-main">Massagem Relaxante Integrativa
-                                                </p>
-                                                <p class="text-xs text-text-muted">ID: #MT-104</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-orange-100 text-orange-800">
-                                            Massagem
-                                        </span>
-                                    </td>
-                                    <td class="px-6 py-4 text-sm text-text-main">
-                                        <div class="flex items-center gap-1.5">
-                                            <span
-                                                class="material-symbols-outlined text-text-muted text-[18px]">schedule</span>
-                                            32 Horas
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <p class="font-bold text-text-main">R$ 450,00</p>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <span
-                                            class="inline-flex size-2.5 rounded-full bg-green-500 ring-2 ring-green-100"></span>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-end gap-2">
-                                            <button
-                                                class="size-8 flex items-center justify-center rounded-lg text-text-muted hover:bg-primary hover:text-white transition-colors"
-                                                title="Editar">
-                                                <span class="material-symbols-outlined text-[18px]">edit</span>
-                                            </button>
-                                            <button
-                                                class="size-8 flex items-center justify-center rounded-lg text-text-muted hover:bg-red-50 hover:text-red-500 transition-colors"
-                                                title="Excluir">
-                                                <span class="material-symbols-outlined text-[18px]">delete</span>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <!-- Row 3 -->
-                                <tr class="group hover:bg-[#fffcfd] transition-colors">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-4">
-                                            <div class="size-12 rounded-lg bg-cover bg-center shrink-0 border border-secondary"
-                                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCj2vrV04UyDP6hq5tzMOfdOQ_AvbZGQw6wmJm3YoxpvyIzHimf2NBXc7e1QDvCERC_c8iHChd2BMG_4XCcPa1jHh_8JFcn4kxJXpALMQd3s6rEM-6QZ8DVhsY_BU5BlIfTg8ooNNh7jr5NvNRnN-v-SiilTaxD5Tvx1KwpcPocWOt-CJXAciWZEVk1wkLueCw_DvrI71_TecEq_1hbir60JnvR055fZzgKeILbpF8WmbUb_z9o4y_qiRTtojzBwOmc1VJ7kgvhbN_j');">
-                                            </div>
-                                            <div>
-                                                <p class="font-semibold text-text-main">Introdução à Psicanálise Clínica
-                                                </p>
-                                                <p class="text-xs text-text-muted">ID: #PA-202</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-purple-100 text-purple-800">
-                                            Psicanálise
-                                        </span>
-                                    </td>
-                                    <td class="px-6 py-4 text-sm text-text-main">
-                                        <div class="flex items-center gap-1.5">
-                                            <span
-                                                class="material-symbols-outlined text-text-muted text-[18px]">schedule</span>
-                                            120 Horas
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <p class="font-bold text-text-main">R$ 1.290,00</p>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <span
-                                            class="inline-flex size-2.5 rounded-full bg-gray-400 ring-2 ring-gray-200"></span>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-end gap-2">
-                                            <button
-                                                class="size-8 flex items-center justify-center rounded-lg text-text-muted hover:bg-primary hover:text-white transition-colors"
-                                                title="Editar">
-                                                <span class="material-symbols-outlined text-[18px]">edit</span>
-                                            </button>
-                                            <button
-                                                class="size-8 flex items-center justify-center rounded-lg text-text-muted hover:bg-red-50 hover:text-red-500 transition-colors"
-                                                title="Excluir">
-                                                <span class="material-symbols-outlined text-[18px]">delete</span>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <!-- Row 4 -->
-                                <tr class="group hover:bg-[#fffcfd] transition-colors">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-4">
-                                            <div class="size-12 rounded-lg bg-cover bg-center shrink-0 border border-secondary"
-                                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrh5OSY421hKtW2lryooK4v6-A5-77qaCeTb6cXht2Gk2WnwPUWBOYqaIVNFvN715YSl7IN4hiaF3LNFW3UJUIeNZ3-iLaMXoB5-cZ9ai6EB7eqn1Hd_WoEtg5jZaO3Ifx-WHoe38bFoqcmnYB9QVU1Dtf0GGUmSGUVIHVr1s7TR7FQD8ShC3RUppuYaiMXS_onxzIXoD3GFKiUWhHHEy_f4AGD4Q8N2Fd0dqfkaV8PhN2-xSxNp0_qoR8f4gK6aCvuBCnev_xq7Th');">
-                                            </div>
-                                            <div>
-                                                <p class="font-semibold text-text-main">Tricologia Avançada</p>
-                                                <p class="text-xs text-text-muted">ID: #TC-005</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <span
-                                            class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-pink-100 text-pink-800">
-                                            Terapia Capilar
-                                        </span>
-                                    </td>
-                                    <td class="px-6 py-4 text-sm text-text-main">
-                                        <div class="flex items-center gap-1.5">
-                                            <span
-                                                class="material-symbols-outlined text-text-muted text-[18px]">schedule</span>
-                                            60 Horas
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <p class="font-bold text-text-main">R$ 890,00</p>
-                                    </td>
-                                    <td class="px-6 py-4 text-center">
-                                        <span
-                                            class="inline-flex size-2.5 rounded-full bg-green-500 ring-2 ring-green-100"></span>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-end gap-2">
-                                            <button
-                                                class="size-8 flex items-center justify-center rounded-lg text-text-muted hover:bg-primary hover:text-white transition-colors"
-                                                title="Editar">
-                                                <span class="material-symbols-outlined text-[18px]">edit</span>
-                                            </button>
-                                            <button
-                                                class="size-8 flex items-center justify-center rounded-lg text-text-muted hover:bg-red-50 hover:text-red-500 transition-colors"
-                                                title="Excluir">
-                                                <span class="material-symbols-outlined text-[18px]">delete</span>
-                                            </button>
+                                                class="material-symbols-outlined animate-spin">progress_activity</span>
+                                            <span>Carregando cursos...</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -413,7 +247,7 @@
 
                     <!-- Pagination -->
                     <div class="px-6 py-4 border-t border-[#f3e7eb] flex items-center justify-between">
-                        <p class="text-sm text-text-muted">Mostrando 4 de 12 cursos</p>
+                        <p class="text-sm text-text-muted">Mostrando resultados</p>
                         <div class="flex items-center gap-2">
                             <button
                                 class="size-8 flex items-center justify-center rounded-lg border border-[#f3e7eb] text-text-muted hover:bg-secondary disabled:opacity-50"
@@ -422,10 +256,6 @@
                             </button>
                             <button
                                 class="size-8 flex items-center justify-center rounded-lg bg-primary text-white font-medium text-sm">1</button>
-                            <button
-                                class="size-8 flex items-center justify-center rounded-lg border border-[#f3e7eb] text-text-muted hover:bg-secondary font-medium text-sm">2</button>
-                            <button
-                                class="size-8 flex items-center justify-center rounded-lg border border-[#f3e7eb] text-text-muted hover:bg-secondary font-medium text-sm">3</button>
                             <button
                                 class="size-8 flex items-center justify-center rounded-lg border border-[#f3e7eb] text-text-muted hover:bg-secondary">
                                 <span class="material-symbols-outlined text-sm">chevron_right</span>
@@ -441,6 +271,7 @@
     <script src="/static/js/main.js"></script>
     <script src="/static/js/forms.js"></script>
     <script src="/static/js/filters.js"></script>
+    <script src="/static/js/admin-courses.js"></script>
 </body>
 
 </html>

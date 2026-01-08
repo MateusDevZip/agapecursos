@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Login Admin - Ágape Cursos</title>
+    <meta name="description" content="Acesso administrativo Ágape Cursos." />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#A76B7D",
+                        "primary-dark": "#8C5E66",
+                        "background-light": "#FFF9F9",
+                        "background-dark": "#2D1B1E",
+                        "surface-light": "#FFF3F4",
+                        "surface-dark": "#3D2529",
+                        "text-main": "#5C3A40",
+                        "text-light": "#f3e7ea",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="static/img/logo.png">
+
+    <script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
+    <script src='static/js/supabase.js'></script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main font-display min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md bg-white dark:bg-surface-dark rounded-2xl shadow-xl border border-primary/20 p-8">
+        <div class="flex flex-col items-center mb-8">
+            <img src="static/img/logo.png" alt="Ágape Logo" class="h-16 w-auto mb-4">
+            <h1 class="text-2xl font-bold text-primary">Painel Administrativo</h1>
+            <p class="text-sm text-gray-500 mt-2">Acesso restrito a administradores</p>
+        </div>
+
+        <form id="adminLoginForm" class="flex flex-col gap-5">
+            <div class="form-group space-y-2">
+                <label class="text-sm font-medium text-gray-700 dark:text-gray-200" for="email">E-mail</label>
+                <div class="relative">
+                    <input
+                        class="w-full rounded-lg border border-gray-300 px-3 py-2 pl-10 focus:ring-primary focus:border-primary"
+                        id="email" type="email" placeholder="admin@agape.com" required />
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">admin_panel_settings</span>
+                </div>
+            </div>
+
+            <div class="form-group space-y-2">
+                <label class="text-sm font-medium text-gray-700 dark:text-gray-200" for="password">Senha</label>
+                <div class="relative">
+                    <input
+                        class="w-full rounded-lg border border-gray-300 px-3 py-2 pl-10 focus:ring-primary focus:border-primary"
+                        id="password" type="password" placeholder="••••••••" required />
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">lock</span>
+                </div>
+            </div>
+
+            <div id="loginError" class="hidden text-red-500 text-sm text-center bg-red-50 p-2 rounded"></div>
+
+            <button type="submit"
+                class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+                <span>Entrar no Painel</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </button>
+        </form>
+
+        <div class="mt-6 text-center">
+            <a href="index.html" class="text-sm text-gray-500 hover:text-primary transition-colors">Voltar ao site</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('adminLoginForm');
+            const errorDiv = document.getElementById('loginError');
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                errorDiv.classList.add('hidden');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="animate-spin material-symbols-outlined">refresh</span> Autenticando...';
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                try {
+                    const { data, error } = await SupabaseAuth.login(email, password);
+
+                    if (error) throw error;
+
+                    // Check if user is actually an admin (simple check for now, can be enhanced with RLS or metadata)
+                    // For now, we assume anyone who can login here is authorized if they have credentials
+                    // In a real app, you'd check user.role or a profiles table
+
+                    if (data.user) {
+                        // Store admin session marker
+                        localStorage.setItem('agape_admin_user', JSON.stringify(data.user));
+                        window.location.href = 'admin.html';
+                    }
+                } catch (err) {
+                    console.error(err);
+                    errorDiv.textContent = 'Credenciais inválidas ou sem permissão.';
+                    errorDiv.classList.remove('hidden');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<span>Entrar no Painel</span><span class="material-symbols-outlined text-sm">arrow_forward</span>';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

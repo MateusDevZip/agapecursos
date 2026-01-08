@@ -41,8 +41,9 @@
     <link rel="icon" type="image/png" href="/static/img/logo.png">
     <link rel="apple-touch-icon" href="/static/img/logo.png">
 
-<script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
     <script src='/static/js/supabase.js'></script>
+    <script src="static/js/auth-guard.js"></script>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display text-text-dark antialiased">
@@ -94,11 +95,11 @@
 
             <!-- Bottom Actions -->
             <div class="p-4 border-t border-[#e7cfd1]">
-                <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#9a4c52] hover:bg-[#f3e7e8] hover:text-primary transition-colors"
-                    href="#">
+                <button data-admin-logout
+                    class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#9a4c52] hover:bg-[#f3e7e8] hover:text-primary transition-colors w-full text-left">
                     <span class="material-symbols-outlined">logout</span>
                     <span class="text-sm font-medium">Sair</span>
-                </a>
+                </button>
             </div>
         </aside>
 
@@ -216,7 +217,7 @@
                                     <option value="">Todos os Cursos</option>
                                     <option value="capilar">Terapia Capilar</option>
                                     <option value="massagem">Massagem Terapêutica</option>
-                                    </select>
+                                </select>
                                 <span
                                     class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-[#9a4c52] pointer-events-none text-[20px]">expand_more</span>
                             </div>
